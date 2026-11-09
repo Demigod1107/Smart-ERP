@@ -3,9 +3,17 @@ const path = require('path');
 const crypto = require('crypto');
 const { db } = require('../db');
 
-const BACKUP_DIR = path.join(__dirname, '..', '..', 'backups');
-if (!fs.existsSync(BACKUP_DIR)) {
-  fs.mkdirSync(BACKUP_DIR, { recursive: true });
+const isVercel = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const BACKUP_DIR = isVercel 
+  ? path.join('/tmp', 'backups') 
+  : path.join(__dirname, '..', '..', 'backups');
+
+try {
+  if (!fs.existsSync(BACKUP_DIR)) {
+    fs.mkdirSync(BACKUP_DIR, { recursive: true });
+  }
+} catch (e) {
+  console.warn('Backup directory initialization note:', e.message);
 }
 
 // All application tables in dependency order for safe export/import
