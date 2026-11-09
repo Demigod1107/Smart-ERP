@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-09T15:34:13.448Z",
+  "exportedAt": "2026-11-09T16:36:41.889Z",
   "tables": {
     "classes": [
       {
@@ -2744,6 +2744,18 @@
         "status": "Completed",
         "conducted_by": "Teacher",
         "created_at": "2026-11-09 15:31:00"
+      },
+      {
+        "id": 89,
+        "academic_year": "2026-2027",
+        "date": "2026-11-09",
+        "class_sec": "10-A",
+        "subject_id": 4,
+        "period_number": 1,
+        "teacher_code": null,
+        "status": "Completed",
+        "conducted_by": "System Administrator",
+        "created_at": "2026-11-09 16:36:39"
       }
     ],
     "period_attendance": [
@@ -4154,6 +4166,22 @@
         "status": "Present",
         "remarks": null,
         "updated_at": "2026-11-09 15:31:00"
+      },
+      {
+        "id": 177,
+        "session_id": 89,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 16:36:39"
+      },
+      {
+        "id": 178,
+        "session_id": 89,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 16:36:39"
       }
     ],
     "leaves": [],
