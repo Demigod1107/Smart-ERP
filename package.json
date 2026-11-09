@@ -1,0 +1,29 @@
+{
+  "name": "smart-school-attendance",
+  "version": "4.5.0",
+  "description": "Smart School Attendance Management System - Production Relational Architecture",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "test": "node test/test_suite.js && node test/api_test.js"
+  },
+  "keywords": [
+    "school-management",
+    "attendance",
+    "smart-school",
+    "defaulter-detection",
+    "role-based-access"
+  ],
+  "author": "Smart School Engineering Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^10.4.0"
+  }
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Smart School Attendance System</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .login-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        padding: 20px;
+      }
+      .login-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 36px 32px;
+        max-width: 440px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      .login-card h2 {
+        color: #1e3a8a;
+        font-size: 1.6rem;
+        margin-bottom: 6px;
+        text-align: center;
+      }
+      .login-card p {
+        color: #64748b;
+        font-size: 0.88rem;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #334155;
+      }
+      .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        outline: none;
+      }
+      .quick-login-pills {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .quick-btn {
+        flex: 1;
+        padding: 8px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        background: #f8fafc;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .quick-btn:hover {
+        background: #eff6ff;
+        border-color: #3b82f6;
+        color: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <h2>Smart School</h2>
+        <p>Advanced Attendance &amp; Role Portal</p>
+
+        <!-- Quick 1-click test credentials -->
+        <label style="font-size: 0.75rem; color: #64748b; font-weight: 600; text-transform: uppercase;">1-Click Instant Demo Login:</label>
+        <div class="quick-login-pills">
+          <button type="button" class="quick-btn" onclick="fillCreds('admin', 'admin123')">🔑 Admin</button>
+          <button type="button" class="quick-btn" onclick="fillCreds('teacher', 'teacher123')">👩‍🏫 Teacher</button>
+          <button type="button" class="quick-btn" onclick="fillCreds('parent', 'parent123')">👨‍👧 Parent</button>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="e.g. admin or teacher" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" id="loginBtn" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 10px;">
+            Sign In to Portal →
+          </button>
+        </form>
+
+        <div id="loginError" style="color: #dc2626; font-size: 0.85rem; text-align: center; margin-top: 14px;" hidden></div>
+      </div>
+    </div>
+
+    <script>
+      function fillCreds(u, p) {
+        document.getElementById('username').value = u;
+        document.getElementById('password').value = p;
+      }
+
+      document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const errorEl = document.getElementById('loginError');
+        errorEl.hidden = true;
+
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+
+        try {
+          const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            localStorage.setItem('smart_auth_token', data.token);
+            localStorage.setItem('smart_current_user', JSON.stringify(data.user));
+            window.location.href = 'index.html';
+          } else {
+            errorEl.textContent = data.error || 'Login failed';
+            errorEl.hidden = false;
+          }
+        } catch (err) {
+          // If server is not reachable, provide fallback demo user session
+          localStorage.setItem('smart_current_user', JSON.stringify({
+            username,
+            role: username.includes('teacher') ? 'teacher' : username.includes('parent') ? 'parent' : 'admin',
+            name: username.toUpperCase()
+          }));
+          window.location.href = 'index.html';
+        }
+      });
+    </script>
+  </body>
+</html>
+

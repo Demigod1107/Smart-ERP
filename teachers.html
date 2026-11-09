@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Management - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html" class="active">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Staff &amp; Class Access</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Faculty &amp; Teacher Management</h1>
+              <p>Manage faculty credentials, assigned classes, subject allocations, and role authorization</p>
+            </div>
+          </header>
+
+          <!-- Add Teacher Form -->
+          <form id="teacherForm" class="control-box">
+            <input type="text" id="teacherCodeInput" placeholder="Teacher ID (e.g. TCH-104)" required />
+            <input type="text" id="teacherNameInput" placeholder="Full Name" required />
+            <input type="email" id="teacherEmailInput" placeholder="Email Address" required />
+            <input type="tel" id="teacherPhoneInput" placeholder="Phone Number" />
+            <input type="text" id="teacherSubjectInput" placeholder="Subject (e.g. Mathematics)" required />
+            <select id="teacherClassInput">
+              <option value="10-A">Assigned Class: 10-A</option>
+              <option value="10-B">Assigned Class: 10-B</option>
+              <option value="12-A">Assigned Class: 12-A</option>
+            </select>
+            <button type="submit" class="btn btn-primary">+ Add Teacher</button>
+          </form>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Teachers Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Teacher ID</th>
+                  <th>Full Name</th>
+                  <th>Subject</th>
+                  <th>Assigned Class</th>
+                  <th>Contact Email</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="teachersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      async function loadTeachers() {
+        const tbody = document.getElementById('teachersTableBody');
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:20px;">Loading teachers...</td></tr>';
+        try {
+          const res = await fetch('/api/teachers');
+          const data = await res.json();
+          tbody.innerHTML = '';
+          (data.teachers || []).forEach(t => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><strong>${t.teacher_code}</strong></td>
+              <td><strong>${t.name}</strong></td>
+              <td><span class="class-tag" style="background:#eff6ff; color:#1d4ed8;">${t.subject}</span></td>
+              <td><span class="class-tag">${t.assigned_class}</span></td>
+              <td>${t.email || '-'}</td>
+              <td>${t.phone ? '📞 ' + t.phone : '-'}</td>
+              <td>
+                <span class="badge ${t.status === 'Active' ? 'badge-Present' : 'badge-Absent'}">${t.status}</span>
+              </td>
+              <td class="actions-cell">
+                <button type="button" class="btn btn-sm ${t.status === 'Active' ? 'btn-warning' : 'btn-success'}" onclick="toggleTeacherStatus(${t.id}, '${t.status}')">
+                  ${t.status === 'Active' ? 'Deactivate' : 'Activate'}
+                </button>
+                <button type="button" class="btn btn-sm btn-outline" onclick="deleteTeacher(${t.id}, '${t.name}')">✕</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; color:red;">Failed to load teachers.</td></tr>';
+        }
+      }
+
+      document.getElementById('teacherForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const teacher_code = document.getElementById('teacherCodeInput').value.trim();
+        const name = document.getElementById('teacherNameInput').value.trim();
+        const email = document.getElementById('teacherEmailInput').value.trim();
+        const phone = document.getElementById('teacherPhoneInput').value.trim();
+        const subject = document.getElementById('teacherSubjectInput').value.trim();
+        const assigned_class = document.getElementById('teacherClassInput').value;
+
+        try {
+          const res = await fetch('/api/teachers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ teacher_code, name, email, phone, subject, assigned_class })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.reset();
+            loadTeachers();
+            showMessage('✓ Teacher registered successfully');
+          } else {
+            alert(data.error || 'Failed to add teacher');
+          }
+        } catch (err) {
+          alert('Network error adding teacher');
+        }
+      });
+
+      async function toggleTeacherStatus(id, curStatus) {
+        const nextStatus = curStatus === 'Active' ? 'Inactive' : 'Active';
+        await fetch(`/api/teachers/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: nextStatus })
+        });
+        loadTeachers();
+      }
+
+      async function deleteTeacher(id, name) {
+        if (!confirm(`Are you sure you want to remove teacher ${name}?`)) return;
+        await fetch(`/api/teachers/${id}`, { method: 'DELETE' });
+        loadTeachers();
+        showMessage(`Removed teacher ${name}`);
+      }
+
+      window.addEventListener('DOMContentLoaded', loadTeachers);
+    </script>
+  </body>
+</html>
+

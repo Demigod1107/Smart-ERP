@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Attendance Calendar - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html" class="active">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Relational SQL Architecture</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Monthly Attendance Calendar</h1>
+              <p>Color-coded attendance visualization, holiday schedules, and monthly audit tracking</p>
+            </div>
+            <div class="session-info">
+              <select id="calendarStudentSelect" aria-label="Select Student"></select>
+            </div>
+          </header>
+
+          <!-- Monthly Stats Grid -->
+          <section class="stats-grid">
+            <div class="stat-card rate-card">
+              <span>Monthly Attendance Rate</span>
+              <strong id="calMonthlyRate">0%</strong>
+            </div>
+            <div class="stat-card present-card">
+              <span>Present Days</span>
+              <strong id="calPresentDays">0</strong>
+            </div>
+            <div class="stat-card absent-card">
+              <span>Absent Days</span>
+              <strong id="calAbsentDays">0</strong>
+            </div>
+            <div class="stat-card late-card">
+              <span>Late Arrivals</span>
+              <strong id="calLateDays">0</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #2563eb;">
+              <span>Excused / Leave Days</span>
+              <strong id="calExcusedDays">0</strong>
+            </div>
+          </section>
+
+          <!-- Calendar Interface -->
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <button type="button" class="btn btn-secondary" id="calPrevMonthBtn">&larr; Previous Month</button>
+              <h2 id="calendarMonthTitle" style="font-size: 1.25rem; color: var(--text-main);">Month Year</h2>
+              <button type="button" class="btn btn-secondary" id="calNextMonthBtn">Next Month &rarr;</button>
+            </div>
+
+            <!-- Calendar Days Header -->
+            <div class="calendar-grid" style="margin-bottom: 6px;">
+              <div class="calendar-day-name">Sun</div>
+              <div class="calendar-day-name">Mon</div>
+              <div class="calendar-day-name">Tue</div>
+              <div class="calendar-day-name">Wed</div>
+              <div class="calendar-day-name">Thu</div>
+              <div class="calendar-day-name">Fri</div>
+              <div class="calendar-day-name">Sat</div>
+            </div>
+
+            <!-- Calendar Cells -->
+            <div class="calendar-grid" id="calendarDaysGrid"></div>
+          </div>
+
+          <!-- Date Detail Inspection Box -->
+          <div id="dateDetailCard" class="control-box" style="display: none; margin-top: 20px;">
+            <h3 id="dateDetailTitle" style="margin-bottom: 8px;">Date Details</h3>
+            <p id="dateDetailBody" style="color: var(--text-muted); font-size: 0.9rem;"></p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      // Calendar Controller Logic
+      let currentCalDate = new Date();
+      let calendarStudentsList = [];
+
+      async function initCalendar() {
+        try {
+          const res = await fetch('/api/students');
+          const data = await res.json();
+          calendarStudentsList = data.students || [];
+
+          const sel = document.getElementById('calendarStudentSelect');
+          sel.innerHTML = calendarStudentsList.map(s => `
+            <option value="${s.id}">${s.roll} - ${s.name} (${s.class_sec})</option>
+          `).join('');
+
+          sel.addEventListener('change', renderCalendarMonth);
+          renderCalendarMonth();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      document.getElementById('calPrevMonthBtn').addEventListener('click', () => {
+        currentCalDate.setMonth(currentCalDate.getMonth() - 1);
+        renderCalendarMonth();
+      });
+
+      document.getElementById('calNextMonthBtn').addEventListener('click', () => {
+        currentCalDate.setMonth(currentCalDate.getMonth() + 1);
+        renderCalendarMonth();
+      });
+
+      async function renderCalendarMonth() {
+        const sel = document.getElementById('calendarStudentSelect');
+        if (!sel || !sel.value) return;
+
+        const studentId = sel.value;
+        const year = currentCalDate.getFullYear();
+        const monthNum = currentCalDate.getMonth() + 1;
+        const monthTitle = currentCalDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        document.getElementById('calendarMonthTitle').textContent = monthTitle;
+
+        const grid = document.getElementById('calendarDaysGrid');
+        grid.innerHTML = '<div style="grid-column: span 7; text-align: center; padding: 20px;">Loading month data...</div>';
+
+        try {
+          const res = await fetch(`/api/attendance/calendar/${studentId}?year=${year}&month=${monthNum}`);
+          const data = await res.json();
+
+          const recordsMap = {};
+          (data.records || []).forEach(r => recordsMap[r.date] = r);
+
+          const holidaysMap = {};
+          (data.holidays || []).forEach(h => holidaysMap[h.date] = h);
+
+          // Calculate counts for this month
+          let pCount = 0, aCount = 0, lCount = 0, eCount = 0;
+          Object.values(recordsMap).forEach(r => {
+            if (r.status === 'Present') pCount++;
+            else if (r.status === 'Absent') aCount++;
+            else if (r.status === 'Late') lCount++;
+            else if (r.status === 'Excused') eCount++;
+          });
+
+          const totalCounted = pCount + aCount + lCount + eCount;
+          const monthlyPct = totalCounted > 0 ? Math.round(((pCount + lCount * 0.5 + eCount) / totalCounted) * 100) : 0;
+
+          document.getElementById('calMonthlyRate').textContent = monthlyPct + '%';
+          document.getElementById('calPresentDays').textContent = pCount;
+          document.getElementById('calAbsentDays').textContent = aCount;
+          document.getElementById('calLateDays').textContent = lCount;
+          document.getElementById('calExcusedDays').textContent = eCount;
+
+          // Render Grid
+          grid.innerHTML = '';
+          const firstDayIndex = new Date(year, currentCalDate.getMonth(), 1).getDay();
+          const totalDaysInMonth = new Date(year, currentCalDate.getMonth() + 1, 0).getDate();
+
+          // Empty pads before 1st
+          for (let i = 0; i < firstDayIndex; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'calendar-cell empty-cell';
+            grid.appendChild(emptyCell);
+          }
+
+          for (let day = 1; day <= totalDaysInMonth; day++) {
+            const dateStr = `${year}-${String(monthNum).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const rec = recordsMap[dateStr];
+            const hol = holidaysMap[dateStr];
+            const dayOfWeek = new Date(year, currentCalDate.getMonth(), day).getDay();
+            const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
+            const cell = document.createElement('div');
+            cell.className = 'calendar-cell';
+
+            let statusClass = '';
+            let labelHtml = '';
+
+            if (hol) {
+              statusClass = 'cell-holiday';
+              labelHtml = `<span class="calendar-status-label label-holiday">${hol.name}</span>`;
+            } else if (rec) {
+              if (rec.status === 'Present') {
+                statusClass = 'cell-present';
+                labelHtml = '<span class="calendar-status-label label-present">Present</span>';
+              } else if (rec.status === 'Absent') {
+                statusClass = 'cell-absent';
+                labelHtml = '<span class="calendar-status-label label-absent">Absent</span>';
+              } else if (rec.status === 'Late') {
+                statusClass = 'cell-late';
+                labelHtml = '<span class="calendar-status-label label-late">Late</span>';
+              } else if (rec.status === 'Excused') {
+                statusClass = 'cell-excused';
+                labelHtml = '<span class="calendar-status-label label-excused">Excused</span>';
+              }
+            } else if (isWeekend) {
+              statusClass = 'cell-holiday';
+              labelHtml = '<span class="calendar-status-label label-holiday">Weekend</span>';
+            } else {
+              labelHtml = '<span style="font-size:0.7rem; color: #94a3b8;">Unrecorded</span>';
+            }
+
+            cell.className += ' ' + statusClass;
+            cell.innerHTML = `
+              <div class="calendar-date-num">${day}</div>
+              ${labelHtml}
+            `;
+
+            cell.addEventListener('click', () => {
+              const detailCard = document.getElementById('dateDetailCard');
+              detailCard.style.display = 'block';
+              document.getElementById('dateDetailTitle').textContent = `Attendance Record for ${dateStr}`;
+              document.getElementById('dateDetailBody').innerHTML = `
+                <strong>Student:</strong> ${data.student.name} (${data.student.roll})<br/>
+                <strong>Status:</strong> ${rec ? rec.status : (hol ? hol.name : isWeekend ? 'Weekend' : 'Not recorded')}<br/>
+                <strong>Remarks:</strong> ${rec && rec.remarks ? rec.remarks : 'None recorded'}<br/>
+                <strong>Class:</strong> ${data.student.class_sec}
+              `;
+              detailCard.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            grid.appendChild(cell);
+          }
+        } catch (err) {
+          grid.innerHTML = '<div style="grid-column: span 7; color: red;">Failed to load calendar data.</div>';
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', initCalendar);
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports &amp; Defaulters - Smart School Attendance System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html" class="active">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Audits &amp; Formal Reports</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print / Save PDF</button>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Attendance Reporting Centre &amp; 75% Defaulter Engine</h1>
+              <p>Generate daily, weekly, monthly, annual, and student/class-wise compliance audit reports</p>
+            </div>
+            <div class="session-info">
+              <select id="reportTypeSelect">
+                <option value="defaulters">⚠️ 75% Defaulter Recovery Report</option>
+                <option value="daily">📅 Daily Attendance Audit</option>
+                <option value="monthly">🗓️ Monthly Class Performance</option>
+                <option value="annual">📚 Annual Session Ledger</option>
+              </select>
+              <select id="classFilter" aria-label="Select Class and Section">
+                <option value="All">All Classes &amp; Sections</option>
+                <option value="10-A">Class 10 - Section A</option>
+                <option value="10-B">Class 10 - Section B</option>
+                <option value="12-A">Class 12 - Section A</option>
+              </select>
+            </div>
+          </header>
+
+          <!-- Analytics Summary Cards -->
+          <section class="stats-grid">
+            <div class="stat-card">
+              <span>Total Students Audited</span>
+              <strong id="totalCount">0</strong>
+            </div>
+            <div class="stat-card rate-card">
+              <span>Overall Average Rate</span>
+              <strong id="attendanceRate">0%</strong>
+            </div>
+            <div class="stat-card risk-card">
+              <span>At-Risk Defaulters (&lt; 75%)</span>
+              <strong id="riskCount">0</strong>
+            </div>
+            <div class="stat-card present-card">
+              <span>Eligible Candidates (&gt;= 75%)</span>
+              <strong id="safeCount">0</strong>
+            </div>
+          </section>
+
+          <!-- Toolbar & Export -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search students in reports..."
+                aria-label="Search students"
+              />
+              <select id="filterStatus" aria-label="Filter Defaulters">
+                <option value="AtRisk">⚠️ At-Risk Defaulters Only (&lt;75%)</option>
+                <option value="All">All Students Audit View</option>
+              </select>
+            </div>
+            <div class="action-group">
+              <button type="button" id="exportBtn" class="btn btn-export">
+                📥 Export CSV Report
+              </button>
+            </div>
+          </div>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Reports Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Student Name</th>
+                  <th>Class &amp; Sec</th>
+                  <th>Parent Contact</th>
+                  <th>Attendance % (Present/Total)</th>
+                  <th>75% Goal Advice &amp; Required Recovery Classes</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Parent Notification Modal -->
+    <div id="notifyModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>📢 Parent Attendance Alert</h3>
+          <button type="button" class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <textarea id="noticeMessageText" rows="6" aria-label="Parent Notice Message" readonly></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="copyNoticeBtn" class="btn btn-primary">📋 Copy Message</button>
+          <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp">💬 Send via WhatsApp</a>
+          <button type="button" id="dismissModalBtn" class="btn btn-outline">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const repType = document.getElementById('reportTypeSelect');
+      if (repType) {
+        repType.addEventListener('change', () => {
+          if (typeof renderTable === 'function') renderTable();
+        });
+      }
+    </script>
+  </body>
+</html>

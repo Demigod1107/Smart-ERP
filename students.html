@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Directory - Smart School Attendance System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html" class="active">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Student Master Records</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="btn btn-primary btn-sm" id="openAddModalBtn">+ Register New Student</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="openCsvModalBtn">📥 Bulk CSV Import</button>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Student Directory &amp; Records Management</h1>
+              <p>Enroll students, manage unique admission numbers, guardian contacts, and inspect individual attendance dossiers</p>
+            </div>
+            <div class="session-info">
+              <select id="classFilter" aria-label="Select Class and Section">
+                <option value="All">All Classes &amp; Sections</option>
+                <option value="10-A">Class 10 - Section A</option>
+                <option value="10-B">Class 10 - Section B</option>
+                <option value="12-A">Class 12 - Section A</option>
+              </select>
+            </div>
+          </header>
+
+          <!-- Search & Filter Toolbar -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name, roll no, or admission no..."
+                aria-label="Search students"
+              />
+            </div>
+            <div class="action-group">
+              <button type="button" id="exportBtn" class="btn btn-export">
+                📥 Export Directory CSV
+              </button>
+            </div>
+          </div>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Students Directory Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Admission No</th>
+                  <th>Student Name</th>
+                  <th>Class &amp; Sec</th>
+                  <th>Parent / Phone</th>
+                  <th>Attendance %</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Student Registration / Edit Modal -->
+    <div id="studentModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card" style="max-width: 580px;">
+        <div class="modal-header">
+          <h3 id="modalStudentTitle">📝 Student Registration</h3>
+          <button type="button" class="close-btn" id="closeStudentModalBtn">&times;</button>
+        </div>
+        <form id="studentRegistrationForm">
+          <div class="modal-body" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <input type="hidden" id="editStudentId" value="" />
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Roll Number *</label>
+              <input type="text" id="regRoll" placeholder="e.g. 10A-05" required style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Admission Number</label>
+              <input type="text" id="regAdm" placeholder="Auto-generated if empty" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div style="grid-column: span 2;">
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Full Name *</label>
+              <input type="text" id="regName" placeholder="Student Full Legal Name" required style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Date of Birth</label>
+              <input type="date" id="regDob" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Gender</label>
+              <select id="regGender" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Class &amp; Section *</label>
+              <select id="regClass" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                <option value="10-A">Class 10 - A</option>
+                <option value="10-B">Class 10 - B</option>
+                <option value="12-A">Class 12 - A</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Student Status</label>
+              <select id="regStatus" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                <option value="Active">Active</option>
+                <option value="Archived">Archived</option>
+                <option value="Suspended">Suspended</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Parent / Guardian Name</label>
+              <input type="text" id="regParentName" placeholder="Guardian Name" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Parent Phone</label>
+              <input type="tel" id="regParentPhone" placeholder="10-digit phone" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+            <div style="grid-column: span 2;">
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:4px;">Parent Email</label>
+              <input type="email" id="regParentEmail" placeholder="guardian@example.com" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="saveStudentBtn">Save Record</button>
+            <button type="button" class="btn btn-outline" id="dismissStudentModalBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bulk CSV Import Modal -->
+    <div id="csvModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>📥 Bulk CSV Student Import</h3>
+          <button type="button" class="close-btn" id="closeCsvModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+            Paste CSV formatted student lines below (Columns: Roll, Name, ClassSec, ParentPhone, AdmissionNo):
+          </p>
+          <textarea id="csvImportText" rows="6" placeholder="Roll,Name,ClassSec,ParentPhone&#10;10A-07,Kavita Rao,10-A,9876543220&#10;10B-08,Siddharth Jain,10-B,9876543221"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="processCsvBtn">Process &amp; Import</button>
+          <button type="button" class="btn btn-outline" id="dismissCsvModalBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parent Alert Modal -->
+    <div id="notifyModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>📢 Parent Attendance Alert</h3>
+          <button type="button" class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <textarea id="noticeMessageText" rows="5" readonly></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="copyNoticeBtn" class="btn btn-primary">📋 Copy Message</button>
+          <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp">💬 Send WhatsApp</a>
+          <button type="button" id="dismissModalBtn" class="btn btn-outline">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Student modal helpers
+      const studentModal = document.getElementById('studentModal');
+      const csvModal = document.getElementById('csvModal');
+
+      document.getElementById('openAddModalBtn').addEventListener('click', () => {
+        document.getElementById('studentRegistrationForm').reset();
+        document.getElementById('editStudentId').value = '';
+        document.getElementById('modalStudentTitle').textContent = '📝 Register New Student';
+        studentModal.style.display = 'flex';
+      });
+
+      document.getElementById('closeStudentModalBtn').addEventListener('click', () => studentModal.style.display = 'none');
+      document.getElementById('dismissStudentModalBtn').addEventListener('click', () => studentModal.style.display = 'none');
+
+      document.getElementById('openCsvModalBtn').addEventListener('click', () => csvModal.style.display = 'flex');
+      document.getElementById('closeCsvModalBtn').addEventListener('click', () => csvModal.style.display = 'none');
+      document.getElementById('dismissCsvModalBtn').addEventListener('click', () => csvModal.style.display = 'none');
+
+      document.getElementById('processCsvBtn').addEventListener('click', async () => {
+        const csvText = document.getElementById('csvImportText').value.trim();
+        if (!csvText) return alert('Please paste CSV content.');
+        try {
+          const res = await fetch('/api/students/import-csv', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ csvText })
+          });
+          const data = await res.json();
+          csvModal.style.display = 'none';
+          showMessage(`✓ CSV Import: ${data.inserted} added, ${data.skipped} skipped.`);
+          if (typeof loadStudentsFromBackend === 'function') loadStudentsFromBackend();
+        } catch (e) {
+          alert('Error during CSV import');
+        }
+      });
+
+      document.getElementById('studentRegistrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const editId = document.getElementById('editStudentId').value;
+        const payload = {
+          roll: document.getElementById('regRoll').value.trim(),
+          admission_no: document.getElementById('regAdm').value.trim(),
+          name: document.getElementById('regName').value.trim(),
+          dob: document.getElementById('regDob').value,
+          gender: document.getElementById('regGender').value,
+          class_sec: document.getElementById('regClass').value,
+          status: document.getElementById('regStatus').value,
+          parent_name: document.getElementById('regParentName').value.trim(),
+          parent_phone: document.getElementById('regParentPhone').value.trim(),
+          parent_email: document.getElementById('regParentEmail').value.trim(),
+        };
+
+        try {
+          const method = editId ? 'PUT' : 'POST';
+          const endpoint = editId ? `/api/students/${editId}` : '/api/students';
+          const res = await fetch(endpoint, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (res.ok) {
+            studentModal.style.display = 'none';
+            showMessage(editId ? '✓ Student record updated' : '✓ Student registered successfully');
+            if (typeof loadStudentsFromBackend === 'function') loadStudentsFromBackend();
+          } else {
+            alert(data.error || 'Failed to save student record');
+          }
+        } catch (err) {
+          alert('Network error saving student');
+        }
+      });
+    </script>
+  </body>
+</html>

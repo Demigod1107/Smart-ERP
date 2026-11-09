@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database Management &amp; Backups - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html" class="active">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Database Disaster Recovery</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Database Administration, Backups &amp; Disaster Recovery</h1>
+              <p>Create consistent SQL/JSON backups, validate snapshot integrity, and execute secure pre-verified restorations</p>
+            </div>
+          </header>
+
+          <!-- Action Hub & Health Card -->
+          <div class="control-box" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; border-left: 5px solid #16a34a;">
+            <div>
+              <div style="font-size: 1rem; font-weight: 700; color: var(--text-main);">Database Engine: SQLite (better-sqlite3) with WAL Mode</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);" id="dbHealthStatusText">System Status: Active | Foreign Key Constraints: Enabled | ACID Transactions</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary" id="createSqlBackupBtn">💾 Create SQL Backup (.sql)</button>
+              <button type="button" class="btn btn-secondary" id="createJsonBackupBtn">📄 Create JSON Backup (.json)</button>
+            </div>
+          </div>
+
+          <!-- Backup Snapshots History Table -->
+          <div class="table-wrapper" style="margin-bottom: 28px;">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <h2 style="font-size: 1.15rem; color: var(--text-main);">Available Database Snapshots</h2>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="loadBackups()">🔄 Refresh Snapshots</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Backup ID</th>
+                  <th>Filename</th>
+                  <th>Format</th>
+                  <th>Created Date</th>
+                  <th>Size</th>
+                  <th>Created By</th>
+                  <th>Integrity Check</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="backupsTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Restoration History & Safety Audit Table -->
+          <div class="table-wrapper">
+            <div style="padding: 16px 20px;">
+              <h2 style="font-size: 1.15rem; color: var(--text-main);">Restoration Audit History</h2>
+              <small style="color: var(--text-muted);">Every restoration automatically creates a pre-restore backup snapshot before switchover</small>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Restore ID</th>
+                  <th>Restored Snapshot</th>
+                  <th>Restored By</th>
+                  <th>Automated Pre-Restore Safety Snapshot</th>
+                  <th>Execution Timestamp</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="restoreHistoryTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Safety Restore Confirmation Modal -->
+    <div id="restoreModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header" style="background: #dc2626;">
+          <h3 style="color:#ffffff;">⚠️ Confirm Database Restoration</h3>
+          <button type="button" class="close-btn" id="closeRestoreModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p style="font-weight: 700; color: #b91c1c; margin-bottom: 8px;">
+            CRITICAL WARNING: Restoring this backup will replace current application data!
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 12px;" id="restoreModalFilenameText">
+            Target Snapshot: -
+          </p>
+          <div style="background: #eff6ff; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #3b82f6; font-size: 0.82rem; color: #1e3a8a;">
+            ✓ <strong>Automated Safety Guarantee:</strong> The system will automatically generate a complete pre-restore safety backup of the database before applying changes.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="confirmExecuteRestoreBtn">I Understand, Execute Restore</button>
+          <button type="button" class="btn btn-outline" id="dismissRestoreModalBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      let currentBackups = [];
+      let pendingRestoreBackupId = null;
+
+      async function loadBackups() {
+        const tbody = document.getElementById('backupsTbody');
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:16px;">Loading snapshots...</td></tr>';
+
+        try {
+          const res = await fetch('/api/admin/backups');
+          const data = await res.json();
+          currentBackups = data.backups || [];
+          tbody.innerHTML = '';
+
+          if (currentBackups.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:20px; color:#64748b;">No database backups created yet. Click above to generate your first snapshot.</td></tr>';
+            return;
+          }
+
+          currentBackups.forEach(b => {
+            const tr = document.createElement('tr');
+            const sizeKb = (b.filesize_bytes / 1024).toFixed(1);
+            tr.innerHTML = `
+              <td><strong>#BK-${b.id}</strong></td>
+              <td><span style="font-family:monospace; font-weight:600;">${b.filename}</span></td>
+              <td><span class="class-tag" style="background:#f1f5f9; color:#1e293b;">${b.format.toUpperCase()}</span></td>
+              <td><small>${new Date(b.created_at).toLocaleString()}</small></td>
+              <td>${sizeKb} KB</td>
+              <td>${b.created_by}</td>
+              <td><span class="badge badge-Present">✓ Valid</span></td>
+              <td class="actions-cell">
+                <a href="/api/admin/backups/${b.id}/download" class="btn btn-sm btn-primary" download>📥 Download</a>
+                <button type="button" class="btn btn-sm btn-warning" onclick="promptRestore(${b.id}, '${b.filename}')">♻️ Restore</button>
+                <button type="button" class="btn btn-sm btn-outline" onclick="deleteBackupRecord(${b.id})">✕</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; color:red;">Failed to load backup snapshots.</td></tr>';
+        }
+
+        loadRestoreHistory();
+      }
+
+      async function loadRestoreHistory() {
+        const tbody = document.getElementById('restoreHistoryTbody');
+        try {
+          const res = await fetch('/api/admin/backups/restore-history');
+          const data = await res.json();
+          tbody.innerHTML = '';
+
+          if (!data.history || data.history.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:16px; color:#64748b;">No restoration actions recorded yet.</td></tr>';
+            return;
+          }
+
+          data.history.forEach(h => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>#RES-${h.id}</td>
+              <td><strong style="font-family:monospace;">${h.backup_filename}</strong></td>
+              <td>${h.restored_by}</td>
+              <td><span style="font-family:monospace; color:#2563eb;">${h.pre_restore_backup_filename || 'Auto Safety'}</span></td>
+              <td><small>${new Date(h.restored_at).toLocaleString()}</small></td>
+              <td><span class="badge ${h.status === 'Success' ? 'badge-Present' : 'badge-Absent'}">${h.status}</span></td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {}
+      }
+
+      document.getElementById('createSqlBackupBtn').addEventListener('click', () => triggerBackup('sql'));
+      document.getElementById('createJsonBackupBtn').addEventListener('click', () => triggerBackup('json'));
+
+      async function triggerBackup(format) {
+        showToast(`Creating ${format.toUpperCase()} database backup...`);
+        try {
+          const res = await fetch('/api/admin/backups', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ format, createdBy: currentUser ? currentUser.name : 'Administrator' })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            showToast(`✓ Generated ${data.backup.filename}`);
+            loadBackups();
+          } else {
+            alert('Backup failed: ' + (data.error || 'Server error'));
+          }
+        } catch (e) {
+          alert('Network error initiating backup');
+        }
+      }
+
+      function promptRestore(id, filename) {
+        pendingRestoreBackupId = id;
+        document.getElementById('restoreModalFilenameText').textContent = `Target Snapshot: ${filename}`;
+        document.getElementById('restoreModal').style.display = 'flex';
+      }
+
+      document.getElementById('closeRestoreModalBtn').addEventListener('click', () => {
+        document.getElementById('restoreModal').style.display = 'none';
+      });
+      document.getElementById('dismissRestoreModalBtn').addEventListener('click', () => {
+        document.getElementById('restoreModal').style.display = 'none';
+      });
+
+      document.getElementById('confirmExecuteRestoreBtn').addEventListener('click', async () => {
+        if (!pendingRestoreBackupId) return;
+        document.getElementById('restoreModal').style.display = 'none';
+        showToast('Restoring database snapshot with pre-restore safety check...');
+
+        try {
+          const res = await fetch('/api/admin/backups/restore', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              backupId: pendingRestoreBackupId,
+              restoredBy: currentUser ? currentUser.name : 'Administrator'
+            })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            showToast('✓ Database restored successfully!');
+            alert(`✓ Restoration complete!\nPre-restore safety backup created: ${data.preRestoreBackup}`);
+            loadBackups();
+          } else {
+            alert('Restoration failed: ' + (data.error || 'Integrity check rejected file'));
+          }
+        } catch (e) {
+          alert('Network error executing restore');
+        }
+      });
+
+      async function deleteBackupRecord(id) {
+        if (!confirm('Are you sure you want to permanently delete this backup file?')) return;
+        try {
+          await fetch(`/api/admin/backups/${id}`, { method: 'DELETE' });
+          showToast('✓ Backup removed');
+          loadBackups();
+        } catch (e) {
+          alert('Failed to delete backup');
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', loadBackups);
+    </script>
+  </body>
+</html>
+

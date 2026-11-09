@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Smart School Attendance Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html" class="active">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Academic &amp; Gateway Hub</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">System Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="btn btn-sm btn-secondary" id="notifBellBtn" title="In-App Notifications">
+                🔔 <span id="unreadNotifCount" style="background:#dc2626; color:#fff; border-radius:10px; padding:1px 6px; font-size:0.75rem;">0</span>
+              </button>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header & Class / Date Selector -->
+          <header class="header">
+            <div>
+              <h1>Smart Attendance Management System</h1>
+              <p>Roll-Call, 75% Eligibility Engine, Defaulter Recovery, and AI Predictive Insights</p>
+            </div>
+            <div class="session-info">
+              <select id="classFilter" aria-label="Select Class and Section">
+                <option value="All">All Classes &amp; Sections</option>
+                <option value="10-A">Class 10 - Section A</option>
+                <option value="10-B">Class 10 - Section B</option>
+                <option value="12-A">Class 12 - Section A</option>
+              </select>
+              <input type="date" id="attendanceDate" aria-label="Attendance Date" />
+            </div>
+          </header>
+
+          <!-- Attendance Summary Cards -->
+          <section class="stats-grid">
+            <div class="stat-card">
+              <span>Total Students</span>
+              <strong id="totalCount">0</strong>
+            </div>
+            <div class="stat-card present-card">
+              <span>Present Today</span>
+              <strong id="presentCount">0</strong>
+            </div>
+            <div class="stat-card absent-card">
+              <span>Absent Today</span>
+              <strong id="absentCount">0</strong>
+            </div>
+            <div class="stat-card late-card">
+              <span>Late Arrivals</span>
+              <strong id="lateCount">0</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #2563eb;">
+              <span>Excused / Leave</span>
+              <strong id="excusedCount">0</strong>
+            </div>
+            <div class="stat-card rate-card">
+              <span>Overall Attendance %</span>
+              <strong id="attendanceRate">0%</strong>
+            </div>
+            <div class="stat-card risk-card">
+              <span>Defaulters (&lt; 75%)</span>
+              <strong id="riskCount">0</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #0284c7;">
+              <span>Period Sessions Today</span>
+              <strong id="todayPeriodCount">0</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #e11d48;">
+              <span>Subject Defaulters</span>
+              <strong id="subjRiskCount">0</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #059669;">
+              <span>Gateway Dispatches</span>
+              <strong id="commDispatchCount">0 Active</strong>
+            </div>
+            <div class="stat-card" style="border-left-color: #4f46e5;">
+              <span>Last Backup Snapshot</span>
+              <strong id="backupHealthText" style="font-size: 1rem; margin-top:8px;">Initial</strong>
+            </div>
+          </section>
+
+          <!-- Interactive Analytics Charts Grid -->
+          <section class="charts-grid">
+            <div class="chart-box">
+              <h3>Weekly Attendance Trends (%)</h3>
+              <canvas id="weeklyChart" width="400" height="220"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Status Distribution (Present vs Absent vs Late vs Excused)</h3>
+              <canvas id="distributionChart" width="400" height="220"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Class-wise Attendance Comparison</h3>
+              <canvas id="classComparisonChart" width="400" height="220"></canvas>
+            </div>
+          </section>
+
+          <!-- Speed Calling Mode Interactive Banner -->
+          <div id="speedCallBanner" class="speed-banner" style="display: none;">
+            <div class="speed-info">
+              <span class="speed-tag">⚡ SPEED ROLL-CALL ACTIVE</span>
+              <div class="speed-student">
+                Calling: <strong id="speedStudentName">-</strong> (<span id="speedStudentRoll">-</span>)
+              </div>
+              <small class="speed-hint">Press keys: <kbd>P</kbd> Present &nbsp;|&nbsp; <kbd>A</kbd> Absent &nbsp;|&nbsp; <kbd>L</kbd> Late &nbsp;|&nbsp; <kbd>E</kbd> Excused &nbsp;|&nbsp; <kbd>Esc</kbd> Exit</small>
+            </div>
+            <div class="speed-actions">
+              <button type="button" class="btn btn-sm btn-success" id="speedPBtn">P (Present)</button>
+              <button type="button" class="btn btn-sm btn-danger" id="speedABtn">A (Absent)</button>
+              <button type="button" class="btn btn-sm btn-warning" id="speedLBtn">L (Late)</button>
+              <button type="button" class="btn btn-sm btn-primary" id="speedEBtn">E (Excused)</button>
+              <button type="button" class="btn btn-sm btn-outline" id="speedExitBtn">Exit Speed Mode</button>
+            </div>
+          </div>
+
+          <!-- Quick Add Student Form -->
+          <form id="studentForm" class="control-box">
+            <input
+              type="text"
+              id="rollInput"
+              placeholder="Roll No (e.g. 10A-06)"
+              aria-label="Roll Number"
+              required
+            />
+            <input
+              type="text"
+              id="nameInput"
+              placeholder="Student Full Name"
+              aria-label="Student Full Name"
+              required
+            />
+            <input
+              type="tel"
+              id="parentPhoneInput"
+              placeholder="Parent Phone (Optional)"
+              aria-label="Parent Phone"
+            />
+            <select id="studentClassInput" aria-label="Assign Class and Section">
+              <option value="10-A">Class 10 - A</option>
+              <option value="10-B">Class 10 - B</option>
+              <option value="12-A">Class 12 - A</option>
+            </select>
+            <button type="submit" id="addBtn" class="btn btn-primary">
+              + Add Student
+            </button>
+          </form>
+
+          <!-- Search, Filters & Bulk Actions -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name or roll no..."
+                aria-label="Search students"
+              />
+              <select id="filterStatus" aria-label="Filter by Status">
+                <option value="All">All Statuses</option>
+                <option value="Present">Present Only</option>
+                <option value="Absent">Absent Only</option>
+                <option value="Late">Late Only</option>
+                <option value="Excused">Excused Only</option>
+                <option value="Unmarked">Unmarked</option>
+                <option value="AtRisk">⚠️ At-Risk Defaulters (&lt;75%)</option>
+              </select>
+            </div>
+            <div class="action-group">
+              <button type="button" id="startSpeedBtn" class="btn btn-secondary">
+                ⚡ Speed Call
+              </button>
+              <button type="button" id="markAllBtn" class="btn btn-success">
+                Mark All Present
+              </button>
+              <button type="button" id="exportBtn" class="btn btn-export">
+                📥 Export CSV
+              </button>
+              <button type="button" id="resetBtn" class="btn btn-outline">
+                Reset Date
+              </button>
+            </div>
+          </div>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Attendance Management & Analytics Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Student Name</th>
+                  <th>Class &amp; Sec</th>
+                  <th>Status (<span id="dateLabel">Today</span>)</th>
+                  <th>Recent Trend (Last 5 Days)</th>
+                  <th>Overall % &amp; 75% Goal Advice</th>
+                  <th>Quick Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Parent Notification Modal -->
+    <div id="notifyModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>📢 Parent Attendance Alert</h3>
+          <button type="button" class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">
+            Standard attendance notice ready to send to parent:
+          </p>
+          <textarea id="noticeMessageText" rows="6" aria-label="Parent Notice Message" readonly></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="copyNoticeBtn" class="btn btn-primary">
+            📋 Copy Message
+          </button>
+          <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp">
+            💬 Send via WhatsApp
+          </a>
+          <button type="button" id="dismissModalBtn" class="btn btn-outline">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- In-App Notification Center Modal -->
+    <div id="notifModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>🔔 In-App Notifications</h3>
+          <button type="button" class="close-btn" id="closeNotifModalBtn">&times;</button>
+        </div>
+        <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+          <div id="notificationsList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" id="markAllNotifReadBtn">Mark All Read</button>
+          <button type="button" class="btn btn-sm btn-outline" id="dismissNotifModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

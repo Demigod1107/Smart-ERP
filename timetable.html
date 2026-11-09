@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timetable &amp; Holiday Management - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html" class="active">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Academic Schedule</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Academic Timetable &amp; Holiday Calendar</h1>
+              <p>Period schedules, subject assignments, holiday dates, and academic session settings</p>
+            </div>
+            <div class="session-info">
+              <select id="ttClassSelect" aria-label="Select Class">
+                <option value="10-A">Class 10 - Section A</option>
+                <option value="10-B">Class 10 - Section B</option>
+                <option value="12-A">Class 12 - Section A</option>
+              </select>
+            </div>
+          </header>
+
+          <!-- Timetable Section -->
+          <div class="table-wrapper" style="margin-bottom: 28px;">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+              <h2 style="font-size: 1.15rem; color: var(--text-main);">Weekly Class Period Timetable</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Timing</th>
+                  <th>Subject</th>
+                  <th>Teacher</th>
+                  <th>Day</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody id="timetableTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- School Holiday Calendar Section -->
+          <div class="table-wrapper">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <h2 style="font-size: 1.15rem; color: var(--text-main);">School Holiday &amp; Non-Working Day Calendar</h2>
+            </div>
+
+            <!-- Add Holiday Form -->
+            <form id="holidayForm" class="control-box" style="margin: 0 20px 16px 20px;">
+              <input type="date" id="holDateInput" required />
+              <input type="text" id="holNameInput" placeholder="Holiday Name (e.g. Annual Sports Day, Break)" required style="flex: 2;" />
+              <select id="holTypeInput">
+                <option value="National Holiday">National Holiday</option>
+                <option value="Festival Holiday">Festival Holiday</option>
+                <option value="Gazetted Holiday">Gazetted Holiday</option>
+                <option value="School Break">School Break</option>
+              </select>
+              <button type="submit" class="btn btn-primary">+ Add Holiday</button>
+            </form>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Holiday Name</th>
+                  <th>Holiday Category</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="holidaysTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      async function loadTimetable() {
+        const cls = document.getElementById('ttClassSelect').value;
+        const tbody = document.getElementById('timetableTbody');
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:20px;">Loading schedule...</td></tr>';
+        try {
+          const res = await fetch(`/api/timetable?class=${cls}`);
+          const data = await res.json();
+          tbody.innerHTML = '';
+          (data.timetable || []).forEach(p => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><strong>Period ${p.period_number}</strong></td>
+              <td>${p.start_time} - ${p.end_time}</td>
+              <td><span class="class-tag" style="background:#eff6ff; color:#1d4ed8;">${p.subject}</span></td>
+              <td>${p.teacher_name}</td>
+              <td>${p.day_of_week}</td>
+              <td>${p.room || '-'}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:red;">Failed to load timetable.</td></tr>';
+        }
+      }
+
+      async function loadHolidays() {
+        const tbody = document.getElementById('holidaysTbody');
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:20px;">Loading holidays...</td></tr>';
+        try {
+          const res = await fetch('/api/holidays');
+          const data = await res.json();
+          tbody.innerHTML = '';
+          (data.holidays || []).forEach(h => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><strong>${h.date}</strong></td>
+              <td><strong>${h.name}</strong></td>
+              <td><span class="badge badge-Holiday">${h.type}</span></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-outline" onclick="deleteHoliday(${h.id})">✕ Remove</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:red;">Failed to load holidays.</td></tr>';
+        }
+      }
+
+      document.getElementById('holidayForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const date = document.getElementById('holDateInput').value;
+        const name = document.getElementById('holNameInput').value.trim();
+        const type = document.getElementById('holTypeInput').value;
+
+        try {
+          const res = await fetch('/api/holidays', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ date, name, type })
+          });
+          if (res.ok) {
+            this.reset();
+            loadHolidays();
+            showMessage('✓ Holiday added successfully');
+          }
+        } catch (e) {
+          alert('Failed to add holiday');
+        }
+      });
+
+      async function deleteHoliday(id) {
+        if (!confirm('Remove this holiday from school calendar?')) return;
+        await fetch(`/api/holidays/${id}`, { method: 'DELETE' });
+        loadHolidays();
+      }
+
+      document.getElementById('ttClassSelect').addEventListener('change', loadTimetable);
+      window.addEventListener('DOMContentLoaded', () => {
+        loadTimetable();
+        loadHolidays();
+      });
+    </script>
+  </body>
+</html>
+

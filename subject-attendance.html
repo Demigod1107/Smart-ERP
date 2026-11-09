@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject Attendance &amp; Eligibility - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html" class="active">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Subject Threshold Engine</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="btn btn-sm btn-primary" id="openAddSubjectBtn">+ Add New Subject</button>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Subject-Wise Attendance Eligibility Management</h1>
+              <p>Configure distinct attendance percentage criteria per subject (e.g. 75% Theory, 80% Labs) &amp; track deficit recovery</p>
+            </div>
+            <div class="session-info">
+              <select id="subjectClassFilter">
+                <option value="All">All Classes &amp; Sections</option>
+                <option value="10-A">Class 10 - Section A</option>
+                <option value="10-B">Class 10 - Section B</option>
+                <option value="12-A">Class 12 - Section A</option>
+              </select>
+            </div>
+          </header>
+
+          <!-- Subjects Configuration Grid -->
+          <div class="table-wrapper" style="margin-bottom: 24px;">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+              <h2 style="font-size: 1.15rem; color: var(--text-main);">Academic Subjects &amp; Configurable Thresholds</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject Code</th>
+                  <th>Subject Name</th>
+                  <th>Type</th>
+                  <th>Class</th>
+                  <th>Teacher</th>
+                  <th>Required Min %</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="subjectsConfigTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Subject Student Roster & Eligibility Table -->
+          <div class="table-wrapper">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h2 style="font-size: 1.15rem; color: var(--text-main);" id="rosterTitle">Student Attendance Roster</h2>
+                <small style="color: var(--text-muted);" id="rosterSubtitle">Select a subject above to view student-level compliance and recovery requirements</small>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <select id="activeSubjectSelect" style="padding: 6px 12px; border-radius: 6px;"></select>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Student Name</th>
+                  <th>Conducted Sessions</th>
+                  <th>Attended (Weighted)</th>
+                  <th>Absent / Late</th>
+                  <th>Attendance %</th>
+                  <th>Eligibility Status</th>
+                  <th>Goal Advice &amp; Recovery Sessions</th>
+                </tr>
+              </thead>
+              <tbody id="subjectRosterTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Add/Edit Subject Modal -->
+    <div id="subjectModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="subjectModalTitle">Add New Subject</h3>
+          <button type="button" class="close-btn" id="closeSubjectModalBtn">&times;</button>
+        </div>
+        <form id="subjectForm">
+          <div class="modal-body">
+            <input type="hidden" id="editSubjectId" value="" />
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label style="font-size:0.8rem; font-weight:600;">Subject Code *</label>
+              <input type="text" id="subCodeInput" placeholder="e.g. MATH-10A, PHYLAB-10A" required style="width:100%; padding:8px;" />
+            </div>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label style="font-size:0.8rem; font-weight:600;">Subject Name *</label>
+              <input type="text" id="subNameInput" placeholder="e.g. Mathematics Theory" required style="width:100%; padding:8px;" />
+            </div>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label style="font-size:0.8rem; font-weight:600;">Subject Type</label>
+              <select id="subTypeInput" style="width:100%; padding:8px;">
+                <option value="Theory">Theory</option>
+                <option value="Practical">Practical Lab</option>
+                <option value="Elective">Elective</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label style="font-size:0.8rem; font-weight:600;">Class &amp; Section *</label>
+              <select id="subClassInput" style="width:100%; padding:8px;">
+                <option value="10-A">Class 10 - A</option>
+                <option value="10-B">Class 10 - B</option>
+                <option value="12-A">Class 12 - A</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label style="font-size:0.8rem; font-weight:600;">Minimum Attendance Requirement (%) *</label>
+              <input type="number" id="subMinPctInput" value="75" min="50" max="100" step="1" required style="width:100%; padding:8px;" />
+              <small style="color:#64748b;">Theory standard is 75%, Lab practicals standard is 80%</small>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save Subject</button>
+            <button type="button" class="btn btn-outline" id="dismissSubjectModalBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      let allSubjects = [];
+
+      async function initSubjectPage() {
+        await loadSubjects();
+
+        document.getElementById('subjectClassFilter').addEventListener('change', loadSubjects);
+        document.getElementById('activeSubjectSelect').addEventListener('change', loadSubjectRoster);
+
+        document.getElementById('openAddSubjectBtn').addEventListener('click', () => {
+          document.getElementById('subjectForm').reset();
+          document.getElementById('editSubjectId').value = '';
+          document.getElementById('subjectModalTitle').textContent = 'Add New Subject';
+          document.getElementById('subjectModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeSubjectModalBtn').addEventListener('click', () => {
+          document.getElementById('subjectModal').style.display = 'none';
+        });
+        document.getElementById('dismissSubjectModalBtn').addEventListener('click', () => {
+          document.getElementById('subjectModal').style.display = 'none';
+        });
+
+        document.getElementById('subjectForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const editId = document.getElementById('editSubjectId').value;
+          const payload = {
+            code: document.getElementById('subCodeInput').value.trim(),
+            name: document.getElementById('subNameInput').value.trim(),
+            type: document.getElementById('subTypeInput').value,
+            class_sec: document.getElementById('subClassInput').value,
+            min_attendance_pct: parseFloat(document.getElementById('subMinPctInput').value) || 75.0,
+          };
+
+          try {
+            const method = editId ? 'PUT' : 'POST';
+            const endpoint = editId ? `/api/subjects/${editId}` : '/api/subjects';
+            const res = await fetch(endpoint, {
+              method,
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if (res.ok) {
+              document.getElementById('subjectModal').style.display = 'none';
+              showToast('✓ Subject saved successfully');
+              await loadSubjects();
+            } else {
+              alert(data.error || 'Failed to save subject');
+            }
+          } catch (err) {
+            alert('Network error saving subject');
+          }
+        });
+      }
+
+      async function loadSubjects() {
+        const cls = document.getElementById('subjectClassFilter').value;
+        const tbody = document.getElementById('subjectsConfigTbody');
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:16px;">Loading subjects...</td></tr>';
+
+        try {
+          const res = await fetch(`/api/subjects?class=${cls}`);
+          const data = await res.json();
+          allSubjects = data.subjects || [];
+          tbody.innerHTML = '';
+
+          const sel = document.getElementById('activeSubjectSelect');
+          sel.innerHTML = allSubjects.map(s => `<option value="${s.id}">${s.name} (${s.code})</option>`).join('');
+
+          allSubjects.forEach(s => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><strong>${s.code}</strong></td>
+              <td><strong>${s.name}</strong></td>
+              <td><span class="class-tag" style="background:#eff6ff; color:#1d4ed8;">${s.type}</span></td>
+              <td><span class="class-tag">${s.class_sec}</span></td>
+              <td>${s.teacher_name || s.teacher_code || 'Faculty'}</td>
+              <td>
+                <input type="number" value="${s.min_attendance_pct}" min="50" max="100" style="width:70px; padding:4px 6px; font-weight:700; border-radius:4px; border:1px solid #cbd5e1;" onchange="updateThreshold(${s.id}, this.value)" /> %
+              </td>
+              <td>
+                <button type="button" class="btn btn-sm btn-outline" onclick="deleteSubject(${s.id}, '${s.name}')">✕</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+
+          if (allSubjects.length > 0) {
+            loadSubjectRoster();
+          } else {
+            document.getElementById('subjectRosterTbody').innerHTML = '<tr><td colspan="8" style="text-align:center; padding:20px; color:#64748b;">No subjects found.</td></tr>';
+          }
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Failed to load subjects.</td></tr>';
+        }
+      }
+
+      async function updateThreshold(subjectId, newMin) {
+        try {
+          await fetch(`/api/subjects/${subjectId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ min_attendance_pct: parseFloat(newMin) })
+          });
+          showToast(`✓ Updated minimum threshold to ${newMin}%`);
+          loadSubjectRoster();
+        } catch (e) {
+          alert('Error updating threshold');
+        }
+      }
+
+      async function deleteSubject(id, name) {
+        if (!confirm(`Delete subject ${name}? This will remove its associated attendance records.`)) return;
+        await fetch(`/api/subjects/${id}`, { method: 'DELETE' });
+        showToast(`Removed subject ${name}`);
+        loadSubjects();
+      }
+
+      async function loadSubjectRoster() {
+        const sel = document.getElementById('activeSubjectSelect');
+        const subjectId = sel ? sel.value : null;
+        if (!subjectId) return;
+
+        const subObj = allSubjects.find(s => s.id == subjectId);
+        if (subObj) {
+          document.getElementById('rosterTitle').textContent = `${subObj.name} (${subObj.code}) — Attendance Compliance`;
+          document.getElementById('rosterSubtitle').textContent = `Class: ${subObj.class_sec} | Configured Mandatory Threshold: ${subObj.min_attendance_pct}%`;
+        }
+
+        const tbody = document.getElementById('subjectRosterTbody');
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:16px;">Calculating student subject stats...</td></tr>';
+
+        try {
+          // Fetch students for class
+          const cls = subObj ? subObj.class_sec : '10-A';
+          const sRes = await fetch(`/api/students?class=${cls}`);
+          const sData = await sRes.json();
+          tbody.innerHTML = '';
+
+          for (const st of sData.students || []) {
+            const statRes = await fetch(`/api/attendance/student/${st.id}/subjects`);
+            const statData = await statRes.json();
+            const subStat = (statData.subjects || []).find(s => s.subjectId == subjectId);
+
+            if (!subStat) continue;
+
+            const tr = document.createElement('tr');
+            const isEligible = subStat.isEligible;
+
+            let adviceText = '';
+            if (isEligible) {
+              adviceText = `<span class="advice-pill advice-safe">✓ Safe: Can miss ${subStat.safeSessionsToMiss} session(s)</span>`;
+            } else {
+              adviceText = `<span class="advice-pill advice-danger">⚠️ Defaulter: Need next ${subStat.recoverySessions} consecutive sessions</span>`;
+            }
+
+            tr.innerHTML = `
+              <td><strong>${st.roll}</strong></td>
+              <td><a href="profile.html?id=${st.id}" style="text-decoration:none; color:inherit;"><strong>${st.name}</strong></a></td>
+              <td>${subStat.conducted}</td>
+              <td>${subStat.attended}</td>
+              <td>${subStat.absent} / ${subStat.late}</td>
+              <td><span class="advice-pct ${isEligible ? 'pct-safe' : 'pct-danger'}">${subStat.percentage}%</span></td>
+              <td>
+                <span class="badge ${isEligible ? 'badge-Present' : 'badge-Absent'}">${subStat.eligibilityStatus}</span>
+              </td>
+              <td>${adviceText}</td>
+            `;
+            tbody.appendChild(tr);
+          }
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; color:red;">Failed to load subject roster.</td></tr>';
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', initSubjectPage);
+    </script>
+  </body>
+</html>
+

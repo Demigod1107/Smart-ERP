@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile &amp; Attendance Audit - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html" class="active">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Student Dossier &amp; Audit</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="btn btn-primary" onclick="window.print()">🖨️ Print Student Report</button>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1 id="profHeaderName">Student Profile &amp; Performance</h1>
+              <p>Comprehensive attendance dossier, parent contacts, 75% eligibility, and audit history</p>
+            </div>
+            <div class="session-info">
+              <select id="profileStudentSelect" aria-label="Select Student"></select>
+            </div>
+          </header>
+
+          <!-- Student Profile Card -->
+          <div class="profile-card">
+            <div class="profile-avatar" id="profAvatar">👤</div>
+            <div class="profile-info">
+              <h2 id="profName">Student Name</h2>
+              <div class="profile-grid">
+                <div class="profile-field">
+                  <span>Roll Number</span>
+                  <strong id="profRoll">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Admission Number</span>
+                  <strong id="profAdm">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Class &amp; Section</span>
+                  <strong id="profClassSec">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Date of Birth</span>
+                  <strong id="profDob">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Parent / Guardian</span>
+                  <strong id="profParentName">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Parent Phone</span>
+                  <strong id="profParentPhone">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Parent Email</span>
+                  <strong id="profParentEmail">-</strong>
+                </div>
+                <div class="profile-field">
+                  <span>Status</span>
+                  <strong id="profStatus">Active</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attendance Metrics Grid -->
+          <section class="stats-grid">
+            <div class="stat-card rate-card">
+              <span>Overall Attendance</span>
+              <strong id="profRate">0%</strong>
+            </div>
+            <div class="stat-card present-card">
+              <span>Present Days</span>
+              <strong id="profPresentDays">0</strong>
+            </div>
+            <div class="stat-card absent-card">
+              <span>Absence Count</span>
+              <strong id="profAbsentDays">0</strong>
+            </div>
+            <div class="stat-card late-card">
+              <span>Late Arrivals</span>
+              <strong id="profLateDays">0</strong>
+            </div>
+            <div class="stat-card risk-card">
+              <span>75% Minimum Eligibility</span>
+              <strong id="profEligibilityStatus">-</strong>
+            </div>
+          </section>
+
+          <!-- Recommendation & Advice Card -->
+          <div class="control-box" id="adviceNoticeBox" style="margin-bottom: 24px; border-left: 5px solid #3b82f6;">
+            <h3 style="font-size: 1rem; color: var(--text-main); margin-bottom: 6px;">🎯 75% Attendance Goal Advisor &amp; Recommendations</h3>
+            <p id="profAdviceText" style="font-size: 0.92rem; font-weight: 600; color: #1e3a8a; margin-bottom: 4px;"></p>
+            <p id="profRecommendationDetail" style="font-size: 0.85rem; color: var(--text-muted);"></p>
+          </div>
+
+          <!-- Module 1.4: Subject-Wise Attendance Performance & Interactive Chart -->
+          <div class="table-wrapper" style="margin-bottom: 24px;">
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 1.1rem; color: var(--text-main);">Subject-Wise Attendance Performance</h3>
+                <small style="color: var(--text-muted);">Disaggregated session counts, subject threshold compliance, and recovery session calculations</small>
+              </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 0 20px 20px; align-items: center;">
+              <div>
+                <table style="width: 100%;">
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      <th>Attended</th>
+                      <th>Conducted</th>
+                      <th>Percentage</th>
+                      <th>Min Required</th>
+                      <th>Eligibility</th>
+                      <th>Recovery Plan</th>
+                    </tr>
+                  </thead>
+                  <tbody id="profSubjectPerfTbody"></tbody>
+                </table>
+              </div>
+              <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+                <h4 style="font-size: 0.85rem; margin-bottom: 8px; color: var(--text-main);">Subject Attendance Comparison (%)</h4>
+                <canvas id="profSubjectCanvas" width="280" height="180"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attendance History & Audit Table -->
+          <div class="table-wrapper">
+            <h3 style="padding: 16px 20px 8px; font-size: 1.1rem; color: var(--text-main);">Full Session Attendance History</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Period</th>
+                  <th>Attendance Status</th>
+                  <th>Recorded By</th>
+                  <th>Remarks</th>
+                  <th>Last Updated</th>
+                </tr>
+              </thead>
+              <tbody id="profHistoryTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      let profileStudents = [];
+
+      async function initProfilePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let targetId = urlParams.get('id');
+
+        try {
+          const res = await fetch('/api/students');
+          const data = await res.json();
+          profileStudents = data.students || [];
+
+          const sel = document.getElementById('profileStudentSelect');
+          sel.innerHTML = profileStudents.map(s => `
+            <option value="${s.id}" ${s.id == targetId ? 'selected' : ''}>${s.roll} - ${s.name} (${s.class_sec})</option>
+          `).join('');
+
+          if (!targetId && profileStudents.length > 0) {
+            targetId = profileStudents[0].id;
+          }
+
+          sel.addEventListener('change', () => loadStudentProfile(sel.value));
+          if (targetId) loadStudentProfile(targetId);
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      async function loadStudentProfile(id) {
+        try {
+          const res = await fetch(`/api/students/${id}`);
+          const data = await res.json();
+          const s = data.student;
+          const stats = data.stats;
+
+          document.getElementById('profHeaderName').textContent = `${s.name} — Student Profile`;
+          document.getElementById('profName').textContent = s.name;
+          document.getElementById('profRoll').textContent = s.roll;
+          document.getElementById('profAdm').textContent = s.admission_no;
+          document.getElementById('profClassSec').textContent = s.class_sec;
+          document.getElementById('profDob').textContent = s.dob || 'Not provided';
+          document.getElementById('profParentName').textContent = s.parent_name || 'Not provided';
+          document.getElementById('profParentPhone').textContent = s.parent_phone ? '📞 ' + s.parent_phone : 'Not provided';
+          document.getElementById('profParentEmail').textContent = s.parent_email || 'Not provided';
+          document.getElementById('profStatus').textContent = s.status;
+
+          // Stats
+          let absCount = 0;
+          let lateCount = 0;
+          let presentCount = 0;
+          (data.recentRecords || []).forEach(r => {
+            if (r.status === 'Absent') absCount++;
+            if (r.status === 'Late') lateCount++;
+            if (r.status === 'Present') presentCount++;
+          });
+
+          document.getElementById('profRate').textContent = stats.pct + '%';
+          document.getElementById('profPresentDays').textContent = stats.presentCount;
+          document.getElementById('profAbsentDays').textContent = absCount;
+          document.getElementById('profLateDays').textContent = lateCount;
+
+          const isEligible = stats.pct >= 75;
+          const eligEl = document.getElementById('profEligibilityStatus');
+          eligEl.textContent = isEligible ? 'Eligible (>= 75%)' : 'Defaulter (< 75%)';
+          eligEl.style.color = isEligible ? '#16a34a' : '#dc2626';
+
+          // Advice
+          let needed = 0;
+          let adviceText = '';
+          let adviceDetail = '';
+
+          if (stats.pct < 75) {
+            needed = Math.max(1, Math.ceil(3 * stats.totalCount - 4 * stats.presentCount));
+            adviceText = `⚠️ Attendance Deficit: Must attend the next ${needed} consecutive classes without missing to recover 75% eligibility.`;
+            adviceDetail = 'Administrative Recommendation: Schedule parent consultation and monitor daily attendance. Automatic warning notice generated.';
+          } else {
+            const canMiss = Math.floor((4 * stats.presentCount - 3 * stats.totalCount) / 3);
+            adviceText = `✓ Compliant: Currently safe. Student can miss at most ${canMiss} class${canMiss > 1 ? 'es' : ''} while maintaining >= 75%.`;
+            adviceDetail = 'Encourage consistent attendance and punctuality for annual examination eligibility.';
+          }
+
+          document.getElementById('profAdviceText').textContent = adviceText;
+          document.getElementById('profRecommendationDetail').textContent = adviceDetail;
+
+          // Module 1.4: Load Subject-Wise Attendance Performance
+          try {
+            const subRes = await fetch(`/api/attendance/student/${id}/subjects`);
+            const subData = await subRes.json();
+            const subTbody = document.getElementById('profSubjectPerfTbody');
+            subTbody.innerHTML = '';
+
+            const subjectStats = subData.subjects || [];
+            if (subjectStats.length === 0) {
+              subTbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:12px; color:#64748b;">No subject enrollments found.</td></tr>';
+            } else {
+              subjectStats.forEach(sub => {
+                const tr = document.createElement('tr');
+                const isSubEligible = sub.isEligible;
+                let recText = isSubEligible 
+                  ? `<span class="advice-pill advice-safe">✓ Safe (Can miss ${sub.safeSessionsToMiss})</span>`
+                  : `<span class="advice-pill advice-danger">⚠️ Need next ${sub.recoverySessions} classes</span>`;
+
+                tr.innerHTML = `
+                  <td><strong>${sub.subjectName}</strong><br/><small style="color:#64748b;">${sub.subjectCode} (${sub.subjectType})</small></td>
+                  <td>${sub.attended}</td>
+                  <td>${sub.conducted}</td>
+                  <td><strong style="color:${isSubEligible ? '#16a34a' : '#dc2626'};">${sub.percentage}%</strong></td>
+                  <td>${sub.minAttendancePct}%</td>
+                  <td>
+                    <span class="badge ${isSubEligible ? 'badge-Present' : 'badge-Absent'}">
+                      ${sub.eligibilityStatus}
+                    </span>
+                  </td>
+                  <td>${recText}</td>
+                `;
+                subTbody.appendChild(tr);
+              });
+              drawSubjectChart(subjectStats);
+            }
+          } catch (e) {
+            console.error('Error loading subject stats:', e);
+          }
+
+          // History records table
+          const tbody = document.getElementById('profHistoryTbody');
+          tbody.innerHTML = '';
+          if (data.recentRecords && data.recentRecords.length > 0) {
+            data.recentRecords.forEach(r => {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td><strong>${r.date}</strong></td>
+                <td>${r.period === 0 ? 'Full Day' : 'Period ' + r.period}</td>
+                <td><span class="badge badge-${r.status}">${r.status}</span></td>
+                <td>Instructor</td>
+                <td>${r.remarks || '-'}</td>
+                <td>Just now</td>
+              `;
+              tbody.appendChild(tr);
+            });
+          } else {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:20px; color:#64748b;">No individual session history recorded yet.</td></tr>';
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function drawSubjectChart(subjects) {
+        const canvas = document.getElementById('profSubjectCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const w = canvas.width;
+        const h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+
+        const padLeft = 35;
+        const padBottom = 25;
+        const padTop = 15;
+        const count = subjects.length || 1;
+        const barWidth = Math.min(30, Math.floor((w - padLeft - 20) / count - 10));
+
+        // Grid lines
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 1;
+        for (let y = 0; y <= 100; y += 25) {
+          const yPos = padTop + (h - padTop - padBottom) - (y / 100) * (h - padTop - padBottom);
+          ctx.beginPath();
+          ctx.moveTo(padLeft, yPos);
+          ctx.lineTo(w - 10, yPos);
+          ctx.stroke();
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px sans-serif';
+          ctx.fillText(`${y}%`, 5, yPos + 3);
+        }
+
+        // Draw bars
+        subjects.forEach((s, idx) => {
+          const x = padLeft + 10 + idx * (barWidth + 12);
+          const barHeight = (s.percentage / 100) * (h - padTop - padBottom);
+          const y = padTop + (h - padTop - padBottom) - barHeight;
+
+          ctx.fillStyle = s.isEligible ? '#2563eb' : '#dc2626';
+          ctx.fillRect(x, y, barWidth, barHeight);
+
+          ctx.fillStyle = '#1e293b';
+          ctx.font = '9px sans-serif';
+          ctx.fillText(`${Math.round(s.percentage)}%`, x + 2, y - 4);
+          ctx.fillText(s.subjectCode.slice(0, 4), x, h - 8);
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', initProfilePage);
+    </script>
+  </body>
+</html>
+

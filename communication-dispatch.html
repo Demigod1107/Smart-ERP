@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Communication Dispatch History - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html" class="active">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Communication Audit Log</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <a href="settings-communication.html" class="btn btn-sm btn-primary">⚙️ Gateway Settings</a>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Communication Dispatch History &amp; Delivery Audit</h1>
+              <p>Audit trail of all automated parent email and SMS dispatches, delivery statuses, and retry controls</p>
+            </div>
+          </header>
+
+          <!-- Filters Toolbar -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <select id="logStatusFilter">
+                <option value="All">All Delivery Statuses</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Sent">Sent / Processing</option>
+                <option value="Failed">Failed Only</option>
+                <option value="Queued">Queued</option>
+              </select>
+              <select id="logTypeFilter">
+                <option value="All">All Channels (Email &amp; SMS)</option>
+                <option value="email">Email Dispatches</option>
+                <option value="sms">SMS Dispatches</option>
+              </select>
+            </div>
+            <div class="action-group">
+              <button type="button" class="btn btn-secondary" onclick="loadDispatchLogs()">🔄 Refresh Logs</button>
+            </div>
+          </div>
+
+          <!-- Dispatch Logs Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Log ID</th>
+                  <th>Student</th>
+                  <th>Channel</th>
+                  <th>Recipient</th>
+                  <th>Event / Subject</th>
+                  <th>Gateway Provider</th>
+                  <th>Timestamp</th>
+                  <th>Delivery Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="dispatchLogsTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Message Inspection Modal -->
+    <div id="msgModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="msgModalTitle">Dispatched Message Content</h3>
+          <button type="button" class="close-btn" id="closeMsgModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <textarea id="msgModalBody" rows="7" readonly style="width:100%; padding:10px; font-family:monospace; font-size:0.85rem;"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="dismissMsgModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      let currentLogs = [];
+
+      async function loadDispatchLogs() {
+        const status = document.getElementById('logStatusFilter').value;
+        const type = document.getElementById('logTypeFilter').value;
+        const tbody = document.getElementById('dispatchLogsTbody');
+        tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:20px;">Loading dispatch logs...</td></tr>';
+
+        try {
+          const res = await fetch(`/api/notifications/dispatch-logs?status=${status}&type=${type}`);
+          const data = await res.json();
+          currentLogs = data.logs || [];
+          tbody.innerHTML = '';
+
+          if (currentLogs.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:20px; color:#64748b;">No communication logs found matching filter.</td></tr>';
+            return;
+          }
+
+          currentLogs.forEach(l => {
+            const tr = document.createElement('tr');
+            let statusBadge = 'badge-Late';
+            if (l.status === 'Delivered') statusBadge = 'badge-Present';
+            if (l.status === 'Sent') statusBadge = 'badge-Excused';
+            if (l.status === 'Failed') statusBadge = 'badge-Absent';
+
+            tr.innerHTML = `
+              <td><strong>#LOG-${l.id}</strong></td>
+              <td>${l.student_name ? `<strong>${l.student_name}</strong><br/><small style="color:#64748b;">${l.student_roll || ''}</small>` : 'System'}</td>
+              <td><span class="class-tag" style="background:#f1f5f9; color:#334155;">${l.recipient_type.toUpperCase()}</span></td>
+              <td><span style="font-family:monospace;">${l.recipient}</span></td>
+              <td>
+                <a href="#" onclick="viewMsg(${l.id}); return false;" style="color:#2563eb; font-weight:600; text-decoration:none;">
+                  ${l.subject || l.notification_type}
+                </a>
+              </td>
+              <td>${l.provider}</td>
+              <td><small>${new Date(l.created_at).toLocaleString()}</small></td>
+              <td>
+                <span class="badge ${statusBadge}">${l.status}</span>
+                ${l.failure_reason ? `<br/><small style="color:#dc2626;">${l.failure_reason}</small>` : ''}
+              </td>
+              <td>
+                ${l.status === 'Failed' ? `
+                  <button type="button" class="btn btn-sm btn-primary" onclick="retryMessage(${l.id})">🔁 Retry</button>
+                ` : `<span style="font-size:0.75rem; color:#64748b;">Completed</span>`}
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; color:red;">Failed to load dispatch history.</td></tr>';
+        }
+      }
+
+      function viewMsg(id) {
+        const log = currentLogs.find(l => l.id === id);
+        if (!log) return;
+        document.getElementById('msgModalTitle').textContent = `Message: ${log.subject || log.notification_type}`;
+        document.getElementById('msgModalBody').value = log.message;
+        document.getElementById('msgModal').style.display = 'flex';
+      }
+
+      document.getElementById('closeMsgModalBtn').addEventListener('click', () => document.getElementById('msgModal').style.display = 'none');
+      document.getElementById('dismissMsgModalBtn').addEventListener('click', () => document.getElementById('msgModal').style.display = 'none');
+
+      async function retryMessage(id) {
+        try {
+          const res = await fetch(`/api/notifications/${id}/retry`, { method: 'POST' });
+          const data = await res.json();
+          if (data.success) {
+            showToast('✓ Message retried successfully');
+            loadDispatchLogs();
+          } else {
+            alert('Retry failed: ' + (data.error || 'Provider rejected message'));
+          }
+        } catch (e) {
+          alert('Network error retrying message');
+        }
+      }
+
+      document.getElementById('logStatusFilter').addEventListener('change', loadDispatchLogs);
+      document.getElementById('logTypeFilter').addEventListener('change', loadDispatchLogs);
+      window.addEventListener('DOMContentLoaded', loadDispatchLogs);
+    </script>
+  </body>
+</html>
+

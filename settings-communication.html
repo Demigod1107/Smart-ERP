@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Communication Gateway Settings - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html" class="active">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Email &amp; SMS Delivery</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <a href="communication-dispatch.html" class="btn btn-sm btn-secondary">📨 View Dispatch Logs</a>
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Communication &amp; Notification Gateway Settings</h1>
+              <p>Configure institutional SMTP mail servers, Gmail app passwords, and Twilio SMS credentials</p>
+            </div>
+          </header>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px;">
+            <!-- EMAIL CONFIGURATION CARD -->
+            <div class="table-wrapper" style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h2 style="font-size: 1.2rem; color: var(--text-main);">📧 Email Gateway (SMTP / Gmail / SendGrid)</h2>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; cursor: pointer;">
+                  <input type="checkbox" id="emailEnabledToggle" style="transform: scale(1.2);" />
+                  Enable Email Dispatch
+                </label>
+              </div>
+
+              <form id="emailSettingsForm">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">Email Provider</label>
+                  <select id="emailProviderSelect" style="width:100%; padding:8px;">
+                    <option value="smtp">Custom SMTP Server</option>
+                    <option value="gmail">Gmail (App Password)</option>
+                    <option value="sendgrid">SendGrid SMTP</option>
+                  </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div>
+                    <label style="font-size:0.8rem; font-weight:600;">SMTP Host *</label>
+                    <input type="text" id="smtpHostInput" placeholder="smtp.gmail.com" required style="width:100%; padding:8px;" />
+                  </div>
+                  <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Port *</label>
+                    <input type="number" id="smtpPortInput" placeholder="587" required style="width:100%; padding:8px;" />
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">SMTP Username / Email *</label>
+                  <input type="text" id="smtpUserInput" placeholder="notifications@smartschool.edu" required style="width:100%; padding:8px;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">SMTP Password / App Password *</label>
+                  <input type="password" id="smtpPassInput" placeholder="Leave unchanged to keep current" style="width:100%; padding:8px;" />
+                  <small style="color: #64748b;" id="smtpPassHint">Stored securely; masked for privacy</small>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                  <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Sender Display Name</label>
+                    <input type="text" id="senderNameInput" placeholder="Smart School Administration" style="width:100%; padding:8px;" />
+                  </div>
+                  <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Sender From Address</label>
+                    <input type="email" id="senderAddressInput" placeholder="no-reply@smartschool.edu" style="width:100%; padding:8px;" />
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+                  <button type="submit" class="btn btn-primary">Save Email Settings</button>
+                  <button type="button" class="btn btn-secondary" id="openTestEmailBtn">✉️ Send Test Email</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- SMS CONFIGURATION CARD -->
+            <div class="table-wrapper" style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h2 style="font-size: 1.2rem; color: var(--text-main);">📱 SMS Gateway (Twilio)</h2>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; cursor: pointer;">
+                  <input type="checkbox" id="smsEnabledToggle" style="transform: scale(1.2);" />
+                  Enable SMS Alerts
+                </label>
+              </div>
+
+              <form id="smsSettingsForm">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">SMS Provider</label>
+                  <select id="smsProviderSelect" style="width:100%; padding:8px;">
+                    <option value="twilio">Twilio Cloud API</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">Twilio Account SID</label>
+                  <input type="text" id="twilioSidInput" placeholder="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" style="width:100%; padding:8px; font-family:monospace;" />
+                  <small style="color: #64748b;" id="twilioSidHint">Stored securely; masked in public APIs</small>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label style="font-size:0.8rem; font-weight:600;">Twilio Auth Token</label>
+                  <input type="password" id="twilioTokenInput" placeholder="Leave unchanged to keep current" style="width:100%; padding:8px; font-family:monospace;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label style="font-size:0.8rem; font-weight:600;">Twilio Sender Phone Number</label>
+                  <input type="text" id="twilioPhoneInput" placeholder="+15551234567" style="width:100%; padding:8px;" />
+                </div>
+
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <button type="submit" class="btn btn-primary">Save SMS Settings</button>
+                  <button type="button" class="btn btn-secondary" id="openTestSmsBtn">💬 Send Test SMS</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Test Email Modal -->
+    <div id="testEmailModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>✉️ Dispatch Test Email</h3>
+          <button type="button" class="close-btn" id="closeTestEmailModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label style="font-size:0.8rem; font-weight:600; display:block; margin-bottom:4px;">Recipient Test Email Address:</label>
+          <input type="email" id="testEmailTargetInput" placeholder="admin@example.com" required style="width:100%; padding:8px;" />
+          <p id="testEmailStatus" style="font-size:0.82rem; margin-top:10px; color:#64748b;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="confirmSendTestEmailBtn">Send Test Message</button>
+          <button type="button" class="btn btn-outline" id="dismissTestEmailModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test SMS Modal -->
+    <div id="testSmsModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>💬 Dispatch Test SMS</h3>
+          <button type="button" class="close-btn" id="closeTestSmsModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label style="font-size:0.8rem; font-weight:600; display:block; margin-bottom:4px;">Recipient Phone Number:</label>
+          <input type="tel" id="testSmsTargetInput" placeholder="+919876543210" required style="width:100%; padding:8px;" />
+          <p id="testSmsStatus" style="font-size:0.82rem; margin-top:10px; color:#64748b;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="confirmSendTestSmsBtn">Send Test SMS</button>
+          <button type="button" class="btn btn-outline" id="dismissTestSmsModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      async function loadCommConfig() {
+        try {
+          const res = await fetch('/api/settings/communications');
+          const data = await res.json();
+          const em = data.config.email;
+          const sm = data.config.sms;
+
+          document.getElementById('emailEnabledToggle').checked = em.enabled;
+          document.getElementById('emailProviderSelect').value = em.provider || 'smtp';
+          document.getElementById('smtpHostInput').value = em.smtp_host || '';
+          document.getElementById('smtpPortInput').value = em.smtp_port || 587;
+          document.getElementById('smtpUserInput').value = em.smtp_user || '';
+          document.getElementById('senderNameInput').value = em.sender_name || '';
+          document.getElementById('senderAddressInput').value = em.sender_address || '';
+
+          if (em.smtp_pass_masked) {
+            document.getElementById('smtpPassInput').placeholder = `Current Password: ${em.smtp_pass_masked}`;
+          }
+
+          document.getElementById('smsEnabledToggle').checked = sm.enabled;
+          document.getElementById('smsProviderSelect').value = sm.provider || 'twilio';
+          document.getElementById('twilioPhoneInput').value = sm.twilio_sender_number || '';
+          if (sm.twilio_account_sid_masked) {
+            document.getElementById('twilioSidInput').placeholder = `Current SID: ${sm.twilio_account_sid_masked}`;
+          }
+          if (sm.twilio_auth_token_masked) {
+            document.getElementById('twilioTokenInput').placeholder = `Current Token: ${sm.twilio_auth_token_masked}`;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      document.getElementById('emailSettingsForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const payload = {
+          enabled: document.getElementById('emailEnabledToggle').checked,
+          provider: document.getElementById('emailProviderSelect').value,
+          smtp_host: document.getElementById('smtpHostInput').value.trim(),
+          smtp_port: parseInt(document.getElementById('smtpPortInput').value, 10),
+          smtp_user: document.getElementById('smtpUserInput').value.trim(),
+          smtp_pass: document.getElementById('smtpPassInput').value,
+          sender_name: document.getElementById('senderNameInput').value.trim(),
+          sender_address: document.getElementById('senderAddressInput').value.trim(),
+        };
+
+        try {
+          const res = await fetch('/api/settings/communications/email', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            showToast('✓ Email gateway configuration saved');
+            loadCommConfig();
+          }
+        } catch (e) {
+          alert('Failed to save email settings');
+        }
+      });
+
+      document.getElementById('smsSettingsForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const payload = {
+          enabled: document.getElementById('smsEnabledToggle').checked,
+          provider: document.getElementById('smsProviderSelect').value,
+          twilio_account_sid: document.getElementById('twilioSidInput').value.trim(),
+          twilio_auth_token: document.getElementById('twilioTokenInput').value,
+          twilio_sender_number: document.getElementById('twilioPhoneInput').value.trim(),
+        };
+
+        try {
+          const res = await fetch('/api/settings/communications/sms', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            showToast('✓ SMS gateway configuration saved');
+            loadCommConfig();
+          }
+        } catch (e) {
+          alert('Failed to save SMS settings');
+        }
+      });
+
+      // Test Email Modal
+      const testEmailModal = document.getElementById('testEmailModal');
+      document.getElementById('openTestEmailBtn').addEventListener('click', () => {
+        document.getElementById('testEmailStatus').textContent = '';
+        testEmailModal.style.display = 'flex';
+      });
+      document.getElementById('closeTestEmailModalBtn').addEventListener('click', () => testEmailModal.style.display = 'none');
+      document.getElementById('dismissTestEmailModalBtn').addEventListener('click', () => testEmailModal.style.display = 'none');
+
+      document.getElementById('confirmSendTestEmailBtn').addEventListener('click', async () => {
+        const testEmail = document.getElementById('testEmailTargetInput').value.trim();
+        if (!testEmail) return alert('Please enter target email');
+
+        const statusEl = document.getElementById('testEmailStatus');
+        statusEl.textContent = 'Connecting to SMTP server and dispatching...';
+
+        try {
+          const res = await fetch('/api/settings/communications/test-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ testEmail })
+          });
+          const data = await res.json();
+          if (data.success) {
+            statusEl.style.color = '#16a34a';
+            statusEl.textContent = `✓ Success! ${data.note || 'Dispatched via SMTP gateway'}`;
+            showToast('✓ Test email dispatched');
+          } else {
+            statusEl.style.color = '#dc2626';
+            statusEl.textContent = `✗ Delivery Failed: ${data.error}`;
+          }
+        } catch (err) {
+          statusEl.style.color = '#dc2626';
+          statusEl.textContent = 'Network error sending test email';
+        }
+      });
+
+      // Test SMS Modal
+      const testSmsModal = document.getElementById('testSmsModal');
+      document.getElementById('openTestSmsBtn').addEventListener('click', () => {
+        document.getElementById('testSmsStatus').textContent = '';
+        testSmsModal.style.display = 'flex';
+      });
+      document.getElementById('closeTestSmsModalBtn').addEventListener('click', () => testSmsModal.style.display = 'none');
+      document.getElementById('dismissTestSmsModalBtn').addEventListener('click', () => testSmsModal.style.display = 'none');
+
+      document.getElementById('confirmSendTestSmsBtn').addEventListener('click', async () => {
+        const testPhone = document.getElementById('testSmsTargetInput').value.trim();
+        if (!testPhone) return alert('Please enter phone number');
+
+        const statusEl = document.getElementById('testSmsStatus');
+        statusEl.textContent = 'Contacting SMS gateway...';
+
+        try {
+          const res = await fetch('/api/settings/communications/test-sms', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ testPhone })
+          });
+          const data = await res.json();
+          if (data.success) {
+            statusEl.style.color = '#16a34a';
+            statusEl.textContent = `✓ Success! ${data.note || 'Dispatched via Twilio API'}`;
+            showToast('✓ Test SMS dispatched');
+          } else {
+            statusEl.style.color = '#dc2626';
+            statusEl.textContent = `✗ SMS Failed: ${data.error}`;
+          }
+        } catch (err) {
+          statusEl.style.color = '#dc2626';
+          statusEl.textContent = 'Network error sending test SMS';
+        }
+      });
+
+      window.addEventListener('DOMContentLoaded', loadCommConfig);
+    </script>
+  </body>
+</html>
+

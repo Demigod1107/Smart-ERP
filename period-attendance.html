@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Period-Wise Attendance - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html" class="active">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.5<br/>Academic Period Engine</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Period-Wise &amp; Subject Attendance Recording</h1>
+              <p>Mark attendance for specific academic periods, subjects, and lab practicals with automated parent dispatch</p>
+            </div>
+          </header>
+
+          <!-- Selection Controls Bar -->
+          <div class="control-box" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px;">
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:4px;">Academic Year</label>
+              <select id="acadYearSelect">
+                <option value="2026-2027">2026-2027</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:4px;">Class &amp; Section</label>
+              <select id="periodClassSelect">
+                <option value="10-A">Class 10 - A</option>
+                <option value="10-B">Class 10 - B</option>
+                <option value="12-A">Class 12 - A</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:4px;">Subject</label>
+              <select id="periodSubjectSelect"></select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:4px;">Period</label>
+              <select id="periodNumberSelect"></select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:4px;">Date</label>
+              <input type="date" id="periodDateInput" />
+            </div>
+          </div>
+
+          <!-- Session Metadata & Status Card -->
+          <div class="control-box" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-left: 4px solid #2563eb;">
+            <div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-main);" id="sessionSubjectTitle">Subject Name</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);" id="sessionTeacherTitle">Assigned Teacher: -</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span id="sessionStatusBadge" class="badge badge-Excused">Scheduled</span>
+              <button type="button" id="markAllPeriodPresentBtn" class="btn btn-sm btn-success">Mark All Present</button>
+            </div>
+          </div>
+
+          <!-- Toolbar (Search & Sort) -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <input type="text" id="periodSearchInput" placeholder="Filter student list..." />
+            </div>
+            <div class="action-group">
+              <button type="button" id="savePeriodAttendanceBtn" class="btn btn-primary">
+                💾 Submit &amp; Save Period Attendance
+              </button>
+            </div>
+          </div>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Enrolled Students Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Student Name</th>
+                  <th>Class</th>
+                  <th>Current Subject %</th>
+                  <th>Subject Eligibility</th>
+                  <th>Attendance Status</th>
+                  <th>Remarks (Optional)</th>
+                </tr>
+              </thead>
+              <tbody id="periodStudentsTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Post-submission Summary Drawer -->
+          <div id="submissionSummaryCard" class="control-box" style="display: none; margin-top: 24px; background: #f0fdf4; border: 1px solid #bbf7d0;">
+            <h3 style="color: #166534; margin-bottom: 6px;">✓ Attendance Session Successfully Recorded</h3>
+            <div id="summaryCountsText" style="font-size: 0.92rem; color: #1e293b;"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmSubmitModal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Confirm Attendance Submission</h3>
+          <button type="button" class="close-btn" id="closeConfirmModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="confirmModalText">Are you sure you want to record period attendance for this session?</p>
+          <small style="color: #64748b;">Automated email/SMS advisories will be queued for any absent students.</small>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="finalSubmitBtn">Confirm &amp; Record</button>
+          <button type="button" class="btn btn-outline" id="cancelSubmitBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+    <script>
+      let currentPeriodStudents = [];
+      let subjectsList = [];
+      let periodsList = [];
+
+      async function initPeriodAttendance() {
+        const todayStr = new Date().toISOString().split('T')[0];
+        document.getElementById('periodDateInput').value = todayStr;
+
+        // 1. Load Periods
+        try {
+          const pRes = await fetch('/api/periods');
+          const pData = await pRes.json();
+          periodsList = pData.periods || [];
+          const pSel = document.getElementById('periodNumberSelect');
+          pSel.innerHTML = periodsList.map(p => `
+            <option value="${p.period_number}">${p.name} (${p.start_time} - ${p.end_time})</option>
+          `).join('');
+        } catch (e) {}
+
+        // 2. Load Subjects for selected class
+        await reloadSubjects();
+
+        document.getElementById('periodClassSelect').addEventListener('change', async () => {
+          await reloadSubjects();
+          loadPeriodSession();
+        });
+
+        document.getElementById('periodSubjectSelect').addEventListener('change', loadPeriodSession);
+        document.getElementById('periodNumberSelect').addEventListener('change', loadPeriodSession);
+        document.getElementById('periodDateInput').addEventListener('change', loadPeriodSession);
+
+        document.getElementById('markAllPeriodPresentBtn').addEventListener('click', () => {
+          document.querySelectorAll('.period-status-select').forEach(sel => sel.value = 'Present');
+          showToast('Marked all students Present');
+        });
+
+        document.getElementById('periodSearchInput').addEventListener('input', renderPeriodTable);
+
+        loadPeriodSession();
+      }
+
+      async function reloadSubjects() {
+        const cls = document.getElementById('periodClassSelect').value;
+        const res = await fetch(`/api/subjects?class=${cls}`);
+        const data = await res.json();
+        subjectsList = data.subjects || [];
+        const sSel = document.getElementById('periodSubjectSelect');
+        sSel.innerHTML = subjectsList.map(s => `
+          <option value="${s.id}">${s.name} (${s.code}) - Min: ${s.min_attendance_pct}%</option>
+        `).join('');
+      }
+
+      async function loadPeriodSession() {
+        const classSec = document.getElementById('periodClassSelect').value;
+        const subjectId = document.getElementById('periodSubjectSelect').value;
+        const periodNumber = document.getElementById('periodNumberSelect').value;
+        const date = document.getElementById('periodDateInput').value;
+
+        if (!subjectId) return;
+
+        const tbody = document.getElementById('periodStudentsTbody');
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px;">Loading student list...</td></tr>';
+
+        try {
+          const res = await fetch(`/api/attendance/period-wise?classSec=${classSec}&subjectId=${subjectId}&periodNumber=${periodNumber}&date=${date}`);
+          const data = await res.json();
+
+          const sub = data.subject;
+          document.getElementById('sessionSubjectTitle').textContent = `${sub.name} (${sub.code}) — Minimum Attendance: ${sub.min_attendance_pct}%`;
+          document.getElementById('sessionTeacherTitle').textContent = `Assigned Teacher: ${sub.teacher_code || 'Faculty Staff'} | Session Date: ${date} (Period ${periodNumber})`;
+
+          const badge = document.getElementById('sessionStatusBadge');
+          if (data.isCompleted) {
+            badge.textContent = '✓ Recorded / Completed';
+            badge.className = 'badge badge-Present';
+          } else {
+            badge.textContent = 'Scheduled / Unsaved';
+            badge.className = 'badge badge-Late';
+          }
+
+          currentPeriodStudents = data.students || [];
+          renderPeriodTable();
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Failed to load period session.</td></tr>';
+        }
+      }
+
+      function renderPeriodTable() {
+        const tbody = document.getElementById('periodStudentsTbody');
+        const search = (document.getElementById('periodSearchInput').value || '').toLowerCase();
+        tbody.innerHTML = '';
+
+        const filtered = currentPeriodStudents.filter(s => s.name.toLowerCase().includes(search) || s.roll.toLowerCase().includes(search));
+
+        if (filtered.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#64748b;">No students found enrolled in this subject.</td></tr>';
+          return;
+        }
+
+        filtered.forEach(st => {
+          const tr = document.createElement('tr');
+          const isEligible = st.isSubjectEligible;
+          tr.innerHTML = `
+            <td><strong>${st.roll}</strong></td>
+            <td><strong>${st.name}</strong><br/><small style="color:#64748b;">${st.phone ? '📞 ' + st.phone : ''}</small></td>
+            <td><span class="class-tag">${st.classSec}</span></td>
+            <td><strong>${st.subjectAttendancePct}%</strong></td>
+            <td>
+              <span class="badge ${isEligible ? 'badge-Present' : 'badge-Absent'}">
+                ${isEligible ? 'Eligible' : 'Defaulter (Need ' + st.recoverySessions + ' classes)'}
+              </span>
+            </td>
+            <td>
+              <select class="period-status-select" data-student-id="${st.id}" style="padding:6px 10px; border-radius:6px; font-weight:700;">
+                <option value="Present" ${st.status === 'Present' || st.status === 'Unmarked' ? 'selected' : ''}>Present</option>
+                <option value="Absent" ${st.status === 'Absent' ? 'selected' : ''}>Absent</option>
+                <option value="Late" ${st.status === 'Late' ? 'selected' : ''}>Late</option>
+                <option value="Excused" ${st.status === 'Excused' ? 'selected' : ''}>Excused</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="period-remark-input" data-student-id="${st.id}" value="${st.remarks || ''}" placeholder="Optional note..." style="width:100%; padding:6px; border:1px solid #cbd5e1; border-radius:4px;" />
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Save Period Attendance
+      document.getElementById('savePeriodAttendanceBtn').addEventListener('click', () => {
+        document.getElementById('confirmSubmitModal').style.display = 'flex';
+      });
+
+      document.getElementById('closeConfirmModalBtn').addEventListener('click', () => {
+        document.getElementById('confirmSubmitModal').style.display = 'none';
+      });
+      document.getElementById('cancelSubmitBtn').addEventListener('click', () => {
+        document.getElementById('confirmSubmitModal').style.display = 'none';
+      });
+
+      document.getElementById('finalSubmitBtn').addEventListener('click', async () => {
+        document.getElementById('confirmSubmitModal').style.display = 'none';
+
+        const classSec = document.getElementById('periodClassSelect').value;
+        const subjectId = document.getElementById('periodSubjectSelect').value;
+        const periodNumber = document.getElementById('periodNumberSelect').value;
+        const date = document.getElementById('periodDateInput').value;
+
+        const records = [];
+        let pCount = 0, aCount = 0, lCount = 0, eCount = 0;
+
+        document.querySelectorAll('.period-status-select').forEach(sel => {
+          const studentId = parseInt(sel.getAttribute('data-student-id'), 10);
+          const status = sel.value;
+          const remarkEl = document.querySelector(`.period-remark-input[data-student-id="${studentId}"]`);
+          const remarks = remarkEl ? remarkEl.value.trim() : '';
+
+          if (status === 'Present') pCount++;
+          if (status === 'Absent') aCount++;
+          if (status === 'Late') lCount++;
+          if (status === 'Excused') eCount++;
+
+          records.push({ studentId, status, remarks });
+        });
+
+        try {
+          const res = await fetch('/api/attendance/period-wise', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              date,
+              classSec,
+              subjectId,
+              periodNumber,
+              records,
+              conductedBy: currentUser ? currentUser.name : 'Teacher'
+            })
+          });
+
+          const data = await res.json();
+          if (res.ok) {
+            showMessage(`✓ Attendance recorded for ${records.length} students`);
+            document.getElementById('sessionStatusBadge').textContent = '✓ Recorded / Completed';
+            document.getElementById('sessionStatusBadge').className = 'badge badge-Present';
+
+            const summaryCard = document.getElementById('submissionSummaryCard');
+            summaryCard.style.display = 'block';
+            document.getElementById('summaryCountsText').innerHTML = `
+              <strong>Total Students:</strong> ${records.length} &nbsp;|&nbsp;
+              <strong style="color:#16a34a;">Present:</strong> ${pCount} &nbsp;|&nbsp;
+              <strong style="color:#dc2626;">Absent:</strong> ${aCount} &nbsp;|&nbsp;
+              <strong style="color:#d97706;">Late:</strong> ${lCount} &nbsp;|&nbsp;
+              <strong style="color:#2563eb;">Excused:</strong> ${eCount}
+            `;
+            loadPeriodSession();
+          } else {
+            alert(data.error || 'Failed to record period attendance');
+          }
+        } catch (err) {
+          alert('Network error saving period attendance');
+        }
+      });
+
+      window.addEventListener('DOMContentLoaded', initPeriodAttendance);
+    </script>
+  </body>
+</html>
+

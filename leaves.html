@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Management Portal - Smart School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>Smart School</h2>
+          <p>Attendance &amp; Portal</p>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="nav-section-label">ATTENDANCE</li>
+          <li><a href="index.html">📊 Daily Roll-Call</a></li>
+          <li><a href="period-attendance.html">⏱️ Period-Wise Attendance</a></li>
+          <li><a href="subject-attendance.html">📚 Subject Eligibility</a></li>
+          <li><a href="calendar.html">📅 Monthly Calendar</a></li>
+          
+          <li class="nav-section-label">DIRECTORY</li>
+          <li><a href="students.html">👥 Student Directory</a></li>
+          <li><a href="teachers.html">👩‍🏫 Teacher Directory</a></li>
+          <li><a href="leaves.html" class="active">📝 Leave Applications</a></li>
+
+          <li class="nav-section-label">COMMUNICATION</li>
+          <li><a href="communication-dispatch.html">📨 Dispatch History</a></li>
+          <li><a href="settings-communication.html">⚙️ Gateway Settings</a></li>
+
+          <li class="nav-section-label">ADMINISTRATION</li>
+          <li><a href="settings-database.html">💾 Database Backups</a></li>
+          <li><a href="reports.html">📈 Reports &amp; Defaulters</a></li>
+          <li><a href="timetable.html">🕒 Timetable &amp; Holidays</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <small>Smart Attendance v4.0<br/>Leaves &amp; Excused Absences</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Top Bar -->
+          <div class="top-nav">
+            <div class="user-badge">
+              <span id="userRoleBadge" class="role-pill role-admin">Admin</span>
+              <strong id="userNameLabel">Administrator</strong>
+            </div>
+            <div class="top-actions">
+              <button type="button" class="theme-toggle-btn" id="themeToggleBtn">🌓 Theme</button>
+              <a href="login.html" class="btn btn-sm btn-outline" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <header class="header">
+            <div>
+              <h1>Student Leave Application &amp; Approval Portal</h1>
+              <p>Submit absence requests, track approval workflows, and record authorized medical/excused leaves</p>
+            </div>
+          </header>
+
+          <!-- Leave Application Submission Form -->
+          <form id="leaveForm" class="control-box">
+            <select id="leaveStudentSelect" required style="min-width: 200px;">
+              <option value="">Select Student...</option>
+            </select>
+            <input type="date" id="leaveStartDate" aria-label="Leave Start Date" required />
+            <input type="date" id="leaveEndDate" aria-label="Leave End Date" required />
+            <input type="text" id="leaveReasonInput" placeholder="Reason (e.g. Medical, Emergency, Family Event)" required style="flex: 2;" />
+            <button type="submit" class="btn btn-primary">✉️ Submit Application</button>
+          </form>
+
+          <div id="statusMsg" class="status-msg" hidden></div>
+
+          <!-- Filter Toolbar -->
+          <div class="control-box toolbar">
+            <div class="filter-group">
+              <select id="leaveStatusFilter">
+                <option value="All">All Leave Applications</option>
+                <option value="Pending" selected>Pending Review</option>
+                <option value="Approved">Approved (Excused)</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Applications Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Class &amp; Sec</th>
+                  <th>Dates Range</th>
+                  <th>Reason</th>
+                  <th>Applicant</th>
+                  <th>Status</th>
+                  <th>Actions / Decision</th>
+                </tr>
+              </thead>
+              <tbody id="leavesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      async function initLeavesPage() {
+        try {
+          const res = await fetch('/api/students');
+          const data = await res.json();
+          const sel = document.getElementById('leaveStudentSelect');
+          sel.innerHTML = '<option value="">Select Student...</option>' + 
+            (data.students || []).map(s => `<option value="${s.id}">${s.roll} - ${s.name} (${s.class_sec})</option>`).join('');
+
+          // Set default dates
+          const todayStr = new Date().toISOString().split('T')[0];
+          document.getElementById('leaveStartDate').value = todayStr;
+          document.getElementById('leaveEndDate').value = todayStr;
+
+          document.getElementById('leaveStatusFilter').addEventListener('change', loadLeaves);
+          loadLeaves();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      async function loadLeaves() {
+        const statusFilter = document.getElementById('leaveStatusFilter').value;
+        const tbody = document.getElementById('leavesTableBody');
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px;">Loading applications...</td></tr>';
+
+        try {
+          const res = await fetch(`/api/leaves?status=${statusFilter}`);
+          const data = await res.json();
+          tbody.innerHTML = '';
+
+          if (!data.leaves || data.leaves.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:20px; color:#64748b;">No leave applications found for this filter.</td></tr>';
+            return;
+          }
+
+          data.leaves.forEach(l => {
+            const tr = document.createElement('tr');
+            let badgeClass = 'badge-Late';
+            if (l.status === 'Approved') badgeClass = 'badge-Excused';
+            if (l.status === 'Rejected') badgeClass = 'badge-Absent';
+
+            tr.innerHTML = `
+              <td><strong>${l.student_name}</strong><br/><small style="color:#64748b;">Roll: ${l.student_roll}</small></td>
+              <td><span class="class-tag">${l.class_sec}</span></td>
+              <td>${l.start_date} to ${l.end_date}</td>
+              <td><strong>${l.reason}</strong>${l.rejection_reason ? '<br/><small style="color:#dc2626;">Note: ' + l.rejection_reason + '</small>' : ''}</td>
+              <td>${l.applicant_name || 'Guardian'}</td>
+              <td><span class="badge ${badgeClass}">${l.status}</span></td>
+              <td class="actions-cell">
+                ${l.status === 'Pending' ? `
+                  <button type="button" class="btn btn-sm btn-success" onclick="decideLeave(${l.id}, 'Approved')">✓ Approve</button>
+                  <button type="button" class="btn btn-sm btn-danger" onclick="promptRejectLeave(${l.id})">✕ Reject</button>
+                ` : `<span style="font-size:0.8rem; color:#64748b;">Decision recorded</span>`}
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } catch (e) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Failed to load leaves.</td></tr>';
+        }
+      }
+
+      document.getElementById('leaveForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const student_id = document.getElementById('leaveStudentSelect').value;
+        const start_date = document.getElementById('leaveStartDate').value;
+        const end_date = document.getElementById('leaveEndDate').value;
+        const reason = document.getElementById('leaveReasonInput').value.trim();
+
+        if (!student_id) {
+          alert('Please select a student.');
+          return;
+        }
+
+        try {
+          const res = await fetch('/api/leaves', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ student_id, start_date, end_date, reason })
+          });
+          if (res.ok) {
+            this.reset();
+            loadLeaves();
+            showMessage('✓ Leave application submitted successfully');
+          }
+        } catch (err) {
+          alert('Error submitting leave');
+        }
+      });
+
+      async function decideLeave(leaveId, status, rejectionReason = '') {
+        try {
+          const res = await fetch(`/api/leaves/${leaveId}/status`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status, rejection_reason: rejectionReason, reviewed_by: 'School Authority' })
+          });
+          if (res.ok) {
+            loadLeaves();
+            showMessage(`✓ Application marked ${status}`);
+          }
+        } catch (e) {
+          alert('Error updating leave decision');
+        }
+      }
+
+      function promptRejectLeave(id) {
+        const reason = prompt('Please enter the reason for rejection (optional):', 'Insufficient documentation / Exam scheduled');
+        if (reason !== null) {
+          decideLeave(id, 'Rejected', reason);
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', initLeavesPage);
+    </script>
+  </body>
+</html>
+
