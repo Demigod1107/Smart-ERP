@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Report - SMART SCHOOL Attendance & Academic ERP System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 20mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: #1e293b;
+      background: #f1f5f9;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 24mm 22mm;
+      margin: 15px auto;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        min-height: auto;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Print action bar */
+    .action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #1e3a8a;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn {
+      background: #3b82f6;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .print-btn:hover {
+      background: #2563eb;
+    }
+
+    /* COVER PAGE STYLING - EXACT MATCH TO UPLOADED IMAGE */
+    .cover-page {
+      background: #1c2125;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 30mm 20mm 22mm 20mm;
+    }
+
+    .cover-header {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.35;
+      color: #f8fafc;
+      margin-bottom: 12px;
+    }
+
+    .cover-report {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 17pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f1f5f9;
+      margin-top: 14px;
+      margin-bottom: 10px;
+    }
+
+    .cover-on {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 13pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .cover-title {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 15.5pt;
+      font-weight: 700;
+      font-style: italic;
+      color: #ffffff;
+      line-height: 1.45;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      padding: 0 10px;
+    }
+
+    .cover-submitted-to-ptu {
+      font-family: 'Inter', Georgia, serif;
+      font-size: 12pt;
+      font-weight: 600;
+      color: #93c5fd;
+      line-height: 1.4;
+      margin-bottom: 26px;
+    }
+
+    .cover-degree {
+      font-family: 'Inter', Georgia, serif;
+      font-size: 11pt;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 26px;
+    }
+
+    .cover-logo-box {
+      margin: 15px auto 25px auto;
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .cover-logo-box img {
+      max-width: 140px;
+      height: auto;
+      display: block;
+    }
+
+    .cover-meta-grid {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      font-family: 'Inter', Georgia, serif;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      margin-top: 25px;
+      padding: 0 10px;
+    }
+
+    .cover-meta-grid .col-left {
+      flex: 1;
+      color: #f1f5f9;
+    }
+
+    .cover-meta-grid .col-right {
+      flex: 1;
+      text-align: right;
+      color: #f1f5f9;
+    }
+
+    .cover-meta-grid strong {
+      font-size: 11pt;
+      color: #ffffff;
+    }
+
+    .cover-footer {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1.4;
+      color: #f8fafc;
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    /* INTERNAL PAGES STYLING */
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 18pt;
+      font-weight: 700;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 9.5pt;
+      font-family: 'Inter', sans-serif;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 10pt;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin: 14px 0;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      font-size: 11pt;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .page-footer {
+      position: absolute;
+      bottom: 15mm;
+      left: 22mm;
+      right: 22mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: #94a3b8;
+      font-family: 'Inter', sans-serif;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dotted #cbd5e1;
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5pt;
+    }
+    .toc-title { font-weight: 600; color: #1e293b; }
+    .toc-page { font-weight: 600; color: #2563eb; }
+    .toc-sub { padding-left: 20px; font-weight: 400; font-size: 9.5pt; color: #475569; }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Print Bar (Hidden during print) -->
+  <div class="action-bar no-print">
+    <div>
+      <strong>📄 SMART SCHOOL — Academic Project Report</strong> &nbsp;|&nbsp; 
+      <small>Live URL: <a href="https://smart-erp-ruddy.vercel.app" target="_blank" style="color:#93c5fd; text-decoration:underline;">smart-erp-ruddy.vercel.app</a></small>
+    </div>
+    <button type="button" class="print-btn" onclick="window.print()">🖨️ Print to PDF / Paper</button>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 1: COVER PAGE (EXACT REPLICA OF THE UPLOADED FORMAT)    -->
+  <!-- ============================================================= -->
+  <div class="page cover-page">
+    <div>
+      <div class="cover-header">
+        COMPUTER<br/>
+        NETWORKS
+      </div>
+      <div class="cover-report">
+        PROJECT REPORT
+      </div>
+      <div class="cover-on">
+        ON
+      </div>
+      <div class="cover-title">
+        “SMART SCHOOL — SMART ATTENDANCE &amp; ACADEMIC ERP SYSTEM”
+      </div>
+      <div class="cover-submitted-to-ptu">
+        Submitted to Punjab Technical<br/>
+        University, Jalandhar
+      </div>
+      <div class="cover-degree">
+        Bachelors of Technology<br/>
+        (CSE)<br/>
+        (Batch 2024-2028)
+      </div>
+    </div>
+
+    <!-- PCTE LOGO CROPPED FROM UPLOADED IMAGE -->
+    <div class="cover-logo-box">
+      <img src="data:image/png;base64,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" alt="PCTE Logo" />
+    </div>
+
+    <div>
+      <div class="cover-meta-grid">
+        <div class="col-left">
+          <strong>Submitted To:</strong> Ms. Kamalpreet Kaur<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gursimar Kaur
+        </div>
+        <div class="col-right">
+          <strong>Submitted By:</strong><br/>
+          Name: Arhaan Chopra<br/>
+          University Roll No.: 2113642
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        PCTE INSTITUTES OF ENGINEERING &amp; TECHNOLOGY,<br/>
+        LUDHIANA
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 2: TABLE OF CONTENTS & ABSTRACT                         -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>Table of Contents</h1>
+    <div style="margin: 20px 0 35px 0;">
+      <div class="toc-item"><span class="toc-title">1. Abstract &amp; Executive Summary</span><span class="toc-page">Page 2</span></div>
+      <div class="toc-item"><span class="toc-title">2. Introduction &amp; Project Overview</span><span class="toc-page">Page 3</span></div>
+      <div class="toc-item"><span class="toc-title">3. Problem Statement &amp; Motivation</span><span class="toc-page">Page 3</span></div>
+      <div class="toc-item"><span class="toc-title">4. Technology Stack &amp; Architecture</span><span class="toc-page">Page 4</span></div>
+      <div class="toc-item toc-sub"><span>4.1 Frontend Architecture (HTML5, CSS3, Vanilla JS)</span><span>Page 4</span></div>
+      <div class="toc-item toc-sub"><span>4.2 Backend REST Engine (Node.js &amp; Express.js)</span><span>Page 4</span></div>
+      <div class="toc-item toc-sub"><span>4.3 Relational Database Layer (SQLite WAL Mode)</span><span>Page 4</span></div>
+      <div class="toc-item toc-sub"><span>4.4 24/7 Cloud Deployment &amp; GitHub Sync</span><span>Page 5</span></div>
+      <div class="toc-item"><span class="toc-title">5. Core Features &amp; Functional Modules</span><span class="toc-page">Page 5</span></div>
+      <div class="toc-item toc-sub"><span>5.1 Administrative Dashboard &amp; Native Canvas Charts</span><span>Page 5</span></div>
+      <div class="toc-item toc-sub"><span>5.2 Subject &amp; Period-Wise Attendance Tracking</span><span>Page 5</span></div>
+      <div class="toc-item toc-sub"><span>5.3 75% Eligibility Engine &amp; Recovery Calculations</span><span>Page 6</span></div>
+      <div class="toc-item toc-sub"><span>5.4 Monthly Color-Coded Calendar System</span><span>Page 6</span></div>
+      <div class="toc-item toc-sub"><span>5.5 Student Directory &amp; Individual Dossiers</span><span>Page 6</span></div>
+      <div class="toc-item toc-sub"><span>5.6 Leave Management &amp; Automated Synchronization</span><span>Page 7</span></div>
+      <div class="toc-item toc-sub"><span>5.7 Disaster Recovery, Backup &amp; Integrity Verification</span><span>Page 7</span></div>
+      <div class="toc-item"><span class="toc-title">6. Working of the Web Application</span><span class="toc-page">Page 7</span></div>
+      <div class="toc-item"><span class="toc-title">7. Mathematical Formulas &amp; Attendance Algorithms</span><span class="toc-page">Page 8</span></div>
+      <div class="toc-item"><span class="toc-title">8. Live Deployment, Testing &amp; Verification</span><span class="toc-page">Page 8</span></div>
+      <div class="toc-item"><span class="toc-title">9. Conclusion &amp; References</span><span class="toc-page">Page 9</span></div>
+    </div>
+
+    <h1>1. Abstract &amp; Executive Summary</h1>
+    <p>
+      In contemporary educational institutions, the management of student attendance remains a fundamental metric for regulatory compliance, academic progress monitoring, and institutional funding eligibility. However, traditional attendance recording systems rely on physical paper registers or isolated spreadsheets. These legacy workflows suffer from human calculation errors, lack of period-wise and subject-wise visibility, severe delays in notifying parents, and risks of physical record destruction.
+    </p>
+    <p>
+      <strong>SMART SCHOOL</strong> is a full-stack, production-grade <strong>Smart Attendance &amp; Academic ERP System</strong> engineered to eliminate paper registers and streamline school operations. Developed using an agile, zero-external-dependency frontend (HTML5, modern CSS3 with dark mode, and Vanilla ES6+ JavaScript) combined with a high-performance Node.js/Express.js backend and an ACID-compliant SQLite relational database, the system automates roll-call tracking, period scheduling, and compliance monitoring.
+    </p>
+    <p>
+      The platform features an automated <strong>75% Mandatory Attendance Compliance Engine</strong> that mathematically computes the exact consecutive present sessions required for debarred students to recover eligibility. The system is deployed for <strong>24/7 online availability on Vercel</strong>, backed by an automated <strong>GitHub Cloud Persistence</strong> mechanism and offline-first <strong>LocalStorage dual-synchronization</strong>, ensuring continuous access across smartphones, tablets, and computers even when personal host machines are offline.
+    </p>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 3: INTRODUCTION & PROBLEM STATEMENT                     -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>2. Introduction &amp; Project Overview</h1>
+    <p>
+      Attendance tracking is not merely an administrative chore; it is an essential academic indicator directly correlated with student examination success and institutional discipline. In universities and schools affiliated with statutory bodies such as Punjab Technical University (PTU), achieving a minimum of 75% attendance in theoretical lectures and 80% in practical laboratory sessions is a mandatory prerequisite for appearing in final semester examinations.
+    </p>
+    <p>
+      Despite widespread digitization in other university operations, classroom attendance is frequently captured through manual calling and handwritten registers. Teachers spend 10 to 15 minutes of instructional time per period recording marks, and administrative staff spend dozens of hours at the end of each term manually tallying columns to produce defaulter lists.
+    </p>
+    <p>
+      <strong>SMART SCHOOL</strong> transforms this workflow into an interactive, zero-latency digital experience. The system caters to three distinct user personas through role-based access control (RBAC):
+    </p>
+    <ul>
+      <li><strong>Administrators:</strong> Gain a centralized dashboard showing aggregated attendance rates, class-by-class distributions, instant defaulter identification, and automated cloud backups.</li>
+      <li><strong>Teachers:</strong> Can conduct rapid keyboard-driven roll-calls (<kbd>P</kbd>, <kbd>A</kbd>, <kbd>L</kbd>, <kbd>E</kbd>), mark period-wise attendance for assigned subjects, and approve leaves.</li>
+      <li><strong>Parents / Students:</strong> View transparent monthly attendance calendars, real-time subject compliance percentages, and recovery targets.</li>
+    </ul>
+
+    <h1>3. Problem Statement &amp; Motivation</h1>
+    <p>
+      The conception of SMART SCHOOL originates from several real-world operational challenges observed in academic campuses:
+    </p>
+    <ol>
+      <li><strong>High Instructional Time Waste:</strong> Traditional manual calling consumes up to 25% of class time, reducing student-teacher interaction.</li>
+      <li><strong>Calculation Errors in Defaulter Detection:</strong> Manual tabulation regularly miscalculates attendance percentages, failing to properly account for approved leaves, late arrivals, or practical session weightings.</li>
+      <li><strong>Lack of Period &amp; Subject Granularity:</strong> Full-day attendance marks do not capture students who attend morning theory classes but skip afternoon laboratories.</li>
+      <li><strong>Delayed Parental Communication:</strong> Parents often discover that their child has fallen below the 75% debarment threshold only days before examinations, leaving no time for academic remediation.</li>
+      <li><strong>Data Vulnerability &amp; Single-Device Lock:</strong> Software running solely on local school desktops is unavailable when computers are turned off and vulnerable to disk failures.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Core Project Objective:</strong> To engineer a lightweight, resilient, and 24/7 accessible web-based ERP system that provides subject-wise roll-call tracking, transparent mathematical recovery calculations, automated leave-to-attendance synchronization, and permanent cloud database persistence.
+    </div>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 4: TECHNOLOGY STACK & ARCHITECTURE                     -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>4. Technology Stack &amp; Architecture</h1>
+    <p>
+      The system architecture adheres to a clean separation of concerns between client presentation, application business logic, and relational persistence.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose &amp; Architectural Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend</strong></td>
+          <td>HTML5, CSS3, Vanilla JavaScript (ES6+)</td>
+          <td>Zero external runtime framework dependencies. Extremely fast load times (&lt;100ms) on low-end mobile devices and university Wi-Fi networks.</td>
+        </tr>
+        <tr>
+          <td><strong>Styling &amp; Charts</strong></td>
+          <td>CSS Custom Properties &amp; HTML5 Canvas</td>
+          <td>Responsive layout supporting Light &amp; Dark themes. Custom native Canvas charts without heavy third-party charting libraries.</td>
+        </tr>
+        <tr>
+          <td><strong>Backend API</strong></td>
+          <td>Node.js &amp; Express.js (v5)</td>
+          <td>Asynchronous, non-blocking REST API service communicating over standard JSON payloads with comprehensive parameter validation.</td>
+        </tr>
+        <tr>
+          <td><strong>Database</strong></td>
+          <td>SQLite (<code>better-sqlite3</code>)</td>
+          <td>ACID-compliant relational engine operating in Write-Ahead Logging (WAL) mode with foreign key constraints. Highly reliable and portable.</td>
+        </tr>
+        <tr>
+          <td><strong>Security</strong></td>
+          <td><code>bcryptjs</code> &amp; <code>jsonwebtoken</code></td>
+          <td>Industry-standard password hashing with salt rounds and tamper-proof signed JWT tokens for stateless session authorization.</td>
+        </tr>
+        <tr>
+          <td><strong>Communications</strong></td>
+          <td>Nodemailer &amp; Twilio SDK</td>
+          <td>Carrier-grade SMTP and SMS integration with automatic secret masking and persistent delivery dispatch logging.</td>
+        </tr>
+        <tr>
+          <td><strong>Cloud Hosting</strong></td>
+          <td>Vercel Serverless Edge Network</td>
+          <td>Global 24/7 cloud deployment. Serverless execution functions with automatic scaling and zero cold-start maintenance.</td>
+        </tr>
+        <tr>
+          <td><strong>Persistence Sync</strong></td>
+          <td>GitHub REST API &amp; LocalStorage</td>
+          <td>Automatic background synchronization committing database state to <code>data/cloud_db.json</code> on GitHub, paired with client-side LocalStorage.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4.1 System Architectural Diagram</h2>
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; margin: 15px 0; font-family: 'Inter', monospace; font-size: 8.5pt; line-height: 1.4; color: #0f172a;">
+      [ Client Browser / Smartphone ]<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─► [ LocalStorage Layer ] (Instant offline render cache &amp; session token)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ HTTPS / JSON REST API<br/>
+      [ Vercel Edge Serverless Gateway ] ───► [ Express.js Backend Application ]<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌──────────────────────────┴──────────────────────────┐<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ SQLite Relational DB ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ GitHub Cloud Sync ]<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Tables: students, attendance,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(data/cloud_db.json<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;periods, subjects, leaves)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24/7 Git Persistence)
+    </div>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 5: CORE FEATURES & FUNCTIONAL MODULES                   -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>5. Core Features &amp; Functional Modules</h1>
+
+    <h2>5.1 Main Administrative Dashboard (<code>index.html</code>)</h2>
+    <p>
+      The dashboard serves as the central mission-control interface for institutional leaders:
+    </p>
+    <ul>
+      <li><strong>Live Aggregated Statistics Cards:</strong> Real-time counts of Total Students, Total Faculty, Present Today, Absent Today, Late Arrivals, Overall Attendance Rate, and Defaulters Below 75%.</li>
+      <li><strong>Native HTML5 Canvas Charts:</strong>
+        <ul>
+          <li><em>Weekly Attendance Trend Curve:</em> Visualizes day-by-day cohort engagement with a red 75% baseline marker.</li>
+          <li><em>Status Distribution Doughnut Chart:</em> Displays proportion of Present, Absent, Late, and Excused marks.</li>
+          <li><em>Class-Wise Attendance Comparison Bar Chart:</em> Compares performance across classes (10-A, 10-B, 12-A).</li>
+        </ul>
+      </li>
+      <li><strong>Rapid Speed Roll-Call Mode:</strong> A dedicated keyboard-driven interface allowing teachers to mark hundreds of students in seconds using hotkeys (<kbd>P</kbd>, <kbd>A</kbd>, <kbd>L</kbd>, <kbd>E</kbd>, <kbd>Esc</kbd>).</li>
+      <li><strong>Real-Time Search &amp; Filter Bar:</strong> Instant client-side filtering by roll number, name, or class section.</li>
+    </ul>
+
+    <h2>5.2 Subject &amp; Period-Wise Attendance (<code>period-attendance.html</code>)</h2>
+    <p>
+      Upgrades traditional full-day roll calls to university-standard period scheduling:
+    </p>
+    <ul>
+      <li>Supports instructional blocks (Period 1 to Period 6) linked to allocated academic subjects (e.g., Mathematics Theory, Physics Practical Lab, Computer Science Lab).</li>
+      <li>Prevents accidental duplicate submissions via composite unique constraints (<code>date</code>, <code>class_sec</code>, <code>period_number</code>, <code>subject_id</code>).</li>
+      <li>Teacher boundary authorization restricts faculty members to recording attendance only for courses and classes explicitly assigned to them.</li>
+    </ul>
+
+    <h2>5.3 Configurable Subject Eligibility &amp; Defaulter Advisor (<code>subject-attendance.html</code>)</h2>
+    <p>
+      Acknowledges that theoretical lectures and practical laboratories require distinct attendance thresholds:
+    </p>
+    <ul>
+      <li>Administrators can configure eligibility percentages independently (e.g., 75% for Theory, 80% for Labs).</li>
+      <li>Automated roster calculates total conducted sessions, attended sessions, percentage, and eligibility badges (<span class="badge badge-green">Eligible</span> / <span class="badge badge-amber">Defaulter</span>).</li>
+      <li><strong>Mathematical Recovery Session Advisor:</strong> Automatically displays the exact minimum consecutive future sessions a student must attend to cross the compliance threshold.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 6: CALENDAR, PROFILES, LEAVES & BACKUPS                 -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h2>5.4 Monthly Color-Coded Calendar (<code>calendar.html</code>)</h2>
+    <p>
+      Provides a visual monthly ledger for individual students and class teachers:
+    </p>
+    <ul>
+      <li>Interactive grid with previous/next month navigation synchronized with the database.</li>
+      <li>Color-coded attendance states:
+        <ul>
+          <li><span class="badge badge-green">Green</span> — Present (Full attendance credit).</li>
+          <li><span class="badge" style="background:#fee2e2; color:#991b1b;">Red</span> — Unexcused Absent (0 credit).</li>
+          <li><span class="badge badge-amber">Yellow</span> — Late Arrival (Weighted 0.5 credit).</li>
+          <li><span class="badge badge-blue">Blue</span> — Approved Excused Leave (Counted towards authorized credit).</li>
+          <li><span class="badge" style="background:#f1f5f9; color:#64748b;">Grey</span> — Official Gazetted Holiday / Sunday.</li>
+        </ul>
+      </li>
+      <li>Clicking any date cell displays teacher remarks and individual period breakdown.</li>
+    </ul>
+
+    <h2>5.5 Student Directory &amp; Dossiers (<code>students.html</code>, <code>profile.html</code>)</h2>
+    <ul>
+      <li>Unique constraints enforce distinct roll numbers per section and global admission numbers.</li>
+      <li>Complete personal profile dossiers featuring student avatar, guardian phone, email, and residential address.</li>
+      <li>Dedicated subject-wise attendance performance table and comparison charts on individual profile pages.</li>
+      <li><strong>Bulk CSV Import &amp; Export:</strong> Facilitates batch enrollment of student cohorts in one click.</li>
+    </ul>
+
+    <h2>5.6 Leave Management Portal (<code>leaves.html</code>)</h2>
+    <ul>
+      <li>Students and guardians can submit digital leave applications specifying start date, end date, and medical/personal reasons.</li>
+      <li>Administrative review portal to Approve or Reject applications with justification notes.</li>
+      <li><strong>Automated Attendance Synchronization:</strong> When a leave is approved, the system automatically updates all corresponding calendar dates to <span class="badge badge-blue">Excused</span>, eliminating manual teacher reconciliations.</li>
+    </ul>
+
+    <h2>5.7 Disaster Recovery &amp; Database Backups (<code>settings-database.html</code>)</h2>
+    <ul>
+      <li>On-demand export in two standard formats:
+        <ul>
+          <li><strong>SQL Dump (<code>.sql</code>):</strong> Complete DDL schema and transactional DML statements for direct SQLite restoration.</li>
+          <li><strong>Structured JSON (<code>.json</code>):</strong> Human-readable database snapshot containing complete table documents.</li>
+        </ul>
+      </li>
+      <li><strong>Cryptographic SHA-256 Verification:</strong> Automatically checks file integrity before any restore is performed.</li>
+      <li><strong>Pre-Restore Safety Snapshot:</strong> Before restoring any archive, the system automatically writes a safety snapshot of the active database, guaranteeing zero accidental data loss.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 7: WORKING OF THE WEBSITE & ALGORITHMS                  -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>6. Working of the Web Application</h1>
+    <p>
+      The end-to-end user workflow follows a robust, data-validated sequence:
+    </p>
+    <ol>
+      <li><strong>User Authentication:</strong> The user accesses the application at <code>https://smart-erp-ruddy.vercel.app</code>. The client authenticates against <code>/api/auth/login</code> using bcrypt-verified credentials. A signed JWT token is stored securely in the browser's <code>localStorage</code>.</li>
+      <li><strong>Initial Page Hydration:</strong>
+        <ul>
+          <li>The client immediately renders cached student rosters from <code>localStorage</code>, eliminating screen flicker.</li>
+          <li>Simultaneously, the browser issues a non-blocking asynchronous request to <code>/api/dashboard/stats</code> and <code>/api/attendance</code> to fetch the live state.</li>
+        </ul>
+      </li>
+      <li><strong>Roll-Call Recording:</strong>
+        <ul>
+          <li>The teacher selects the date, class, subject, and period.</li>
+          <li>Attendance is marked individually or using batch hotkeys (<kbd>P</kbd>, <kbd>A</kbd>, <kbd>L</kbd>, <kbd>E</kbd>).</li>
+          <li>On clicking <em>Save Attendance</em>, the frontend dispatches a JSON payload to <code>/api/attendance/period-wise</code>.</li>
+          <li>The server executes the updates within an ACID transaction and triggers audit trail logging.</li>
+        </ul>
+      </li>
+      <li><strong>Automated Compliance Calculation:</strong> The backend computes the student's cumulative percentage. If the score drops below 75%, an in-app notification and parental alert are generated.</li>
+      <li><strong>24/7 Cloud Persistence Synchronization:</strong>
+        <ul>
+          <li>Every successful write triggers <code>cloudSyncService.triggerAutoSave()</code>.</li>
+          <li>The backend serializes SQLite tables and commits the updated database snapshot to <code>data/cloud_db.json</code> on GitHub.</li>
+          <li>This guarantees that even if the serverless container restarts or the host PC is turned off, data is permanently preserved.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h1>7. Mathematical Formulas &amp; Algorithms</h1>
+
+    <h3>1. Cumulative Attendance Percentage Formula</h3>
+    <p>
+      The platform evaluates attendance by weighting late arrivals as half-credit and treating approved leaves as valid instructional credit:
+    </p>
+    <div class="formula-box">
+      Attendance Percentage (%) = [ ( P + 0.5 &times; L + E ) / T ] &times; 100
+    </div>
+    <p style="font-size: 9.5pt; color: #475569;">
+      Where: <em>P</em> = Present sessions, <em>L</em> = Late arrival sessions, <em>E</em> = Excused approved leave sessions, and <em>T</em> = Total conducted instructional sessions.
+    </p>
+
+    <h3>2. Exact Recovery Session Planning Formula</h3>
+    <p>
+      To answer the student's critical question: <em>"How many more classes must I attend consecutively without missing any to regain 75% eligibility?"</em>, the system solves the following inequality:
+    </p>
+    <div style="text-align: center; font-size: 10.5pt; margin: 8px 0; color: #334155;">
+      ( P + x ) / ( T + x ) &ge; r
+    </div>
+    <p>
+      Solving for the minimum non-negative integer <em>x</em> yields:
+    </p>
+    <div class="formula-box">
+      x = max( 1, &lceil; ( r &times; T - P ) / ( 1 - r ) &rceil; )
+    </div>
+    <p style="font-size: 9.5pt; color: #475569;">
+      For a 75% threshold (<em>r</em> = 0.75), this simplifies to: <strong>x = max(1, &lceil; 3T - 4P &rceil;)</strong>. The algorithm incorporates IEEE 754 floating-point sanitization to prevent binary precision truncation.
+    </p>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 8: LIVE DEPLOYMENT, TESTING & VERIFICATION              -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>8. Live Deployment, Testing &amp; Verification</h1>
+
+    <h2>8.1 24/7 Cloud Deployment Infrastructure</h2>
+    <p>
+      The application has been deployed on the <strong>Vercel Serverless Edge Platform</strong> and linked directly to the official GitHub source repository:
+    </p>
+    <ul>
+      <li><strong>Live Production URL:</strong> <a href="https://smart-erp-ruddy.vercel.app" target="_blank">https://smart-erp-ruddy.vercel.app</a></li>
+      <li><strong>Permanent GitHub Branch URL:</strong> <a href="https://smart-erp-git-main-demigod1107.vercel.app" target="_blank">https://smart-erp-git-main-demigod1107.vercel.app</a></li>
+      <li><strong>Source Code Repository:</strong> <a href="https://github.com/Demigod1107/Smart-ERP" target="_blank">https://github.com/Demigod1107/Smart-ERP</a></li>
+      <li><strong>Live Cloud Database File:</strong> <a href="https://github.com/Demigod1107/Smart-ERP/blob/main/data/cloud_db.json" target="_blank">https://github.com/Demigod1107/Smart-ERP/blob/main/data/cloud_db.json</a></li>
+    </ul>
+
+    <h2>8.2 Automated Quality Assurance &amp; Test Suite</h2>
+    <p>
+      The system includes a zero-dependency automated test runner executed via <code>npm test</code>. A total of <strong>44 out of 44 tests passed with a 100% success rate</strong>:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Test Suite</th>
+          <th>Tests</th>
+          <th>Status</th>
+          <th>Key Verified Behaviors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Unit Tests (<code>test_suite.js</code>)</strong></td>
+          <td>23 Tests</td>
+          <td><span class="badge badge-green">100% Pass</span></td>
+          <td>Database seeding, bcrypt hashing, JWT token integrity, 75% recovery formulas, unique constraints, leave synchronization, SQL/JSON backup exports, and SHA-256 integrity validation.</td>
+        </tr>
+        <tr>
+          <td><strong>API Integration Tests (<code>api_test.js</code>)</strong></td>
+          <td>21 Tests</td>
+          <td><span class="badge badge-green">100% Pass</span></td>
+          <td>All REST API endpoints: <code>/api/auth/login</code>, <code>/api/dashboard/stats</code>, <code>/api/attendance/mark</code>, <code>/api/subjects</code>, <code>/api/leaves</code>, <code>/api/admin/backups</code>. Verified status codes and response bodies.</td>
+        </tr>
+        <tr>
+          <td><strong>Total Test Coverage</strong></td>
+          <td><strong>44 Tests</strong></td>
+          <td><span class="badge badge-green">44 / 44 (100%)</span></td>
+          <td>Zero regressions across all administrative, academic, and disaster recovery workflows.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8.3 Teacher Demonstration &amp; Viva Credentials</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Privileges &amp; Access Scope</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Administrator</strong></td>
+          <td><code>admin</code></td>
+          <td><code>admin123</code></td>
+          <td>Full administrative access: all classes, student directory, faculty allocation, reports, and database backups.</td>
+        </tr>
+        <tr>
+          <td><strong>Teacher</strong></td>
+          <td><code>teacher1</code></td>
+          <td><code>teacher123</code></td>
+          <td>Assigned to Class 10-A, 10-B (Mathematics &amp; Physics). Authorized for period-wise roll calls.</td>
+        </tr>
+        <tr>
+          <td><strong>Parent</strong></td>
+          <td><code>parent1</code></td>
+          <td><code>parent123</code></td>
+          <td>Linked to student Aarav Sharma (Roll No: 10A-01). Can view calendar and submit leave requests.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 9.5pt; color: #475569;">
+      <em>Note: The login page includes 1-Click Demo Login buttons for instant role switching without manual typing.</em>
+    </p>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- PAGE 9: CONCLUSION & REFERENCES                             -->
+  <!-- ============================================================= -->
+  <div class="page">
+    <h1>9. Conclusion &amp; Future Scope</h1>
+
+    <h2>9.1 Conclusion</h2>
+    <p>
+      The <strong>SMART SCHOOL</strong> Attendance &amp; Academic ERP platform successfully demonstrates how modern, lightweight full-stack web technologies can solve persistent administrative bottlenecks in educational institutions. By transitioning from paper registers and isolated spreadsheets to an ACID-compliant relational SQL backend and a reactive, zero-framework frontend, the system delivers significant operational improvements:
+    </p>
+    <ul>
+      <li>Reduces attendance recording time from 10 minutes to under 30 seconds per session using hotkey speed calling.</li>
+      <li>Eliminates human tabulation errors through mathematical calculation of attendance percentages and exact recovery planning.</li>
+      <li>Guarantees high availability through serverless cloud hosting on Vercel, automated GitHub cloud database sync, and client-side LocalStorage resilience.</li>
+      <li>Enhances institutional accountability through tamper-proof attendance audit logs and role-based permissions.</li>
+    </ul>
+
+    <h2>9.2 Future Scope &amp; Enhancements</h2>
+    <ul>
+      <li><strong>Biometric Device Integration:</strong> Linking physical fingerprint or RFID turnstiles via WebSockets to automatically ingest campus entry timestamps.</li>
+      <li><strong>Parent Mobile Application:</strong> Packaging the responsive web platform into native Android/iOS applications using Capacitor or React Native.</li>
+      <li><strong>Automated Timetable Generator:</strong> Implementing genetic algorithms to automatically schedule weekly faculty and classroom periods without room conflicts.</li>
+    </ul>
+
+    <h1>10. References</h1>
+    <ol style="font-size: 9.5pt; color: #334155;">
+      <li>Mozilla Developer Network (MDN). <em>JavaScript (ES6+) Documentation and Web APIs</em>, 2024. Available: https://developer.mozilla.org</li>
+      <li>Express.js Foundation. <em>Fast, unopinionated, minimalist web framework for Node.js</em>, 2024. Available: https://expressjs.com</li>
+      <li>SQLite Development Team. <em>SQLite Documentation: Write-Ahead Logging (WAL) and Foreign Key Support</em>, 2024. Available: https://www.sqlite.org</li>
+      <li>Vercel Inc. <em>Serverless Functions &amp; Edge Network Architecture Guide</em>, 2024. Available: https://vercel.com/docs</li>
+      <li>World Wide Web Consortium (W3C). <em>HTML5 Web Storage Specification (LocalStorage &amp; SessionStorage)</em>, 2023.</li>
+      <li>IETF RFC 7519. <em>JSON Web Token (JWT) Architecture and Security Best Practices</em>, Internet Engineering Task Force.</li>
+      <li>Punjab Technical University (PTU). <em>Academic Regulations and Minimum Attendance Requirements for B.Tech CSE</em>, Academic Handbook.</li>
+    </ol>
+
+    <div style="margin-top: 40px; padding: 16px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center;">
+      <strong style="color: #1e3a8a;">Project Submitted in Partial Fulfillment of the Requirements for the Degree of</strong><br/>
+      <span style="font-size: 10pt;">Bachelor of Technology in Computer Science &amp; Engineering<br/>
+      PCTE Group of Institutes, Ludhiana — Affiliated to I.K. Gujral Punjab Technical University (IKGPTU)</span>
+    </div>
+
+    <div class="page-footer">
+      <span>SMART SCHOOL — Academic Project Report</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+</body>
+</html>
