@@ -3,12 +3,20 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 
-const dbPath = path.join(__dirname, 'smart_school.db');
+const isVercel = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const dbPath = isVercel 
+  ? path.join('/tmp', 'smart_school.db') 
+  : path.join(__dirname, 'smart_school.db');
+
 const db = new Database(dbPath);
 
-// Enable foreign keys and WAL mode for high performance
-db.pragma('foreign_keys = ON');
-db.pragma('journal_mode = WAL');
+// Enable foreign keys and WAL/DELETE mode for high performance
+try {
+  db.pragma('foreign_keys = ON');
+  db.pragma(isVercel ? 'journal_mode = DELETE' : 'journal_mode = WAL');
+} catch (e) {
+  console.warn('Pragma config note:', e.message);
+}
 
 function initDatabase() {
   db.exec(`
