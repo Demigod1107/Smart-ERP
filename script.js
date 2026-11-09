@@ -1322,6 +1322,58 @@ function drawClassComparisonChart() {
 }
 
 // -------------------------------------------------------------
+// CLOUD PERSISTENCE & DUAL LOCALSTORAGE SYNCHRONIZATION
+// -------------------------------------------------------------
+async function checkCloudSyncStatus() {
+  const badge = document.getElementById('cloudStatusBadge');
+  if (!badge) return;
+  try {
+    const res = await fetch('/api/cloud/status');
+    const data = await res.json();
+    if (data.enabled) {
+      badge.textContent = '☁️ 24/7 Cloud Online (Synced)';
+      badge.style.color = '#047857';
+      badge.style.borderColor = '#a7f3d0';
+      badge.title = `Stored online at ${data.repo}. Click to sync now.`;
+    } else {
+      badge.textContent = '💾 LocalStorage Active';
+    }
+  } catch (e) {
+    badge.textContent = '💾 LocalStorage Active (Offline)';
+    badge.style.color = '#d97706';
+  }
+}
+
+async function syncWithCloudStorage() {
+  const badge = document.getElementById('cloudStatusBadge');
+  if (badge) {
+    badge.textContent = '☁️ Syncing online...';
+    badge.style.color = '#2563eb';
+  }
+  try {
+    const res = await fetch('/api/cloud/sync', { method: 'POST' });
+    const data = await res.json();
+    if (data.success) {
+      if (badge) {
+        badge.textContent = '☁️ 24/7 Cloud Online (Synced)';
+        badge.style.color = '#047857';
+      }
+      showToast('✓ Data safely saved 24/7 online & cached in LocalStorage');
+    }
+  } catch (e) {
+    if (badge) {
+      badge.textContent = '💾 LocalStorage Active';
+      badge.style.color = '#d97706';
+    }
+  }
+}
+
+const cloudStatusBadge = document.getElementById('cloudStatusBadge');
+if (cloudStatusBadge) {
+  cloudStatusBadge.addEventListener('click', syncWithCloudStorage);
+}
+
+// -------------------------------------------------------------
 // INITIALIZATION
 // -------------------------------------------------------------
 window.addEventListener('DOMContentLoaded', async () => {
@@ -1330,4 +1382,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   await syncFromBackend();
   renderTable();
   loadAiInsights();
+  checkCloudSyncStatus();
 });

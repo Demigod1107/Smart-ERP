@@ -1,4 +1,4 @@
-const CACHE_NAME = 'smart-school-cache-v5.0-clean';
+const CACHE_NAME = 'smart-school-cache-v5.1-cloudsync';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

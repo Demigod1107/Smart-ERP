@@ -42,6 +42,16 @@ const {
   getRestoreHistory 
 } = require('./services/restoreService');
 
+const { 
+  pullFromCloud, 
+  pushToCloud, 
+  triggerAutoSave, 
+  getSyncStatus 
+} = require('./services/cloudSyncService');
+
+// Hydrate from persistent cloud storage on startup
+pullFromCloud().catch(() => {});
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -452,6 +462,7 @@ app.post('/api/attendance/mark', (req, res) => {
     );
   }
 
+  triggerAutoSave();
   res.json({ success: true, studentId, date, status });
 });
 
@@ -484,6 +495,7 @@ app.post('/api/attendance/mark-all', (req, res) => {
   });
 
   markMany(students);
+  triggerAutoSave();
   res.json({ success: true, count: students.length, status, date });
 });
 
@@ -1117,6 +1129,31 @@ app.get('/api/ai/predictions', (req, res) => {
 });
 
 // -------------------------------------------------------------
+// 9.5 CLOUD PERSISTENCE & 24/7 ONLINE SYNC APIS
+// -------------------------------------------------------------
+app.get('/api/cloud/status', (req, res) => {
+  res.json(getSyncStatus());
+});
+
+app.post('/api/cloud/sync', async (req, res) => {
+  try {
+    const result = await pushToCloud('chore(data): manual cloud backup triggered by admin');
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: 'Cloud sync failed', message: err.message });
+  }
+});
+
+app.post('/api/cloud/pull', async (req, res) => {
+  try {
+    const result = await pullFromCloud();
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: 'Cloud pull failed', message: err.message });
+  }
+});
+
+// -------------------------------------------------------------
 // 10. REPORTS & EXPORTS API
 // -------------------------------------------------------------
 app.get('/api/reports/defaulters', (req, res) => {
@@ -1428,6 +1465,8 @@ app.post('/api/attendance/period-wise', async (req, res) => {
         }).catch(() => {});
       }
     });
+
+    triggerAutoSave();
 
     res.json({
       success: true,
