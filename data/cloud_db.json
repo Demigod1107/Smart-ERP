@@ -1,0 +1,4217 @@
+{
+  "version": "4.5.0",
+  "exportedAt": "2026-11-09T15:26:14.193Z",
+  "tables": {
+    "classes": [
+      {
+        "id": 1,
+        "code": "10-A",
+        "name": "Class 10",
+        "section": "A",
+        "room": "Room 101"
+      },
+      {
+        "id": 2,
+        "code": "10-B",
+        "name": "Class 10",
+        "section": "B",
+        "room": "Room 102"
+      },
+      {
+        "id": 3,
+        "code": "12-A",
+        "name": "Class 12",
+        "section": "A",
+        "room": "Room 201"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "admin",
+        "password_hash": "$2b$10$LcF28w2LMXwf.LKrRQuRlO5ohL2lB6rIyBvWxZ6uMJWOpP.TSq5rW",
+        "role": "admin",
+        "name": "System Administrator",
+        "email": "admin@smartschool.edu",
+        "phone": "9899999999",
+        "linked_student_id": null,
+        "teacher_id": null,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "username": "teacher",
+        "password_hash": "$2b$10$AGt8tJ4.fCLJvTpEB2caguKNOUiOKluM/XHl7bZWKiIDDyWXjQQj2",
+        "role": "teacher",
+        "name": "Sunita Rao",
+        "email": "sunita.rao@smartschool.edu",
+        "phone": "9811122233",
+        "linked_student_id": null,
+        "teacher_id": "TCH-101",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "username": "parent",
+        "password_hash": "$2b$10$MC/ytL6BjU1lqCC9HlcDHuthX8Oq8t2jVCIr2smGhQ6xxzgHOJ55i",
+        "role": "parent",
+        "name": "Rajesh Sharma",
+        "email": "rajesh.sharma@example.com",
+        "phone": "9876543210",
+        "linked_student_id": 1,
+        "teacher_id": null,
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "teachers": [
+      {
+        "id": 1,
+        "teacher_code": "TCH-101",
+        "name": "Sunita Rao",
+        "email": "sunita.rao@smartschool.edu",
+        "phone": "9811122233",
+        "subject": "Mathematics",
+        "assigned_class": "10-A",
+        "status": "Active",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "teacher_code": "TCH-102",
+        "name": "Amitabh Sen",
+        "email": "amitabh.sen@smartschool.edu",
+        "phone": "9822233344",
+        "subject": "Science",
+        "assigned_class": "10-B",
+        "status": "Active",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "teacher_code": "TCH-103",
+        "name": "Meera Kapoor",
+        "email": "meera.kapoor@smartschool.edu",
+        "phone": "9833344455",
+        "subject": "English",
+        "assigned_class": "12-A",
+        "status": "Active",
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "students": [
+      {
+        "id": 1,
+        "roll": "10A-01",
+        "admission_no": "ADM-2024-001",
+        "name": "Aarav Sharma",
+        "dob": "2010-04-15",
+        "gender": "Male",
+        "class_sec": "10-A",
+        "parent_name": "Rajesh Sharma",
+        "parent_phone": "9876543210",
+        "parent_email": "rajesh.sharma@example.com",
+        "address": "12 Lake View Road, Delhi",
+        "photo_url": null,
+        "admission_date": "2024-04-01",
+        "status": "Active",
+        "base_present": 14,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "roll": "10A-02",
+        "admission_no": "ADM-2024-002",
+        "name": "Priya Patel",
+        "dob": "2010-08-22",
+        "gender": "Female",
+        "class_sec": "10-A",
+        "parent_name": "Suresh Patel",
+        "parent_phone": "9876543211",
+        "parent_email": "suresh.patel@example.com",
+        "address": "45 Green Park, Delhi",
+        "photo_url": null,
+        "admission_date": "2024-04-01",
+        "status": "Active",
+        "base_present": 18,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "roll": "10B-01",
+        "admission_no": "ADM-2024-003",
+        "name": "Rohan Verma",
+        "dob": "2010-01-10",
+        "gender": "Male",
+        "class_sec": "10-B",
+        "parent_name": "Mahesh Verma",
+        "parent_phone": "9876543212",
+        "parent_email": "mahesh.verma@example.com",
+        "address": "88 Sector 14, Gurgaon",
+        "photo_url": null,
+        "admission_date": "2024-04-01",
+        "status": "Active",
+        "base_present": 11,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 4,
+        "roll": "10B-02",
+        "admission_no": "ADM-2024-004",
+        "name": "Sneha Nair",
+        "dob": "2010-11-05",
+        "gender": "Female",
+        "class_sec": "10-B",
+        "parent_name": "Gopal Nair",
+        "parent_phone": "9876543213",
+        "parent_email": "gopal.nair@example.com",
+        "address": "21 Palm Enclave, Noida",
+        "photo_url": null,
+        "admission_date": "2024-04-01",
+        "status": "Active",
+        "base_present": 19,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 5,
+        "roll": "12A-01",
+        "admission_no": "ADM-2022-005",
+        "name": "Vikram Singh",
+        "dob": "2008-06-18",
+        "gender": "Male",
+        "class_sec": "12-A",
+        "parent_name": "Harpreet Singh",
+        "parent_phone": "9876543214",
+        "parent_email": "harpreet.singh@example.com",
+        "address": "72 Ring Road, Delhi",
+        "photo_url": null,
+        "admission_date": "2022-04-01",
+        "status": "Active",
+        "base_present": 13,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 6,
+        "roll": "12A-02",
+        "admission_no": "ADM-2022-006",
+        "name": "Ananya Iyer",
+        "dob": "2008-03-30",
+        "gender": "Female",
+        "class_sec": "12-A",
+        "parent_name": "Venkat Iyer",
+        "parent_phone": "9876543215",
+        "parent_email": "venkat.iyer@example.com",
+        "address": "109 Civil Lines, Delhi",
+        "photo_url": null,
+        "admission_date": "2022-04-01",
+        "status": "Active",
+        "base_present": 17,
+        "base_total": 20,
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "subjects": [
+      {
+        "id": 1,
+        "code": "MATH-10A",
+        "name": "Mathematics",
+        "type": "Theory",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-101",
+        "min_attendance_pct": 75,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "code": "PHYTH-10A",
+        "name": "Physics Theory",
+        "type": "Theory",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-102",
+        "min_attendance_pct": 75,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "code": "PHYLAB-10A",
+        "name": "Physics Lab",
+        "type": "Practical",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-102",
+        "min_attendance_pct": 80,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 4,
+        "code": "CHEM-10A",
+        "name": "Chemistry",
+        "type": "Theory",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-102",
+        "min_attendance_pct": 75,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 5,
+        "code": "ENG-10A",
+        "name": "English",
+        "type": "Theory",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-103",
+        "min_attendance_pct": 75,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 6,
+        "code": "CSLAB-10A",
+        "name": "Computer Science Lab",
+        "type": "Lab",
+        "class_sec": "10-A",
+        "teacher_code": "TCH-101",
+        "min_attendance_pct": 80,
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "subject_enrollments": [
+      {
+        "id": 1,
+        "subject_id": 1,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 2,
+        "subject_id": 2,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 3,
+        "subject_id": 3,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 4,
+        "subject_id": 4,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 5,
+        "subject_id": 5,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 6,
+        "subject_id": 6,
+        "student_id": 1,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 7,
+        "subject_id": 1,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 8,
+        "subject_id": 2,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 9,
+        "subject_id": 3,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 10,
+        "subject_id": 4,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 11,
+        "subject_id": 5,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      },
+      {
+        "id": 12,
+        "subject_id": 6,
+        "student_id": 2,
+        "enrolled_date": "2026-04-01"
+      }
+    ],
+    "periods": [
+      {
+        "id": 1,
+        "period_number": 1,
+        "name": "Period 1 — Morning",
+        "start_time": "08:30",
+        "end_time": "09:15"
+      },
+      {
+        "id": 2,
+        "period_number": 2,
+        "name": "Period 2 — Mid-Morning",
+        "start_time": "09:15",
+        "end_time": "10:00"
+      },
+      {
+        "id": 3,
+        "period_number": 3,
+        "name": "Period 3 — Core Theory",
+        "start_time": "10:15",
+        "end_time": "11:00"
+      },
+      {
+        "id": 4,
+        "period_number": 4,
+        "name": "Period 4 — Humanities",
+        "start_time": "11:00",
+        "end_time": "11:45"
+      },
+      {
+        "id": 5,
+        "period_number": 5,
+        "name": "Period 5 — Practical Lab",
+        "start_time": "12:30",
+        "end_time": "01:15"
+      },
+      {
+        "id": 6,
+        "period_number": 6,
+        "name": "Period 6 — Activity/Sports",
+        "start_time": "01:15",
+        "end_time": "02:00"
+      }
+    ],
+    "timetable": [
+      {
+        "id": 1,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 2,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 3,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 4,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 5,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 6,
+        "class_sec": "10-A",
+        "day_of_week": "Monday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 7,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 8,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 9,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 10,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 11,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 12,
+        "class_sec": "10-A",
+        "day_of_week": "Tuesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 13,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 14,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 15,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 16,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 17,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 18,
+        "class_sec": "10-A",
+        "day_of_week": "Wednesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 19,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 20,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 21,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 22,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 23,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 24,
+        "class_sec": "10-A",
+        "day_of_week": "Thursday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 25,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 26,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 27,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 28,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 29,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 30,
+        "class_sec": "10-A",
+        "day_of_week": "Friday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-A"
+      },
+      {
+        "id": 31,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 32,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 33,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 34,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 35,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 36,
+        "class_sec": "10-B",
+        "day_of_week": "Monday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 37,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 38,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 39,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 40,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 41,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 42,
+        "class_sec": "10-B",
+        "day_of_week": "Tuesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 43,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 44,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 45,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 46,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 47,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 48,
+        "class_sec": "10-B",
+        "day_of_week": "Wednesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 49,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 50,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 51,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 52,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 53,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 54,
+        "class_sec": "10-B",
+        "day_of_week": "Thursday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 55,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 56,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 57,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 58,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 59,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 60,
+        "class_sec": "10-B",
+        "day_of_week": "Friday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 10-B"
+      },
+      {
+        "id": 61,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 62,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 63,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 64,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 65,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 66,
+        "class_sec": "12-A",
+        "day_of_week": "Monday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 67,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 68,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 69,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 70,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 71,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 72,
+        "class_sec": "12-A",
+        "day_of_week": "Tuesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 73,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 74,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 75,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 76,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 77,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 78,
+        "class_sec": "12-A",
+        "day_of_week": "Wednesday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 79,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 80,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 81,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 82,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 83,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 84,
+        "class_sec": "12-A",
+        "day_of_week": "Thursday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 85,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 1,
+        "start_time": "08:30",
+        "end_time": "09:15",
+        "subject": "Mathematics",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 86,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 2,
+        "start_time": "09:15",
+        "end_time": "10:00",
+        "subject": "Physics",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 87,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 3,
+        "start_time": "10:15",
+        "end_time": "11:00",
+        "subject": "Chemistry",
+        "teacher_name": "Amitabh Sen",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 88,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 4,
+        "start_time": "11:00",
+        "end_time": "11:45",
+        "subject": "English",
+        "teacher_name": "Meera Kapoor",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 89,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 5,
+        "start_time": "12:30",
+        "end_time": "01:15",
+        "subject": "Computer Science",
+        "teacher_name": "Sunita Rao",
+        "room": "Room 12-A"
+      },
+      {
+        "id": 90,
+        "class_sec": "12-A",
+        "day_of_week": "Friday",
+        "period_number": 6,
+        "start_time": "01:15",
+        "end_time": "02:00",
+        "subject": "Physical Education",
+        "teacher_name": "Coach Rana",
+        "room": "Room 12-A"
+      }
+    ],
+    "attendance": [
+      {
+        "id": 1,
+        "student_id": 1,
+        "date": "2026-11-05",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "student_id": 1,
+        "date": "2026-11-06",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "student_id": 1,
+        "date": "2026-11-07",
+        "status": "Late",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 4,
+        "student_id": 1,
+        "date": "2026-11-08",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 5,
+        "student_id": 1,
+        "date": "2026-11-09",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 6,
+        "student_id": 2,
+        "date": "2026-11-05",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 7,
+        "student_id": 2,
+        "date": "2026-11-06",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 8,
+        "student_id": 2,
+        "date": "2026-11-07",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 9,
+        "student_id": 2,
+        "date": "2026-11-08",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 10,
+        "student_id": 2,
+        "date": "2026-11-09",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 11,
+        "student_id": 3,
+        "date": "2026-11-05",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 12,
+        "student_id": 3,
+        "date": "2026-11-06",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 13,
+        "student_id": 3,
+        "date": "2026-11-07",
+        "status": "Late",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 14,
+        "student_id": 3,
+        "date": "2026-11-08",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 15,
+        "student_id": 3,
+        "date": "2026-11-09",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 16,
+        "student_id": 4,
+        "date": "2026-11-05",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 17,
+        "student_id": 4,
+        "date": "2026-11-06",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 18,
+        "student_id": 4,
+        "date": "2026-11-07",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 19,
+        "student_id": 4,
+        "date": "2026-11-08",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 20,
+        "student_id": 4,
+        "date": "2026-11-09",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 21,
+        "student_id": 5,
+        "date": "2026-11-05",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 22,
+        "student_id": 5,
+        "date": "2026-11-06",
+        "status": "Late",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 23,
+        "student_id": 5,
+        "date": "2026-11-07",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 24,
+        "student_id": 5,
+        "date": "2026-11-08",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 25,
+        "student_id": 5,
+        "date": "2026-11-09",
+        "status": "Late",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 26,
+        "student_id": 6,
+        "date": "2026-11-05",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 27,
+        "student_id": 6,
+        "date": "2026-11-06",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 28,
+        "student_id": 6,
+        "date": "2026-11-07",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 29,
+        "student_id": 6,
+        "date": "2026-11-08",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 30,
+        "student_id": 6,
+        "date": "2026-11-09",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "attendance_sessions": [
+      {
+        "id": 1,
+        "academic_year": "2026-2027",
+        "date": "2026-10-05",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "academic_year": "2026-2027",
+        "date": "2026-10-06",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "academic_year": "2026-2027",
+        "date": "2026-10-07",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 4,
+        "academic_year": "2026-2027",
+        "date": "2026-10-08",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 5,
+        "academic_year": "2026-2027",
+        "date": "2026-10-09",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 6,
+        "academic_year": "2026-2027",
+        "date": "2026-10-10",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 7,
+        "academic_year": "2026-2027",
+        "date": "2026-10-11",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 8,
+        "academic_year": "2026-2027",
+        "date": "2026-10-12",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 9,
+        "academic_year": "2026-2027",
+        "date": "2026-10-13",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 10,
+        "academic_year": "2026-2027",
+        "date": "2026-10-14",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 11,
+        "academic_year": "2026-2027",
+        "date": "2026-10-15",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 12,
+        "academic_year": "2026-2027",
+        "date": "2026-10-16",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 13,
+        "academic_year": "2026-2027",
+        "date": "2026-10-17",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 14,
+        "academic_year": "2026-2027",
+        "date": "2026-10-18",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 15,
+        "academic_year": "2026-2027",
+        "date": "2026-10-19",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 16,
+        "academic_year": "2026-2027",
+        "date": "2026-10-20",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 17,
+        "academic_year": "2026-2027",
+        "date": "2026-10-21",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 18,
+        "academic_year": "2026-2027",
+        "date": "2026-10-22",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 19,
+        "academic_year": "2026-2027",
+        "date": "2026-10-23",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 20,
+        "academic_year": "2026-2027",
+        "date": "2026-10-24",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 21,
+        "academic_year": "2026-2027",
+        "date": "2026-10-25",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 22,
+        "academic_year": "2026-2027",
+        "date": "2026-10-26",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 23,
+        "academic_year": "2026-2027",
+        "date": "2026-10-27",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 24,
+        "academic_year": "2026-2027",
+        "date": "2026-10-28",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 25,
+        "academic_year": "2026-2027",
+        "date": "2026-10-29",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 26,
+        "academic_year": "2026-2027",
+        "date": "2026-10-30",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 27,
+        "academic_year": "2026-2027",
+        "date": "2026-10-31",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 28,
+        "academic_year": "2026-2027",
+        "date": "2026-11-01",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 29,
+        "academic_year": "2026-2027",
+        "date": "2026-11-02",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 30,
+        "academic_year": "2026-2027",
+        "date": "2026-11-03",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 31,
+        "academic_year": "2026-2027",
+        "date": "2026-11-04",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 32,
+        "academic_year": "2026-2027",
+        "date": "2026-11-05",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 33,
+        "academic_year": "2026-2027",
+        "date": "2026-11-06",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 34,
+        "academic_year": "2026-2027",
+        "date": "2026-11-07",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 35,
+        "academic_year": "2026-2027",
+        "date": "2026-11-08",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 36,
+        "academic_year": "2026-2027",
+        "date": "2026-10-05",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 37,
+        "academic_year": "2026-2027",
+        "date": "2026-10-06",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 38,
+        "academic_year": "2026-2027",
+        "date": "2026-10-07",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 39,
+        "academic_year": "2026-2027",
+        "date": "2026-10-08",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 40,
+        "academic_year": "2026-2027",
+        "date": "2026-10-09",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 41,
+        "academic_year": "2026-2027",
+        "date": "2026-10-10",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 42,
+        "academic_year": "2026-2027",
+        "date": "2026-10-11",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 43,
+        "academic_year": "2026-2027",
+        "date": "2026-10-12",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 44,
+        "academic_year": "2026-2027",
+        "date": "2026-10-13",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 45,
+        "academic_year": "2026-2027",
+        "date": "2026-10-14",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 46,
+        "academic_year": "2026-2027",
+        "date": "2026-10-15",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 47,
+        "academic_year": "2026-2027",
+        "date": "2026-10-16",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 48,
+        "academic_year": "2026-2027",
+        "date": "2026-10-17",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 49,
+        "academic_year": "2026-2027",
+        "date": "2026-10-18",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 50,
+        "academic_year": "2026-2027",
+        "date": "2026-10-19",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 51,
+        "academic_year": "2026-2027",
+        "date": "2026-10-20",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 52,
+        "academic_year": "2026-2027",
+        "date": "2026-10-21",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 53,
+        "academic_year": "2026-2027",
+        "date": "2026-10-22",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 54,
+        "academic_year": "2026-2027",
+        "date": "2026-10-23",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 55,
+        "academic_year": "2026-2027",
+        "date": "2026-10-24",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 56,
+        "academic_year": "2026-2027",
+        "date": "2026-10-25",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 57,
+        "academic_year": "2026-2027",
+        "date": "2026-10-26",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 58,
+        "academic_year": "2026-2027",
+        "date": "2026-10-27",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 59,
+        "academic_year": "2026-2027",
+        "date": "2026-10-28",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 60,
+        "academic_year": "2026-2027",
+        "date": "2026-10-29",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 61,
+        "academic_year": "2026-2027",
+        "date": "2026-10-30",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 62,
+        "academic_year": "2026-2027",
+        "date": "2026-10-31",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 63,
+        "academic_year": "2026-2027",
+        "date": "2026-11-01",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 64,
+        "academic_year": "2026-2027",
+        "date": "2026-11-02",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 65,
+        "academic_year": "2026-2027",
+        "date": "2026-11-03",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 66,
+        "academic_year": "2026-2027",
+        "date": "2026-11-04",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 67,
+        "academic_year": "2026-2027",
+        "date": "2026-11-05",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 68,
+        "academic_year": "2026-2027",
+        "date": "2026-11-06",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 69,
+        "academic_year": "2026-2027",
+        "date": "2026-11-07",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 70,
+        "academic_year": "2026-2027",
+        "date": "2026-11-08",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 71,
+        "academic_year": "2026-2027",
+        "date": "2026-10-02",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 72,
+        "academic_year": "2026-2027",
+        "date": "2026-10-04",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 73,
+        "academic_year": "2026-2027",
+        "date": "2026-10-06",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 74,
+        "academic_year": "2026-2027",
+        "date": "2026-10-08",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 75,
+        "academic_year": "2026-2027",
+        "date": "2026-10-10",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 76,
+        "academic_year": "2026-2027",
+        "date": "2026-10-12",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 77,
+        "academic_year": "2026-2027",
+        "date": "2026-10-14",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 78,
+        "academic_year": "2026-2027",
+        "date": "2026-10-16",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 79,
+        "academic_year": "2026-2027",
+        "date": "2026-10-18",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 80,
+        "academic_year": "2026-2027",
+        "date": "2026-10-20",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 81,
+        "academic_year": "2026-2027",
+        "date": "2026-10-22",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 82,
+        "academic_year": "2026-2027",
+        "date": "2026-10-24",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 83,
+        "academic_year": "2026-2027",
+        "date": "2026-10-26",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 84,
+        "academic_year": "2026-2027",
+        "date": "2026-10-28",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 85,
+        "academic_year": "2026-2027",
+        "date": "2026-10-30",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 86,
+        "academic_year": "2026-2027",
+        "date": "2026-11-01",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 87,
+        "academic_year": "2026-2027",
+        "date": "2026-11-03",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 88,
+        "academic_year": "2026-2027",
+        "date": "2026-11-05",
+        "class_sec": "10-A",
+        "subject_id": 3,
+        "period_number": 5,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "period_attendance": [
+      {
+        "id": 1,
+        "session_id": 1,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "session_id": 1,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 3,
+        "session_id": 2,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 4,
+        "session_id": 2,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 5,
+        "session_id": 3,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 6,
+        "session_id": 3,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 7,
+        "session_id": 4,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 8,
+        "session_id": 4,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 9,
+        "session_id": 5,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 10,
+        "session_id": 5,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 11,
+        "session_id": 6,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 12,
+        "session_id": 6,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 13,
+        "session_id": 7,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 14,
+        "session_id": 7,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 15,
+        "session_id": 8,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 16,
+        "session_id": 8,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 17,
+        "session_id": 9,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 18,
+        "session_id": 9,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 19,
+        "session_id": 10,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 20,
+        "session_id": 10,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 21,
+        "session_id": 11,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 22,
+        "session_id": 11,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 23,
+        "session_id": 12,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 24,
+        "session_id": 12,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 25,
+        "session_id": 13,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 26,
+        "session_id": 13,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 27,
+        "session_id": 14,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 28,
+        "session_id": 14,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 29,
+        "session_id": 15,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 30,
+        "session_id": 15,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 31,
+        "session_id": 16,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 32,
+        "session_id": 16,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 33,
+        "session_id": 17,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 34,
+        "session_id": 17,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 35,
+        "session_id": 18,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 36,
+        "session_id": 18,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 37,
+        "session_id": 19,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 38,
+        "session_id": 19,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 39,
+        "session_id": 20,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 40,
+        "session_id": 20,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 41,
+        "session_id": 21,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 42,
+        "session_id": 21,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 43,
+        "session_id": 22,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 44,
+        "session_id": 22,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 45,
+        "session_id": 23,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 46,
+        "session_id": 23,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 47,
+        "session_id": 24,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 48,
+        "session_id": 24,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 49,
+        "session_id": 25,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 50,
+        "session_id": 25,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 51,
+        "session_id": 26,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 52,
+        "session_id": 26,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 53,
+        "session_id": 27,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 54,
+        "session_id": 27,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 55,
+        "session_id": 28,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 56,
+        "session_id": 28,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 57,
+        "session_id": 29,
+        "student_id": 1,
+        "status": "Late",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 58,
+        "session_id": 29,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 59,
+        "session_id": 30,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 60,
+        "session_id": 30,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 61,
+        "session_id": 31,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 62,
+        "session_id": 31,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 63,
+        "session_id": 32,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 64,
+        "session_id": 32,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 65,
+        "session_id": 33,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 66,
+        "session_id": 33,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 67,
+        "session_id": 34,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 68,
+        "session_id": 34,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 69,
+        "session_id": 35,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 70,
+        "session_id": 35,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 71,
+        "session_id": 36,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 72,
+        "session_id": 36,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 73,
+        "session_id": 37,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 74,
+        "session_id": 37,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 75,
+        "session_id": 38,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 76,
+        "session_id": 38,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 77,
+        "session_id": 39,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 78,
+        "session_id": 39,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 79,
+        "session_id": 40,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 80,
+        "session_id": 40,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 81,
+        "session_id": 41,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 82,
+        "session_id": 41,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 83,
+        "session_id": 42,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 84,
+        "session_id": 42,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 85,
+        "session_id": 43,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 86,
+        "session_id": 43,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 87,
+        "session_id": 44,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 88,
+        "session_id": 44,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 89,
+        "session_id": 45,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 90,
+        "session_id": 45,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 91,
+        "session_id": 46,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 92,
+        "session_id": 46,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 93,
+        "session_id": 47,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 94,
+        "session_id": 47,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 95,
+        "session_id": 48,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 96,
+        "session_id": 48,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 97,
+        "session_id": 49,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 98,
+        "session_id": 49,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 99,
+        "session_id": 50,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 100,
+        "session_id": 50,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 101,
+        "session_id": 51,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 102,
+        "session_id": 51,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 103,
+        "session_id": 52,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 104,
+        "session_id": 52,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 105,
+        "session_id": 53,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 106,
+        "session_id": 53,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 107,
+        "session_id": 54,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 108,
+        "session_id": 54,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 109,
+        "session_id": 55,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 110,
+        "session_id": 55,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 111,
+        "session_id": 56,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 112,
+        "session_id": 56,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 113,
+        "session_id": 57,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 114,
+        "session_id": 57,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 115,
+        "session_id": 58,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 116,
+        "session_id": 58,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 117,
+        "session_id": 59,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 118,
+        "session_id": 59,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 119,
+        "session_id": 60,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 120,
+        "session_id": 60,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 121,
+        "session_id": 61,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 122,
+        "session_id": 61,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 123,
+        "session_id": 62,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 124,
+        "session_id": 62,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 125,
+        "session_id": 63,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 126,
+        "session_id": 63,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 127,
+        "session_id": 64,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 128,
+        "session_id": 64,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 129,
+        "session_id": 65,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 130,
+        "session_id": 65,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 131,
+        "session_id": 66,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 132,
+        "session_id": 66,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 133,
+        "session_id": 67,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 134,
+        "session_id": 67,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 135,
+        "session_id": 68,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 136,
+        "session_id": 68,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 137,
+        "session_id": 69,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 138,
+        "session_id": 69,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 139,
+        "session_id": 70,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 140,
+        "session_id": 70,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 141,
+        "session_id": 71,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 142,
+        "session_id": 71,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 143,
+        "session_id": 72,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 144,
+        "session_id": 72,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 145,
+        "session_id": 73,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 146,
+        "session_id": 73,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 147,
+        "session_id": 74,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 148,
+        "session_id": 74,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 149,
+        "session_id": 75,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 150,
+        "session_id": 75,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 151,
+        "session_id": 76,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 152,
+        "session_id": 76,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 153,
+        "session_id": 77,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 154,
+        "session_id": 77,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 155,
+        "session_id": 78,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 156,
+        "session_id": 78,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 157,
+        "session_id": 79,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 158,
+        "session_id": 79,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 159,
+        "session_id": 80,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 160,
+        "session_id": 80,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 161,
+        "session_id": 81,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 162,
+        "session_id": 81,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 163,
+        "session_id": 82,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 164,
+        "session_id": 82,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 165,
+        "session_id": 83,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 166,
+        "session_id": 83,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 167,
+        "session_id": 84,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 168,
+        "session_id": 84,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 169,
+        "session_id": 85,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 170,
+        "session_id": 85,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 171,
+        "session_id": 86,
+        "student_id": 1,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 172,
+        "session_id": 86,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 173,
+        "session_id": 87,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 174,
+        "session_id": 87,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 175,
+        "session_id": 88,
+        "student_id": 1,
+        "status": "Absent",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 176,
+        "session_id": 88,
+        "student_id": 2,
+        "status": "Present",
+        "remarks": null,
+        "updated_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "leaves": [],
+    "notifications": [
+      {
+        "id": 1,
+        "user_id": 3,
+        "student_id": 1,
+        "type": "defaulter",
+        "title": "Low Attendance Alert",
+        "message": "Aarav Sharma has attendance below 75%. Please ensure regular attendance.",
+        "is_read": 0,
+        "created_at": "2026-11-09 15:26:13"
+      },
+      {
+        "id": 2,
+        "user_id": 3,
+        "student_id": 1,
+        "type": "absence",
+        "title": "Student Marked Absent",
+        "message": "Aarav Sharma was marked absent today.",
+        "is_read": 0,
+        "created_at": "2026-11-09 15:26:13"
+      }
+    ],
+    "communication_logs": [
+      {
+        "id": 1,
+        "student_id": 1,
+        "recipient": "rajesh.sharma@example.com",
+        "recipient_type": "email",
+        "notification_type": "absence_alert",
+        "subject": "Attendance Notice: Aarav Sharma",
+        "message": "Student Aarav Sharma was marked absent in Period 2 (Physics Theory) on today.",
+        "provider": "nodemailer",
+        "status": "Delivered",
+        "failure_reason": null,
+        "retry_count": 0,
+        "created_at": "2026-11-09 15:26:13",
+        "delivered_at": null,
+        "provider_message_id": null
+      },
+      {
+        "id": 2,
+        "student_id": 1,
+        "recipient": "9876543210",
+        "recipient_type": "sms",
+        "notification_type": "subject_defaulter",
+        "subject": "Low Attendance Alert",
+        "message": "Notice: Aarav Sharma attendance in Physics Theory has dropped to 68.57% (Below 75%).",
+        "provider": "twilio",
+        "status": "Sent",
+        "failure_reason": null,
+        "retry_count": 0,
+        "created_at": "2026-11-09 15:26:13",
+        "delivered_at": null,
+        "provider_message_id": null
+      }
+    ]
+  }
+}
