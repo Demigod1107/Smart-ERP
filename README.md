@@ -4,6 +4,16 @@
 
 ---
 
+### 🌐 Live Production Application
+👉 **[https://smart-erp-ruddy.vercel.app](https://smart-erp-ruddy.vercel.app)**  
+*(Runs 24/7 in the cloud on Vercel with automatic GitHub cloud persistence and offline LocalStorage dual-sync)*
+
+- **GitHub Repository**: [https://github.com/Demigod1107/Smart-ERP](https://github.com/Demigod1107/Smart-ERP)
+- **Live Cloud Database**: [https://github.com/Demigod1107/Smart-ERP/blob/main/data/cloud_db.json](https://github.com/Demigod1107/Smart-ERP/blob/main/data/cloud_db.json)
+- **Direct 1-Click Folder Shortcut**: Double-click [`OPEN_LIVE_WEBSITE.url`](file:///d:/ITWS%20project/OPEN_LIVE_WEBSITE.url) or [`LAUNCH_LIVE_APP.html`](file:///d:/ITWS%20project/LAUNCH_LIVE_APP.html) right in this folder.
+
+---
+
 ## 1. System Architecture & Tech Stack
 
 SMART SCHOOL is built on a high-throughput, normalized relational architecture designed for modern schools and academic institutions.

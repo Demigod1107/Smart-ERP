@@ -1,0 +1,33 @@
+====================================================================
+SMART SCHOOL — SMART ATTENDANCE & ACADEMIC ERP SYSTEM
+====================================================================
+
+🌐 LIVE DEPLOYED APPLICATION URL:
+https://smart-erp-ruddy.vercel.app
+
+Permanent GitHub Branch URL:
+https://smart-erp-git-main-demigod1107.vercel.app
+
+GitHub Source Code Repository:
+https://github.com/Demigod1107/Smart-ERP
+
+Online 24/7 Cloud Database (Viewable live data):
+https://github.com/Demigod1107/Smart-ERP/blob/main/data/cloud_db.json
+
+--------------------------------------------------------------------
+LOGIN CREDENTIALS FOR TEACHER DEMONSTRATION / VIVA:
+--------------------------------------------------------------------
+Role: Administrator (Full Access)
+Username: admin
+Password: admin123
+
+Role: Teacher (Assigned to Class 10-A, 10-B)
+Username: teacher1
+Password: teacher123
+
+Role: Parent (Linked to Aarav Sharma, Roll 10A-01)
+Username: parent1
+Password: parent123
+
+Tip: You can also click the "1-Click Demo Login" buttons on the login screen!
+====================================================================
