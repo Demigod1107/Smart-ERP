@@ -216,3 +216,4 @@ SMART SCHOOL successfully demonstrates how modern, lightweight full-stack web te
 5. World Wide Web Consortium (W3C). *HTML5 Web Storage Specification (LocalStorage)*, 2023.
 6. IETF RFC 7519. *JSON Web Token (JWT) Architecture and Security Best Practices*.
 7. Punjab Technical University (PTU). *Academic Regulations and Minimum Attendance Requirements for B.Tech CSE*.
+
