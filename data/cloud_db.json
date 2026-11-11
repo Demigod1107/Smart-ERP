@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-10T18:09:10.642Z",
+  "exportedAt": "2026-11-11T09:06:10.326Z",
   "tables": {
     "classes": [
       {
@@ -1696,6 +1696,16 @@
         "marked_by": "admin",
         "remarks": "",
         "updated_at": "2026-11-10 18:09:08"
+      },
+      {
+        "id": 33,
+        "student_id": 3,
+        "date": "2026-11-11",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-11 09:06:07"
       }
     ],
     "attendance_sessions": [
@@ -4235,6 +4245,16 @@
         "message": "Attendance for Rohan Verma is now at 48%, below the mandatory 75% minimum threshold.",
         "is_read": 0,
         "created_at": "2026-11-10 18:09:08"
+      },
+      {
+        "id": 5,
+        "user_id": null,
+        "student_id": 3,
+        "type": "defaulter",
+        "title": "75% Threshold Alert: Rohan Verma",
+        "message": "Attendance for Rohan Verma is now at 50%, below the mandatory 75% minimum threshold.",
+        "is_read": 0,
+        "created_at": "2026-11-11 09:06:07"
       }
     ],
     "communication_logs": [
