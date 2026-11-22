@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T12:56:52.036Z",
+  "exportedAt": "2026-11-22T12:56:58.779Z",
   "tables": {
     "classes": [
       {
@@ -1531,11 +1531,11 @@
         "id": 15,
         "student_id": 3,
         "date": "2026-11-22",
-        "status": "Present",
+        "status": "Absent",
         "period": 0,
-        "marked_by": "User",
-        "remarks": null,
-        "updated_at": "2026-11-22 12:56:22"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 12:56:52"
       },
       {
         "id": 16,
@@ -1581,11 +1581,11 @@
         "id": 20,
         "student_id": 4,
         "date": "2026-11-22",
-        "status": "Present",
+        "status": "Absent",
         "period": 0,
-        "marked_by": "User",
-        "remarks": null,
-        "updated_at": "2026-11-22 12:56:22"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 12:56:53"
       },
       {
         "id": 21,
@@ -1631,11 +1631,11 @@
         "id": 25,
         "student_id": 5,
         "date": "2026-11-22",
-        "status": "Present",
+        "status": "Absent",
         "period": 0,
-        "marked_by": "User",
-        "remarks": null,
-        "updated_at": "2026-11-22 12:56:22"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 12:56:54"
       },
       {
         "id": 26,
@@ -1681,11 +1681,11 @@
         "id": 30,
         "student_id": 6,
         "date": "2026-11-22",
-        "status": "Present",
+        "status": "Absent",
         "period": 0,
-        "marked_by": "User",
-        "remarks": null,
-        "updated_at": "2026-11-22 12:56:22"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 12:56:55"
       }
     ],
     "attendance_sessions": [
@@ -4207,6 +4207,66 @@
         "message": "Priya Patel (10A-02) was marked Absent on 2026-11-22.",
         "is_read": 0,
         "created_at": "2026-11-22 12:56:49"
+      },
+      {
+        "id": 6,
+        "user_id": null,
+        "student_id": 3,
+        "type": "absence",
+        "title": "Absence Alert: Rohan Verma",
+        "message": "Rohan Verma (10B-01) was marked Absent on 2026-11-22.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:52"
+      },
+      {
+        "id": 7,
+        "user_id": null,
+        "student_id": 3,
+        "type": "defaulter",
+        "title": "75% Threshold Alert: Rohan Verma",
+        "message": "Attendance for Rohan Verma is now at 46%, below the mandatory 75% minimum threshold.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:52"
+      },
+      {
+        "id": 8,
+        "user_id": null,
+        "student_id": 4,
+        "type": "absence",
+        "title": "Absence Alert: Sneha Nair",
+        "message": "Sneha Nair (10B-02) was marked Absent on 2026-11-22.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:53"
+      },
+      {
+        "id": 9,
+        "user_id": null,
+        "student_id": 5,
+        "type": "absence",
+        "title": "Absence Alert: Vikram Singh",
+        "message": "Vikram Singh (12A-01) was marked Absent on 2026-11-22.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:54"
+      },
+      {
+        "id": 10,
+        "user_id": null,
+        "student_id": 5,
+        "type": "defaulter",
+        "title": "75% Threshold Alert: Vikram Singh",
+        "message": "Attendance for Vikram Singh is now at 62%, below the mandatory 75% minimum threshold.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:54"
+      },
+      {
+        "id": 11,
+        "user_id": null,
+        "student_id": 6,
+        "type": "absence",
+        "title": "Absence Alert: Ananya Iyer",
+        "message": "Ananya Iyer (12A-02) was marked Absent on 2026-11-22.",
+        "is_read": 0,
+        "created_at": "2026-11-22 12:56:55"
       }
     ],
     "communication_logs": [
