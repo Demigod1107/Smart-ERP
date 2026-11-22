@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T16:36:38.246Z",
+  "exportedAt": "2026-11-22T16:36:46.112Z",
   "tables": {
     "classes": [
       {
@@ -214,25 +214,6 @@
         "created_at": "2026-11-22 12:14:39"
       },
       {
-        "id": 30,
-        "roll": "10A-07",
-        "admission_no": "ADM-2024-007",
-        "name": "Arhaan Chopra",
-        "dob": "2010-05-15",
-        "gender": "Male",
-        "class_sec": "10-A",
-        "parent_name": "Guardian",
-        "parent_phone": "9876543216",
-        "parent_email": "arhaan.guardian@example.com",
-        "address": "PCTE Ludhiana",
-        "photo_url": null,
-        "admission_date": "2024-04-01",
-        "status": "Active",
-        "base_present": 19,
-        "base_total": 21,
-        "created_at": "2026-11-22 12:57:37"
-      },
-      {
         "id": 32,
         "roll": "10A-09",
         "admission_no": "ADM-700948",
@@ -405,42 +386,6 @@
         "subject_id": 6,
         "student_id": 2,
         "enrolled_date": "2026-04-01"
-      },
-      {
-        "id": 37,
-        "subject_id": 1,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
-      },
-      {
-        "id": 38,
-        "subject_id": 2,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
-      },
-      {
-        "id": 39,
-        "subject_id": 3,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
-      },
-      {
-        "id": 40,
-        "subject_id": 4,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
-      },
-      {
-        "id": 41,
-        "subject_id": 5,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
-      },
-      {
-        "id": 42,
-        "subject_id": 6,
-        "student_id": 30,
-        "enrolled_date": "2024-04-01"
       }
     ],
     "periods": [
