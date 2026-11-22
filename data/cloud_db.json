@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T16:24:48.678Z",
+  "exportedAt": "2026-11-22T16:35:52.390Z",
   "tables": {
     "classes": [
       {
@@ -1723,11 +1723,11 @@
         "id": 162,
         "student_id": 4,
         "date": "2026-11-22",
-        "status": "Present",
+        "status": "Late",
         "period": 0,
         "marked_by": "admin",
         "remarks": "",
-        "updated_at": "2026-11-22 13:07:44"
+        "updated_at": "2026-11-22 16:25:19"
       },
       {
         "id": 163,
