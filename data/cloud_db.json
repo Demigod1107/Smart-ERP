@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T11:05:35.769Z",
+  "exportedAt": "2026-11-22T11:05:41.464Z",
   "tables": {
     "classes": [
       {
@@ -1433,11 +1433,11 @@
         "id": 3,
         "student_id": 1,
         "date": "2026-11-20",
-        "status": "Late",
+        "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
-        "remarks": null,
-        "updated_at": "2026-11-22 09:56:09"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:05:37"
       },
       {
         "id": 4,
