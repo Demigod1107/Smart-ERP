@@ -603,6 +603,30 @@ function seedDefaultData() {
     insertLog.run(1, 'rajesh.sharma@example.com', 'email', 'absence_alert', 'Attendance Notice: Aarav Sharma', 'Student Aarav Sharma was marked absent in Period 2 (Physics Theory) on today.', 'nodemailer', 'Delivered');
     insertLog.run(1, '9876543210', 'sms', 'subject_defaulter', 'Low Attendance Alert', 'Notice: Aarav Sharma attendance in Physics Theory has dropped to 68.57% (Below 75%).', 'twilio', 'Sent');
   }
+
+  // Hydrate from bundled persistent cloud snapshot if present
+  try {
+    const cloudSnapshotPath = path.join(__dirname, '..', 'data', 'cloud_db.json');
+    if (fs.existsSync(cloudSnapshotPath)) {
+      const raw = fs.readFileSync(cloudSnapshotPath, 'utf8');
+      const data = JSON.parse(raw);
+      if (data && data.tables) {
+        for (const [tname, rows] of Object.entries(data.tables)) {
+          if (!Array.isArray(rows) || rows.length === 0) continue;
+          const cols = Object.keys(rows[0]);
+          const placeholders = cols.map(() => '?').join(', ');
+          const sql = `INSERT OR REPLACE INTO ${tname} (${cols.join(', ')}) VALUES (${placeholders})`;
+          const stmt = db.prepare(sql);
+          for (const row of rows) {
+            const values = cols.map(c => row[c] !== undefined ? row[c] : null);
+            try { stmt.run(...values); } catch (e) {}
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Initial cloud snapshot hydration note:', err.message);
+  }
 }
 
 // Initialize tables and seed data
