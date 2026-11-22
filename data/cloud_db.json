@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T11:05:47.332Z",
+  "exportedAt": "2026-11-22T11:06:14.382Z",
   "tables": {
     "classes": [
       {
@@ -1708,6 +1708,36 @@
         "marked_by": "User",
         "remarks": null,
         "updated_at": "2026-11-22 09:56:35"
+      },
+      {
+        "id": 32,
+        "student_id": 4,
+        "date": "2026-11-15",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:06:10"
+      },
+      {
+        "id": 33,
+        "student_id": 5,
+        "date": "2026-11-15",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:06:10"
+      },
+      {
+        "id": 34,
+        "student_id": 6,
+        "date": "2026-11-15",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:06:10"
       }
     ],
     "attendance_sessions": [
@@ -4229,6 +4259,16 @@
         "message": "Attendance for Vikram Singh is now at 66%, below the mandatory 75% minimum threshold.",
         "is_read": 0,
         "created_at": "2026-11-22 11:05:32"
+      },
+      {
+        "id": 6,
+        "user_id": null,
+        "student_id": 5,
+        "type": "defaulter",
+        "title": "75% Threshold Alert: Vikram Singh",
+        "message": "Attendance for Vikram Singh is now at 67%, below the mandatory 75% minimum threshold.",
+        "is_read": 0,
+        "created_at": "2026-11-22 11:06:10"
       }
     ],
     "communication_logs": [
