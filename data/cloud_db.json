@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T09:55:44.055Z",
+  "exportedAt": "2026-11-22T09:56:51.101Z",
   "tables": {
     "classes": [
       {
@@ -29,38 +29,38 @@
       {
         "id": 1,
         "username": "admin",
-        "password_hash": "$2b$10$puKbkHCNwNKjF82X3vRT9OnDK8XYpEqV8gPdmtaXaFAURzxmSKte6",
+        "password_hash": "$2b$10$4fyIKuOVaawK5ua7uZ54EOhDHYv2Tfndwdmn9I3r3IiotwZ5SPB5O",
         "role": "admin",
         "name": "System Administrator",
         "email": "admin@smartschool.edu",
         "phone": "9899999999",
         "linked_student_id": null,
         "teacher_id": null,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
         "username": "teacher",
-        "password_hash": "$2b$10$pmMLiJ7ZZlM2KqWaghppDuvxzgtpT0rKM0De8SAKpu4ffh3GZuqb2",
+        "password_hash": "$2b$10$FhIAnhbycOmHRVVQsMtSq.fye1N9/XA7iCgDdMK5j4kG6Igc04VTK",
         "role": "teacher",
         "name": "Sunita Rao",
         "email": "sunita.rao@smartschool.edu",
         "phone": "9811122233",
         "linked_student_id": null,
         "teacher_id": "TCH-101",
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
         "username": "parent",
-        "password_hash": "$2b$10$0sB2QKjWsrRCT0.1k2ZU7ugenO7sj9wZsEz2aF3qss7wl2KrRckV2",
+        "password_hash": "$2b$10$u0Q0sckdq1l3gj0nBUeL9eQWsf7njKsq5AA7NGsTZ.jhzIFFaCBxW",
         "role": "parent",
         "name": "Rajesh Sharma",
         "email": "rajesh.sharma@example.com",
         "phone": "9876543210",
         "linked_student_id": 1,
         "teacher_id": null,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "teachers": [
@@ -73,7 +73,7 @@
         "subject": "Mathematics",
         "assigned_class": "10-A",
         "status": "Active",
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
@@ -84,7 +84,7 @@
         "subject": "Science",
         "assigned_class": "10-B",
         "status": "Active",
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
@@ -95,7 +95,7 @@
         "subject": "English",
         "assigned_class": "12-A",
         "status": "Active",
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "students": [
@@ -116,7 +116,7 @@
         "status": "Active",
         "base_present": 14,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
@@ -135,7 +135,7 @@
         "status": "Active",
         "base_present": 18,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
@@ -154,7 +154,7 @@
         "status": "Active",
         "base_present": 11,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 4,
@@ -173,7 +173,7 @@
         "status": "Active",
         "base_present": 19,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 5,
@@ -192,7 +192,7 @@
         "status": "Active",
         "base_present": 13,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 6,
@@ -211,7 +211,7 @@
         "status": "Active",
         "base_present": 17,
         "base_total": 20,
-        "created_at": "2026-11-09 15:30:59"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "subjects": [
@@ -223,7 +223,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-101",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
@@ -233,7 +233,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
@@ -243,7 +243,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 80,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 4,
@@ -253,7 +253,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 5,
@@ -263,7 +263,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-103",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 6,
@@ -273,7 +273,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-101",
         "min_attendance_pct": 80,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "subject_enrollments": [
@@ -1390,684 +1390,488 @@
       {
         "id": 1,
         "student_id": 1,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
         "student_id": 1,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
         "student_id": 1,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Late",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 4,
         "student_id": 1,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Absent",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 5,
         "student_id": 1,
-        "date": "2026-11-09",
+        "date": "2026-11-22",
         "status": "Present",
         "period": 0,
         "marked_by": "User",
-        "remarks": "Live Vercel 24/7 Cloud Test",
-        "updated_at": "2026-11-09 15:32:06"
+        "remarks": null,
+        "updated_at": "2026-11-22 09:56:35"
       },
       {
         "id": 6,
         "student_id": 2,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 7,
         "student_id": 2,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 8,
         "student_id": 2,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 9,
         "student_id": 2,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 10,
         "student_id": 2,
-        "date": "2026-11-09",
+        "date": "2026-11-22",
         "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
+        "marked_by": "User",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:35"
       },
       {
         "id": 11,
         "student_id": 3,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Absent",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 12,
         "student_id": 3,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Absent",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 13,
         "student_id": 3,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Late",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 14,
         "student_id": 3,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Absent",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 15,
         "student_id": 3,
-        "date": "2026-11-09",
-        "status": "Absent",
+        "date": "2026-11-22",
+        "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
+        "marked_by": "User",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:35"
       },
       {
         "id": 16,
         "student_id": 4,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 17,
         "student_id": 4,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 18,
         "student_id": 4,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 19,
         "student_id": 4,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 20,
         "student_id": 4,
-        "date": "2026-11-09",
+        "date": "2026-11-22",
         "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
+        "marked_by": "User",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:35"
       },
       {
         "id": 21,
         "student_id": 5,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 22,
         "student_id": 5,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Late",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 23,
         "student_id": 5,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Absent",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 24,
         "student_id": 5,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 25,
         "student_id": 5,
-        "date": "2026-11-09",
-        "status": "Late",
+        "date": "2026-11-22",
+        "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
+        "marked_by": "User",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:35"
       },
       {
         "id": 26,
         "student_id": 6,
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 27,
         "student_id": 6,
-        "date": "2026-11-06",
+        "date": "2026-11-19",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 28,
         "student_id": 6,
-        "date": "2026-11-07",
+        "date": "2026-11-20",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 29,
         "student_id": 6,
-        "date": "2026-11-08",
+        "date": "2026-11-21",
         "status": "Present",
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 30,
         "student_id": 6,
-        "date": "2026-11-09",
+        "date": "2026-11-22",
         "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
+        "marked_by": "User",
         "remarks": null,
-        "updated_at": "2026-11-09 15:30:59"
-      },
-      {
-        "id": 32,
-        "student_id": 3,
-        "date": "2026-11-10",
-        "status": "Present",
-        "period": 0,
-        "marked_by": "admin",
-        "remarks": "",
-        "updated_at": "2026-11-10 18:09:08"
-      },
-      {
-        "id": 33,
-        "student_id": 3,
-        "date": "2026-11-11",
-        "status": "Present",
-        "period": 0,
-        "marked_by": "admin",
-        "remarks": "",
-        "updated_at": "2026-11-11 09:06:07"
-      },
-      {
-        "id": 34,
-        "student_id": 5,
-        "date": "2026-11-20",
-        "status": "Present",
-        "period": 0,
-        "marked_by": "admin",
-        "remarks": "",
-        "updated_at": "2026-11-20 15:59:07"
-      },
-      {
-        "id": 35,
-        "student_id": 6,
-        "date": "2026-11-20",
-        "status": "Present",
-        "period": 0,
-        "marked_by": "admin",
-        "remarks": "",
-        "updated_at": "2026-11-20 15:59:08"
+        "updated_at": "2026-11-22 09:56:35"
       }
     ],
     "attendance_sessions": [
       {
         "id": 1,
         "academic_year": "2026-2027",
-        "date": "2026-10-05",
+        "date": "2026-10-18",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
         "academic_year": "2026-2027",
-        "date": "2026-10-06",
+        "date": "2026-10-19",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
         "academic_year": "2026-2027",
-        "date": "2026-10-07",
+        "date": "2026-10-20",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 4,
         "academic_year": "2026-2027",
-        "date": "2026-10-08",
+        "date": "2026-10-21",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 5,
         "academic_year": "2026-2027",
-        "date": "2026-10-09",
+        "date": "2026-10-22",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 6,
         "academic_year": "2026-2027",
-        "date": "2026-10-10",
+        "date": "2026-10-23",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 7,
         "academic_year": "2026-2027",
-        "date": "2026-10-11",
+        "date": "2026-10-24",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 8,
         "academic_year": "2026-2027",
-        "date": "2026-10-12",
+        "date": "2026-10-25",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 9,
         "academic_year": "2026-2027",
-        "date": "2026-10-13",
+        "date": "2026-10-26",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 10,
         "academic_year": "2026-2027",
-        "date": "2026-10-14",
+        "date": "2026-10-27",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 11,
         "academic_year": "2026-2027",
-        "date": "2026-10-15",
+        "date": "2026-10-28",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 12,
         "academic_year": "2026-2027",
-        "date": "2026-10-16",
+        "date": "2026-10-29",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 13,
         "academic_year": "2026-2027",
-        "date": "2026-10-17",
+        "date": "2026-10-30",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 14,
         "academic_year": "2026-2027",
-        "date": "2026-10-18",
+        "date": "2026-10-31",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 15,
         "academic_year": "2026-2027",
-        "date": "2026-10-19",
+        "date": "2026-11-01",
         "class_sec": "10-A",
         "subject_id": 1,
         "period_number": 1,
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 16,
         "academic_year": "2026-2027",
-        "date": "2026-10-20",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 17,
-        "academic_year": "2026-2027",
-        "date": "2026-10-21",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 18,
-        "academic_year": "2026-2027",
-        "date": "2026-10-22",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 19,
-        "academic_year": "2026-2027",
-        "date": "2026-10-23",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 20,
-        "academic_year": "2026-2027",
-        "date": "2026-10-24",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 21,
-        "academic_year": "2026-2027",
-        "date": "2026-10-25",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 22,
-        "academic_year": "2026-2027",
-        "date": "2026-10-26",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 23,
-        "academic_year": "2026-2027",
-        "date": "2026-10-27",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 24,
-        "academic_year": "2026-2027",
-        "date": "2026-10-28",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 25,
-        "academic_year": "2026-2027",
-        "date": "2026-10-29",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 26,
-        "academic_year": "2026-2027",
-        "date": "2026-10-30",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 27,
-        "academic_year": "2026-2027",
-        "date": "2026-10-31",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 28,
-        "academic_year": "2026-2027",
-        "date": "2026-11-01",
-        "class_sec": "10-A",
-        "subject_id": 1,
-        "period_number": 1,
-        "teacher_code": "TCH-101",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 29,
-        "academic_year": "2026-2027",
         "date": "2026-11-02",
         "class_sec": "10-A",
         "subject_id": 1,
@@ -2075,10 +1879,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 30,
+        "id": 17,
         "academic_year": "2026-2027",
         "date": "2026-11-03",
         "class_sec": "10-A",
@@ -2087,10 +1891,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 31,
+        "id": 18,
         "academic_year": "2026-2027",
         "date": "2026-11-04",
         "class_sec": "10-A",
@@ -2099,10 +1903,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 32,
+        "id": 19,
         "academic_year": "2026-2027",
         "date": "2026-11-05",
         "class_sec": "10-A",
@@ -2111,10 +1915,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 33,
+        "id": 20,
         "academic_year": "2026-2027",
         "date": "2026-11-06",
         "class_sec": "10-A",
@@ -2123,10 +1927,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 34,
+        "id": 21,
         "academic_year": "2026-2027",
         "date": "2026-11-07",
         "class_sec": "10-A",
@@ -2135,10 +1939,10 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 35,
+        "id": 22,
         "academic_year": "2026-2027",
         "date": "2026-11-08",
         "class_sec": "10-A",
@@ -2147,166 +1951,166 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 23,
+        "academic_year": "2026-2027",
+        "date": "2026-11-09",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 24,
+        "academic_year": "2026-2027",
+        "date": "2026-11-10",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 25,
+        "academic_year": "2026-2027",
+        "date": "2026-11-11",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 26,
+        "academic_year": "2026-2027",
+        "date": "2026-11-12",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 27,
+        "academic_year": "2026-2027",
+        "date": "2026-11-13",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 28,
+        "academic_year": "2026-2027",
+        "date": "2026-11-14",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 29,
+        "academic_year": "2026-2027",
+        "date": "2026-11-15",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 30,
+        "academic_year": "2026-2027",
+        "date": "2026-11-16",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 31,
+        "academic_year": "2026-2027",
+        "date": "2026-11-17",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 32,
+        "academic_year": "2026-2027",
+        "date": "2026-11-18",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 33,
+        "academic_year": "2026-2027",
+        "date": "2026-11-19",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 34,
+        "academic_year": "2026-2027",
+        "date": "2026-11-20",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 35,
+        "academic_year": "2026-2027",
+        "date": "2026-11-21",
+        "class_sec": "10-A",
+        "subject_id": 1,
+        "period_number": 1,
+        "teacher_code": "TCH-101",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 36,
-        "academic_year": "2026-2027",
-        "date": "2026-10-05",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 37,
-        "academic_year": "2026-2027",
-        "date": "2026-10-06",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 38,
-        "academic_year": "2026-2027",
-        "date": "2026-10-07",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 39,
-        "academic_year": "2026-2027",
-        "date": "2026-10-08",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 40,
-        "academic_year": "2026-2027",
-        "date": "2026-10-09",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 41,
-        "academic_year": "2026-2027",
-        "date": "2026-10-10",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 42,
-        "academic_year": "2026-2027",
-        "date": "2026-10-11",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 43,
-        "academic_year": "2026-2027",
-        "date": "2026-10-12",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 44,
-        "academic_year": "2026-2027",
-        "date": "2026-10-13",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 45,
-        "academic_year": "2026-2027",
-        "date": "2026-10-14",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 46,
-        "academic_year": "2026-2027",
-        "date": "2026-10-15",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 47,
-        "academic_year": "2026-2027",
-        "date": "2026-10-16",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 48,
-        "academic_year": "2026-2027",
-        "date": "2026-10-17",
-        "class_sec": "10-A",
-        "subject_id": 2,
-        "period_number": 2,
-        "teacher_code": "TCH-102",
-        "status": "Completed",
-        "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 49,
         "academic_year": "2026-2027",
         "date": "2026-10-18",
         "class_sec": "10-A",
@@ -2315,10 +2119,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 50,
+        "id": 37,
         "academic_year": "2026-2027",
         "date": "2026-10-19",
         "class_sec": "10-A",
@@ -2327,10 +2131,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 51,
+        "id": 38,
         "academic_year": "2026-2027",
         "date": "2026-10-20",
         "class_sec": "10-A",
@@ -2339,10 +2143,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 52,
+        "id": 39,
         "academic_year": "2026-2027",
         "date": "2026-10-21",
         "class_sec": "10-A",
@@ -2351,10 +2155,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 53,
+        "id": 40,
         "academic_year": "2026-2027",
         "date": "2026-10-22",
         "class_sec": "10-A",
@@ -2363,10 +2167,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 54,
+        "id": 41,
         "academic_year": "2026-2027",
         "date": "2026-10-23",
         "class_sec": "10-A",
@@ -2375,10 +2179,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 55,
+        "id": 42,
         "academic_year": "2026-2027",
         "date": "2026-10-24",
         "class_sec": "10-A",
@@ -2387,10 +2191,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 56,
+        "id": 43,
         "academic_year": "2026-2027",
         "date": "2026-10-25",
         "class_sec": "10-A",
@@ -2399,10 +2203,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 57,
+        "id": 44,
         "academic_year": "2026-2027",
         "date": "2026-10-26",
         "class_sec": "10-A",
@@ -2411,10 +2215,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 58,
+        "id": 45,
         "academic_year": "2026-2027",
         "date": "2026-10-27",
         "class_sec": "10-A",
@@ -2423,10 +2227,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 59,
+        "id": 46,
         "academic_year": "2026-2027",
         "date": "2026-10-28",
         "class_sec": "10-A",
@@ -2435,10 +2239,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 60,
+        "id": 47,
         "academic_year": "2026-2027",
         "date": "2026-10-29",
         "class_sec": "10-A",
@@ -2447,10 +2251,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 61,
+        "id": 48,
         "academic_year": "2026-2027",
         "date": "2026-10-30",
         "class_sec": "10-A",
@@ -2459,10 +2263,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 62,
+        "id": 49,
         "academic_year": "2026-2027",
         "date": "2026-10-31",
         "class_sec": "10-A",
@@ -2471,10 +2275,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 63,
+        "id": 50,
         "academic_year": "2026-2027",
         "date": "2026-11-01",
         "class_sec": "10-A",
@@ -2483,10 +2287,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 64,
+        "id": 51,
         "academic_year": "2026-2027",
         "date": "2026-11-02",
         "class_sec": "10-A",
@@ -2495,10 +2299,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 65,
+        "id": 52,
         "academic_year": "2026-2027",
         "date": "2026-11-03",
         "class_sec": "10-A",
@@ -2507,10 +2311,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 66,
+        "id": 53,
         "academic_year": "2026-2027",
         "date": "2026-11-04",
         "class_sec": "10-A",
@@ -2519,10 +2323,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 67,
+        "id": 54,
         "academic_year": "2026-2027",
         "date": "2026-11-05",
         "class_sec": "10-A",
@@ -2531,10 +2335,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 68,
+        "id": 55,
         "academic_year": "2026-2027",
         "date": "2026-11-06",
         "class_sec": "10-A",
@@ -2543,10 +2347,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 69,
+        "id": 56,
         "academic_year": "2026-2027",
         "date": "2026-11-07",
         "class_sec": "10-A",
@@ -2555,10 +2359,10 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
-        "id": 70,
+        "id": 57,
         "academic_year": "2026-2027",
         "date": "2026-11-08",
         "class_sec": "10-A",
@@ -2567,235 +2371,379 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 58,
+        "academic_year": "2026-2027",
+        "date": "2026-11-09",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 59,
+        "academic_year": "2026-2027",
+        "date": "2026-11-10",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 60,
+        "academic_year": "2026-2027",
+        "date": "2026-11-11",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 61,
+        "academic_year": "2026-2027",
+        "date": "2026-11-12",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 62,
+        "academic_year": "2026-2027",
+        "date": "2026-11-13",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 63,
+        "academic_year": "2026-2027",
+        "date": "2026-11-14",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 64,
+        "academic_year": "2026-2027",
+        "date": "2026-11-15",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 65,
+        "academic_year": "2026-2027",
+        "date": "2026-11-16",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 66,
+        "academic_year": "2026-2027",
+        "date": "2026-11-17",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 67,
+        "academic_year": "2026-2027",
+        "date": "2026-11-18",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 68,
+        "academic_year": "2026-2027",
+        "date": "2026-11-19",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 69,
+        "academic_year": "2026-2027",
+        "date": "2026-11-20",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
+      },
+      {
+        "id": 70,
+        "academic_year": "2026-2027",
+        "date": "2026-11-21",
+        "class_sec": "10-A",
+        "subject_id": 2,
+        "period_number": 2,
+        "teacher_code": "TCH-102",
+        "status": "Completed",
+        "conducted_by": "Teacher",
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 71,
         "academic_year": "2026-2027",
-        "date": "2026-10-02",
+        "date": "2026-10-15",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 72,
         "academic_year": "2026-2027",
-        "date": "2026-10-04",
+        "date": "2026-10-17",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 73,
         "academic_year": "2026-2027",
-        "date": "2026-10-06",
+        "date": "2026-10-19",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 74,
         "academic_year": "2026-2027",
-        "date": "2026-10-08",
+        "date": "2026-10-21",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 75,
         "academic_year": "2026-2027",
-        "date": "2026-10-10",
+        "date": "2026-10-23",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 76,
         "academic_year": "2026-2027",
-        "date": "2026-10-12",
+        "date": "2026-10-25",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 77,
         "academic_year": "2026-2027",
-        "date": "2026-10-14",
+        "date": "2026-10-27",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 78,
         "academic_year": "2026-2027",
-        "date": "2026-10-16",
+        "date": "2026-10-29",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 79,
         "academic_year": "2026-2027",
-        "date": "2026-10-18",
+        "date": "2026-10-31",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 80,
         "academic_year": "2026-2027",
-        "date": "2026-10-20",
+        "date": "2026-11-02",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 81,
         "academic_year": "2026-2027",
-        "date": "2026-10-22",
+        "date": "2026-11-04",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 82,
         "academic_year": "2026-2027",
-        "date": "2026-10-24",
+        "date": "2026-11-06",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 83,
         "academic_year": "2026-2027",
-        "date": "2026-10-26",
+        "date": "2026-11-08",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 84,
         "academic_year": "2026-2027",
-        "date": "2026-10-28",
+        "date": "2026-11-10",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 85,
         "academic_year": "2026-2027",
-        "date": "2026-10-30",
+        "date": "2026-11-12",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 86,
         "academic_year": "2026-2027",
-        "date": "2026-11-01",
+        "date": "2026-11-14",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 87,
         "academic_year": "2026-2027",
-        "date": "2026-11-03",
+        "date": "2026-11-16",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 88,
         "academic_year": "2026-2027",
-        "date": "2026-11-05",
+        "date": "2026-11-18",
         "class_sec": "10-A",
         "subject_id": 3,
         "period_number": 5,
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 89,
-        "academic_year": "2026-2027",
-        "date": "2026-11-09",
-        "class_sec": "10-A",
-        "subject_id": 4,
-        "period_number": 1,
-        "teacher_code": null,
-        "status": "Completed",
-        "conducted_by": "System Administrator",
-        "created_at": "2026-11-09 16:36:39"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "period_attendance": [
@@ -2805,7 +2753,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
@@ -2813,7 +2761,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 3,
@@ -2821,7 +2769,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 4,
@@ -2829,7 +2777,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 5,
@@ -2837,7 +2785,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 6,
@@ -2845,7 +2793,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 7,
@@ -2853,7 +2801,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 8,
@@ -2861,7 +2809,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 9,
@@ -2869,7 +2817,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 10,
@@ -2877,7 +2825,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 11,
@@ -2885,7 +2833,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 12,
@@ -2893,7 +2841,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 13,
@@ -2901,7 +2849,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 14,
@@ -2909,7 +2857,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 15,
@@ -2917,7 +2865,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 16,
@@ -2925,7 +2873,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 17,
@@ -2933,7 +2881,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 18,
@@ -2941,7 +2889,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 19,
@@ -2949,7 +2897,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 20,
@@ -2957,7 +2905,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 21,
@@ -2965,7 +2913,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 22,
@@ -2973,7 +2921,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 23,
@@ -2981,7 +2929,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 24,
@@ -2989,7 +2937,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 25,
@@ -2997,7 +2945,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 26,
@@ -3005,7 +2953,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 27,
@@ -3013,7 +2961,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 28,
@@ -3021,7 +2969,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 29,
@@ -3029,7 +2977,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 30,
@@ -3037,7 +2985,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 31,
@@ -3045,7 +2993,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 32,
@@ -3053,7 +3001,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 33,
@@ -3061,7 +3009,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 34,
@@ -3069,7 +3017,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 35,
@@ -3077,7 +3025,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 36,
@@ -3085,7 +3033,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 37,
@@ -3093,7 +3041,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 38,
@@ -3101,7 +3049,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 39,
@@ -3109,7 +3057,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 40,
@@ -3117,7 +3065,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 41,
@@ -3125,7 +3073,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 42,
@@ -3133,7 +3081,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 43,
@@ -3141,7 +3089,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 44,
@@ -3149,7 +3097,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 45,
@@ -3157,7 +3105,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 46,
@@ -3165,7 +3113,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 47,
@@ -3173,7 +3121,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 48,
@@ -3181,7 +3129,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 49,
@@ -3189,7 +3137,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 50,
@@ -3197,7 +3145,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 51,
@@ -3205,7 +3153,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 52,
@@ -3213,7 +3161,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 53,
@@ -3221,7 +3169,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 54,
@@ -3229,7 +3177,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 55,
@@ -3237,7 +3185,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 56,
@@ -3245,7 +3193,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 57,
@@ -3253,7 +3201,7 @@
         "student_id": 1,
         "status": "Late",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 58,
@@ -3261,7 +3209,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 59,
@@ -3269,7 +3217,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 60,
@@ -3277,7 +3225,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 61,
@@ -3285,7 +3233,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 62,
@@ -3293,7 +3241,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 63,
@@ -3301,7 +3249,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 64,
@@ -3309,7 +3257,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 65,
@@ -3317,7 +3265,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 66,
@@ -3325,7 +3273,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 67,
@@ -3333,7 +3281,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 68,
@@ -3341,7 +3289,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 69,
@@ -3349,7 +3297,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 70,
@@ -3357,7 +3305,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 71,
@@ -3365,7 +3313,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 72,
@@ -3373,7 +3321,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 73,
@@ -3381,7 +3329,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 74,
@@ -3389,7 +3337,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 75,
@@ -3397,7 +3345,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 76,
@@ -3405,7 +3353,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 77,
@@ -3413,7 +3361,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 78,
@@ -3421,7 +3369,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 79,
@@ -3429,7 +3377,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 80,
@@ -3437,7 +3385,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 81,
@@ -3445,7 +3393,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 82,
@@ -3453,7 +3401,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 83,
@@ -3461,7 +3409,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 84,
@@ -3469,7 +3417,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 85,
@@ -3477,7 +3425,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 86,
@@ -3485,7 +3433,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 87,
@@ -3493,7 +3441,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 88,
@@ -3501,7 +3449,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 89,
@@ -3509,7 +3457,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 90,
@@ -3517,7 +3465,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 91,
@@ -3525,7 +3473,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 92,
@@ -3533,7 +3481,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 93,
@@ -3541,7 +3489,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 94,
@@ -3549,7 +3497,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 95,
@@ -3557,7 +3505,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 96,
@@ -3565,7 +3513,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 97,
@@ -3573,7 +3521,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 98,
@@ -3581,7 +3529,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 99,
@@ -3589,7 +3537,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 100,
@@ -3597,7 +3545,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 101,
@@ -3605,7 +3553,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 102,
@@ -3613,7 +3561,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 103,
@@ -3621,7 +3569,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 104,
@@ -3629,7 +3577,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 105,
@@ -3637,7 +3585,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 106,
@@ -3645,7 +3593,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 107,
@@ -3653,7 +3601,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 108,
@@ -3661,7 +3609,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 109,
@@ -3669,7 +3617,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 110,
@@ -3677,7 +3625,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 111,
@@ -3685,7 +3633,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 112,
@@ -3693,7 +3641,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 113,
@@ -3701,7 +3649,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 114,
@@ -3709,7 +3657,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 115,
@@ -3717,7 +3665,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 116,
@@ -3725,7 +3673,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 117,
@@ -3733,7 +3681,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 118,
@@ -3741,7 +3689,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 119,
@@ -3749,7 +3697,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 120,
@@ -3757,7 +3705,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 121,
@@ -3765,7 +3713,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 122,
@@ -3773,7 +3721,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 123,
@@ -3781,7 +3729,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 124,
@@ -3789,7 +3737,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 125,
@@ -3797,7 +3745,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 126,
@@ -3805,7 +3753,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 127,
@@ -3813,7 +3761,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 128,
@@ -3821,7 +3769,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 129,
@@ -3829,7 +3777,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 130,
@@ -3837,7 +3785,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 131,
@@ -3845,7 +3793,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 132,
@@ -3853,7 +3801,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 133,
@@ -3861,7 +3809,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 134,
@@ -3869,7 +3817,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 135,
@@ -3877,7 +3825,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 136,
@@ -3885,7 +3833,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 137,
@@ -3893,7 +3841,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 138,
@@ -3901,7 +3849,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 139,
@@ -3909,7 +3857,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 140,
@@ -3917,7 +3865,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 141,
@@ -3925,7 +3873,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 142,
@@ -3933,7 +3881,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 143,
@@ -3941,7 +3889,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 144,
@@ -3949,7 +3897,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 145,
@@ -3957,7 +3905,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 146,
@@ -3965,7 +3913,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 147,
@@ -3973,7 +3921,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 148,
@@ -3981,7 +3929,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 149,
@@ -3989,7 +3937,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 150,
@@ -3997,7 +3945,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 151,
@@ -4005,7 +3953,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 152,
@@ -4013,7 +3961,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 153,
@@ -4021,7 +3969,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 154,
@@ -4029,7 +3977,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 155,
@@ -4037,7 +3985,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 156,
@@ -4045,7 +3993,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 157,
@@ -4053,7 +4001,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 158,
@@ -4061,7 +4009,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 159,
@@ -4069,7 +4017,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 160,
@@ -4077,7 +4025,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 161,
@@ -4085,7 +4033,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 162,
@@ -4093,7 +4041,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 163,
@@ -4101,7 +4049,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 164,
@@ -4109,7 +4057,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 165,
@@ -4117,7 +4065,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 166,
@@ -4125,7 +4073,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 167,
@@ -4133,7 +4081,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 168,
@@ -4141,7 +4089,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 169,
@@ -4149,7 +4097,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 170,
@@ -4157,7 +4105,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 171,
@@ -4165,7 +4113,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 172,
@@ -4173,7 +4121,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 173,
@@ -4181,7 +4129,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 174,
@@ -4189,7 +4137,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 175,
@@ -4197,7 +4145,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
+        "updated_at": "2026-11-22 09:56:09"
       },
       {
         "id": 176,
@@ -4205,23 +4153,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 177,
-        "session_id": 89,
-        "student_id": 1,
-        "status": "Present",
-        "remarks": null,
-        "updated_at": "2026-11-09 16:37:34"
-      },
-      {
-        "id": 178,
-        "session_id": 89,
-        "student_id": 2,
-        "status": "Present",
-        "remarks": null,
-        "updated_at": "2026-11-09 16:37:34"
+        "updated_at": "2026-11-22 09:56:09"
       }
     ],
     "leaves": [],
@@ -4234,7 +4166,7 @@
         "title": "Low Attendance Alert",
         "message": "Aarav Sharma has attendance below 75%. Please ensure regular attendance.",
         "is_read": 0,
-        "created_at": "2026-11-09 15:31:00"
+        "created_at": "2026-11-22 09:56:09"
       },
       {
         "id": 2,
@@ -4244,47 +4176,7 @@
         "title": "Student Marked Absent",
         "message": "Aarav Sharma was marked absent today.",
         "is_read": 0,
-        "created_at": "2026-11-09 15:31:00"
-      },
-      {
-        "id": 3,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 70%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:32:06"
-      },
-      {
-        "id": 4,
-        "user_id": null,
-        "student_id": 3,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Rohan Verma",
-        "message": "Attendance for Rohan Verma is now at 48%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-10 18:09:08"
-      },
-      {
-        "id": 5,
-        "user_id": null,
-        "student_id": 3,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Rohan Verma",
-        "message": "Attendance for Rohan Verma is now at 50%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-11 09:06:07"
-      },
-      {
-        "id": 6,
-        "user_id": null,
-        "student_id": 5,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Vikram Singh",
-        "message": "Attendance for Vikram Singh is now at 65%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-20 15:59:07"
+        "created_at": "2026-11-22 09:56:09"
       }
     ],
     "communication_logs": [
@@ -4300,7 +4192,7 @@
         "status": "Delivered",
         "failure_reason": null,
         "retry_count": 0,
-        "created_at": "2026-11-09 15:31:00",
+        "created_at": "2026-11-22 09:56:09",
         "delivered_at": null,
         "provider_message_id": null
       },
@@ -4316,7 +4208,7 @@
         "status": "Sent",
         "failure_reason": null,
         "retry_count": 0,
-        "created_at": "2026-11-09 15:31:00",
+        "created_at": "2026-11-22 09:56:09",
         "delivered_at": null,
         "provider_message_id": null
       }
