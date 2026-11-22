@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T12:50:45.828Z",
+  "exportedAt": "2026-11-22T12:53:00.308Z",
   "tables": {
     "classes": [
       {
@@ -29,38 +29,38 @@
       {
         "id": 1,
         "username": "admin",
-        "password_hash": "$2b$10$h9Z8p2EYGR8fLGsQt/wiUeI8qeEA7G0K4g7YMYRQvaNxymsMyfW4a",
+        "password_hash": "$2b$10$H4d8i/v5wUoJWubjY8OkoulJdzjLvYDFCBkRvnoxJOTaW6IKk9hrK",
         "role": "admin",
         "name": "System Administrator",
         "email": "admin@smartschool.edu",
         "phone": "9899999999",
         "linked_student_id": null,
         "teacher_id": null,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 2,
         "username": "teacher",
-        "password_hash": "$2b$10$lO79GAYLp73SQfQGPm2r7us1ba9nXcRWMUCSq.vhNX9th8jHedXDa",
+        "password_hash": "$2b$10$mo4KP65Opvqbax21e7H4J.NPfseBF75b3K5vjURi8v0Mcrl40owSu",
         "role": "teacher",
         "name": "Sunita Rao",
         "email": "sunita.rao@smartschool.edu",
         "phone": "9811122233",
         "linked_student_id": null,
         "teacher_id": "TCH-101",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 3,
         "username": "parent",
-        "password_hash": "$2b$10$CEpaY/okjwDOGu/jqMYBCeuCw142AHNpy0.JmyDkz6LMZEy7Vu8O.",
+        "password_hash": "$2b$10$l4iFpPLf.l5XCOd8l9RvOO/j3ARivw1bWSfl/xUN.9UcqMYGOskzW",
         "role": "parent",
         "name": "Rajesh Sharma",
         "email": "rajesh.sharma@example.com",
         "phone": "9876543210",
         "linked_student_id": 1,
         "teacher_id": null,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       }
     ],
     "teachers": [
@@ -73,7 +73,7 @@
         "subject": "Mathematics",
         "assigned_class": "10-A",
         "status": "Active",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 2,
@@ -84,7 +84,7 @@
         "subject": "Science",
         "assigned_class": "10-B",
         "status": "Active",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 3,
@@ -95,7 +95,7 @@
         "subject": "English",
         "assigned_class": "12-A",
         "status": "Active",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       }
     ],
     "students": [
@@ -116,7 +116,7 @@
         "status": "Active",
         "base_present": 14,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 2,
@@ -135,7 +135,7 @@
         "status": "Active",
         "base_present": 18,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 3,
@@ -154,7 +154,7 @@
         "status": "Active",
         "base_present": 11,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 4,
@@ -173,7 +173,7 @@
         "status": "Active",
         "base_present": 19,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 5,
@@ -192,7 +192,7 @@
         "status": "Active",
         "base_present": 13,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       },
       {
         "id": 6,
@@ -211,7 +211,7 @@
         "status": "Active",
         "base_present": 17,
         "base_total": 20,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:42"
       }
     ],
     "subjects": [
@@ -223,7 +223,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-101",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 2,
@@ -233,7 +233,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 3,
@@ -243,7 +243,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 80,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 4,
@@ -253,7 +253,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-102",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 5,
@@ -263,7 +263,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-103",
         "min_attendance_pct": 75,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 6,
@@ -273,7 +273,7 @@
         "class_sec": "10-A",
         "teacher_code": "TCH-101",
         "min_attendance_pct": 80,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       }
     ],
     "subject_enrollments": [
@@ -1395,7 +1395,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 2,
@@ -1405,7 +1405,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 3,
@@ -1415,7 +1415,27 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 4,
+        "student_id": 1,
+        "date": "2026-11-21",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 5,
+        "student_id": 1,
+        "date": "2026-11-22",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 6,
@@ -1425,7 +1445,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 7,
@@ -1435,7 +1455,37 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 8,
+        "student_id": 2,
+        "date": "2026-11-20",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 9,
+        "student_id": 2,
+        "date": "2026-11-21",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 10,
+        "student_id": 2,
+        "date": "2026-11-22",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 11,
@@ -1445,7 +1495,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 12,
@@ -1455,7 +1505,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 13,
@@ -1465,7 +1515,27 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 14,
+        "student_id": 3,
+        "date": "2026-11-21",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 15,
+        "student_id": 3,
+        "date": "2026-11-22",
+        "status": "Absent",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 16,
@@ -1475,7 +1545,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 17,
@@ -1485,7 +1555,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 18,
@@ -1495,7 +1565,27 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 19,
+        "student_id": 4,
+        "date": "2026-11-21",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 20,
+        "student_id": 4,
+        "date": "2026-11-22",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 21,
@@ -1505,7 +1595,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 22,
@@ -1515,7 +1605,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 23,
@@ -1525,7 +1615,27 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 24,
+        "student_id": 5,
+        "date": "2026-11-21",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
+      },
+      {
+        "id": 25,
+        "student_id": 5,
+        "date": "2026-11-22",
+        "status": "Late",
+        "period": 0,
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 26,
@@ -1535,7 +1645,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 27,
@@ -1545,7 +1655,7 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
         "id": 28,
@@ -1555,27 +1665,27 @@
         "period": 0,
         "marked_by": "Admin",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
-        "id": 157,
-        "student_id": 1,
-        "date": "2026-11-16",
-        "status": "Absent",
+        "id": 29,
+        "student_id": 6,
+        "date": "2026-11-21",
+        "status": "Present",
         "period": 0,
-        "marked_by": "Teacher",
-        "remarks": "Fever",
-        "updated_at": "2026-11-22 12:50:10"
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       },
       {
-        "id": 158,
-        "student_id": 1,
-        "date": "2026-11-17",
-        "status": "Absent",
+        "id": 30,
+        "student_id": 6,
+        "date": "2026-11-22",
+        "status": "Present",
         "period": 0,
-        "marked_by": "Teacher",
-        "remarks": "Medical",
-        "updated_at": "2026-11-22 12:50:10"
+        "marked_by": "Admin",
+        "remarks": null,
+        "updated_at": "2026-11-22 12:51:42"
       }
     ],
     "attendance_sessions": [
@@ -1589,7 +1699,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 2,
@@ -1601,7 +1711,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 3,
@@ -1613,7 +1723,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 4,
@@ -1625,7 +1735,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 5,
@@ -1637,7 +1747,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 6,
@@ -1649,7 +1759,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 7,
@@ -1661,7 +1771,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 8,
@@ -1673,7 +1783,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 9,
@@ -1685,7 +1795,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 10,
@@ -1697,7 +1807,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 11,
@@ -1709,7 +1819,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 12,
@@ -1721,7 +1831,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 13,
@@ -1733,7 +1843,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 14,
@@ -1745,7 +1855,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 15,
@@ -1757,7 +1867,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 16,
@@ -1769,7 +1879,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 17,
@@ -1781,7 +1891,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 18,
@@ -1793,7 +1903,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 19,
@@ -1805,7 +1915,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 20,
@@ -1817,7 +1927,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 21,
@@ -1829,7 +1939,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 22,
@@ -1841,7 +1951,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 23,
@@ -1853,7 +1963,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 24,
@@ -1865,7 +1975,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 25,
@@ -1877,7 +1987,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 26,
@@ -1889,7 +1999,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 27,
@@ -1901,7 +2011,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 28,
@@ -1913,7 +2023,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 29,
@@ -1925,7 +2035,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 30,
@@ -1937,7 +2047,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 31,
@@ -1949,7 +2059,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 32,
@@ -1961,7 +2071,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 33,
@@ -1973,7 +2083,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 34,
@@ -1985,7 +2095,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 35,
@@ -1997,7 +2107,7 @@
         "teacher_code": "TCH-101",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 36,
@@ -2009,7 +2119,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 37,
@@ -2021,7 +2131,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 38,
@@ -2033,7 +2143,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 39,
@@ -2045,7 +2155,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 40,
@@ -2057,7 +2167,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 41,
@@ -2069,7 +2179,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 42,
@@ -2081,7 +2191,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 43,
@@ -2093,7 +2203,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 44,
@@ -2105,7 +2215,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 45,
@@ -2117,7 +2227,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 46,
@@ -2129,7 +2239,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 47,
@@ -2141,7 +2251,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 48,
@@ -2153,7 +2263,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 49,
@@ -2165,7 +2275,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 50,
@@ -2177,7 +2287,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 51,
@@ -2189,7 +2299,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 52,
@@ -2201,7 +2311,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 53,
@@ -2213,7 +2323,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 54,
@@ -2225,7 +2335,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 55,
@@ -2237,7 +2347,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 56,
@@ -2249,7 +2359,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 57,
@@ -2261,7 +2371,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 58,
@@ -2273,7 +2383,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 59,
@@ -2285,7 +2395,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 60,
@@ -2297,7 +2407,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 61,
@@ -2309,7 +2419,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 62,
@@ -2321,7 +2431,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 63,
@@ -2333,7 +2443,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 64,
@@ -2345,7 +2455,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 65,
@@ -2357,7 +2467,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 66,
@@ -2369,7 +2479,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 67,
@@ -2381,7 +2491,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 68,
@@ -2393,7 +2503,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 69,
@@ -2405,7 +2515,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 70,
@@ -2417,7 +2527,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 71,
@@ -2429,7 +2539,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 72,
@@ -2441,7 +2551,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 73,
@@ -2453,7 +2563,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 74,
@@ -2465,7 +2575,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 75,
@@ -2477,7 +2587,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 76,
@@ -2489,7 +2599,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 77,
@@ -2501,7 +2611,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 78,
@@ -2513,7 +2623,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 79,
@@ -2525,7 +2635,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 80,
@@ -2537,7 +2647,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 81,
@@ -2549,7 +2659,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 82,
@@ -2561,7 +2671,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 83,
@@ -2573,7 +2683,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 84,
@@ -2585,7 +2695,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 85,
@@ -2597,7 +2707,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 86,
@@ -2609,7 +2719,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 87,
@@ -2621,7 +2731,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 88,
@@ -2633,7 +2743,7 @@
         "teacher_code": "TCH-102",
         "status": "Completed",
         "conducted_by": "Teacher",
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       }
     ],
     "period_attendance": [
@@ -2643,7 +2753,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 2,
@@ -2651,7 +2761,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 3,
@@ -2659,7 +2769,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 4,
@@ -2667,7 +2777,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 5,
@@ -2675,7 +2785,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 6,
@@ -2683,7 +2793,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 7,
@@ -2691,7 +2801,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 8,
@@ -2699,7 +2809,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 9,
@@ -2707,7 +2817,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 10,
@@ -2715,7 +2825,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 11,
@@ -2723,7 +2833,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 12,
@@ -2731,7 +2841,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 13,
@@ -2739,7 +2849,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 14,
@@ -2747,7 +2857,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 15,
@@ -2755,7 +2865,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 16,
@@ -2763,7 +2873,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 17,
@@ -2771,7 +2881,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 18,
@@ -2779,7 +2889,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 19,
@@ -2787,7 +2897,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 20,
@@ -2795,7 +2905,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 21,
@@ -2803,7 +2913,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 22,
@@ -2811,7 +2921,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 23,
@@ -2819,7 +2929,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 24,
@@ -2827,7 +2937,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 25,
@@ -2835,7 +2945,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 26,
@@ -2843,7 +2953,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 27,
@@ -2851,7 +2961,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 28,
@@ -2859,7 +2969,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 29,
@@ -2867,7 +2977,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 30,
@@ -2875,7 +2985,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 31,
@@ -2883,7 +2993,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 32,
@@ -2891,7 +3001,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 33,
@@ -2899,7 +3009,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 34,
@@ -2907,7 +3017,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 35,
@@ -2915,7 +3025,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 36,
@@ -2923,7 +3033,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 37,
@@ -2931,7 +3041,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 38,
@@ -2939,7 +3049,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 39,
@@ -2947,7 +3057,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 40,
@@ -2955,7 +3065,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 41,
@@ -2963,7 +3073,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 42,
@@ -2971,7 +3081,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 43,
@@ -2979,7 +3089,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 44,
@@ -2987,7 +3097,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 45,
@@ -2995,7 +3105,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 46,
@@ -3003,7 +3113,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 47,
@@ -3011,7 +3121,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 48,
@@ -3019,7 +3129,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 49,
@@ -3027,7 +3137,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 50,
@@ -3035,7 +3145,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 51,
@@ -3043,7 +3153,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 52,
@@ -3051,7 +3161,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 53,
@@ -3059,7 +3169,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 54,
@@ -3067,7 +3177,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 55,
@@ -3075,7 +3185,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 56,
@@ -3083,7 +3193,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 57,
@@ -3091,7 +3201,7 @@
         "student_id": 1,
         "status": "Late",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 58,
@@ -3099,7 +3209,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 59,
@@ -3107,7 +3217,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 60,
@@ -3115,7 +3225,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 61,
@@ -3123,7 +3233,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 62,
@@ -3131,7 +3241,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 63,
@@ -3139,7 +3249,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 64,
@@ -3147,7 +3257,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 65,
@@ -3155,7 +3265,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 66,
@@ -3163,7 +3273,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 67,
@@ -3171,7 +3281,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 68,
@@ -3179,7 +3289,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 69,
@@ -3187,7 +3297,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 70,
@@ -3195,7 +3305,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 71,
@@ -3203,7 +3313,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 72,
@@ -3211,7 +3321,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 73,
@@ -3219,7 +3329,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 74,
@@ -3227,7 +3337,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 75,
@@ -3235,7 +3345,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 76,
@@ -3243,7 +3353,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 77,
@@ -3251,7 +3361,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 78,
@@ -3259,7 +3369,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 79,
@@ -3267,7 +3377,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 80,
@@ -3275,7 +3385,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 81,
@@ -3283,7 +3393,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 82,
@@ -3291,7 +3401,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 83,
@@ -3299,7 +3409,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 84,
@@ -3307,7 +3417,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 85,
@@ -3315,7 +3425,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 86,
@@ -3323,7 +3433,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 87,
@@ -3331,7 +3441,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 88,
@@ -3339,7 +3449,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 89,
@@ -3347,7 +3457,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 90,
@@ -3355,7 +3465,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 91,
@@ -3363,7 +3473,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 92,
@@ -3371,7 +3481,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 93,
@@ -3379,7 +3489,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 94,
@@ -3387,7 +3497,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 95,
@@ -3395,7 +3505,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 96,
@@ -3403,7 +3513,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 97,
@@ -3411,7 +3521,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 98,
@@ -3419,7 +3529,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 99,
@@ -3427,7 +3537,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 100,
@@ -3435,7 +3545,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 101,
@@ -3443,7 +3553,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 102,
@@ -3451,7 +3561,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 103,
@@ -3459,7 +3569,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 104,
@@ -3467,7 +3577,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 105,
@@ -3475,7 +3585,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 106,
@@ -3483,7 +3593,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 107,
@@ -3491,7 +3601,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 108,
@@ -3499,7 +3609,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 109,
@@ -3507,7 +3617,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 110,
@@ -3515,7 +3625,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 111,
@@ -3523,7 +3633,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 112,
@@ -3531,7 +3641,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 113,
@@ -3539,7 +3649,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 114,
@@ -3547,7 +3657,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 115,
@@ -3555,7 +3665,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 116,
@@ -3563,7 +3673,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 117,
@@ -3571,7 +3681,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 118,
@@ -3579,7 +3689,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 119,
@@ -3587,7 +3697,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 120,
@@ -3595,7 +3705,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 121,
@@ -3603,7 +3713,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 122,
@@ -3611,7 +3721,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 123,
@@ -3619,7 +3729,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 124,
@@ -3627,7 +3737,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 125,
@@ -3635,7 +3745,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 126,
@@ -3643,7 +3753,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 127,
@@ -3651,7 +3761,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 128,
@@ -3659,7 +3769,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 129,
@@ -3667,7 +3777,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 130,
@@ -3675,7 +3785,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 131,
@@ -3683,7 +3793,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 132,
@@ -3691,7 +3801,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 133,
@@ -3699,7 +3809,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 134,
@@ -3707,7 +3817,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 135,
@@ -3715,7 +3825,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 136,
@@ -3723,7 +3833,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 137,
@@ -3731,7 +3841,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 138,
@@ -3739,7 +3849,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 139,
@@ -3747,7 +3857,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 140,
@@ -3755,7 +3865,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 141,
@@ -3763,7 +3873,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 142,
@@ -3771,7 +3881,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 143,
@@ -3779,7 +3889,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 144,
@@ -3787,7 +3897,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 145,
@@ -3795,7 +3905,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 146,
@@ -3803,7 +3913,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 147,
@@ -3811,7 +3921,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 148,
@@ -3819,7 +3929,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 149,
@@ -3827,7 +3937,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 150,
@@ -3835,7 +3945,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 151,
@@ -3843,7 +3953,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 152,
@@ -3851,7 +3961,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 153,
@@ -3859,7 +3969,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 154,
@@ -3867,7 +3977,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 155,
@@ -3875,7 +3985,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 156,
@@ -3883,7 +3993,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 157,
@@ -3891,7 +4001,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 158,
@@ -3899,7 +4009,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 159,
@@ -3907,7 +4017,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 160,
@@ -3915,7 +4025,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 161,
@@ -3923,7 +4033,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 162,
@@ -3931,7 +4041,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 163,
@@ -3939,7 +4049,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 164,
@@ -3947,7 +4057,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 165,
@@ -3955,7 +4065,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 166,
@@ -3963,7 +4073,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 167,
@@ -3971,7 +4081,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 168,
@@ -3979,7 +4089,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 169,
@@ -3987,7 +4097,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 170,
@@ -3995,7 +4105,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 171,
@@ -4003,7 +4113,7 @@
         "student_id": 1,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 172,
@@ -4011,7 +4121,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 173,
@@ -4019,7 +4129,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 174,
@@ -4027,7 +4137,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 175,
@@ -4035,7 +4145,7 @@
         "student_id": 1,
         "status": "Absent",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       },
       {
         "id": 176,
@@ -4043,7 +4153,7 @@
         "student_id": 2,
         "status": "Present",
         "remarks": null,
-        "updated_at": "2026-11-22 12:14:39"
+        "updated_at": "2026-11-22 12:51:43"
       }
     ],
     "leaves": [],
@@ -4056,7 +4166,7 @@
         "title": "Low Attendance Alert",
         "message": "Aarav Sharma has attendance below 75%. Please ensure regular attendance.",
         "is_read": 0,
-        "created_at": "2026-11-22 12:14:39"
+        "created_at": "2026-11-22 12:51:43"
       },
       {
         "id": 2,
@@ -4066,427 +4176,7 @@
         "title": "Student Marked Absent",
         "message": "Aarav Sharma was marked absent today.",
         "is_read": 0,
-        "created_at": "2026-11-22 12:14:39"
-      },
-      {
-        "id": 3,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 70%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:32:06"
-      },
-      {
-        "id": 4,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:05:45"
-      },
-      {
-        "id": 5,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 69%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:06:42"
-      },
-      {
-        "id": 6,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:06:42"
-      },
-      {
-        "id": 7,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 69%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:07:09"
-      },
-      {
-        "id": 8,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:07:09"
-      },
-      {
-        "id": 9,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 69%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:08:06"
-      },
-      {
-        "id": 10,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:08:06"
-      },
-      {
-        "id": 11,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 69%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:08:42"
-      },
-      {
-        "id": 12,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:08:42"
-      },
-      {
-        "id": 13,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:09:24"
-      },
-      {
-        "id": 14,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:09:24"
-      },
-      {
-        "id": 15,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:19:16"
-      },
-      {
-        "id": 16,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:19:16"
-      },
-      {
-        "id": 17,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:20:21"
-      },
-      {
-        "id": 18,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 12:20:21"
-      },
-      {
-        "id": 19,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:03:03"
-      },
-      {
-        "id": 20,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:03:03"
-      },
-      {
-        "id": 21,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:04:09"
-      },
-      {
-        "id": 22,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:04:09"
-      },
-      {
-        "id": 23,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:04:58"
-      },
-      {
-        "id": 24,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:04:58"
-      },
-      {
-        "id": 25,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:07:58"
-      },
-      {
-        "id": 26,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:07:58"
-      },
-      {
-        "id": 27,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:23:54"
-      },
-      {
-        "id": 28,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:23:54"
-      },
-      {
-        "id": 29,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:24:13"
-      },
-      {
-        "id": 30,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:24:13"
-      },
-      {
-        "id": 31,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:28:20"
-      },
-      {
-        "id": 32,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:28:20"
-      },
-      {
-        "id": 33,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:40:51"
-      },
-      {
-        "id": 34,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 14:40:51"
-      },
-      {
-        "id": 35,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:01:14"
-      },
-      {
-        "id": 36,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:01:14"
-      },
-      {
-        "id": 37,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:12:09"
-      },
-      {
-        "id": 38,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:12:09"
-      },
-      {
-        "id": 39,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:24:03"
-      },
-      {
-        "id": 40,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:24:03"
-      },
-      {
-        "id": 41,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 67%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:32:49"
-      },
-      {
-        "id": 42,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 15:32:49"
-      },
-      {
-        "id": 43,
-        "user_id": 3,
-        "student_id": 1,
-        "type": "defaulter",
-        "title": "75% Threshold Alert: Aarav Sharma",
-        "message": "Attendance for Aarav Sharma is now at 71%, below the mandatory 75% minimum threshold.",
-        "is_read": 0,
-        "created_at": "2026-11-09 17:40:01"
-      },
-      {
-        "id": 44,
-        "user_id": null,
-        "student_id": 2,
-        "type": "leave_submitted",
-        "title": "New Leave Request: Priya Patel",
-        "message": "Leave application submitted for 2026-11-28 to 2026-11-29. Reason: Family wedding event",
-        "is_read": 0,
-        "created_at": "2026-11-09 17:40:01"
+        "created_at": "2026-11-22 12:51:43"
       }
     ],
     "communication_logs": [
@@ -4502,7 +4192,7 @@
         "status": "Delivered",
         "failure_reason": null,
         "retry_count": 0,
-        "created_at": "2026-11-22 12:14:39",
+        "created_at": "2026-11-22 12:51:43",
         "delivered_at": null,
         "provider_message_id": null
       },
@@ -4518,487 +4208,7 @@
         "status": "Sent",
         "failure_reason": null,
         "retry_count": 0,
-        "created_at": "2026-11-22 12:14:39",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 3,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:02:38",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 4,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:03:02",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 5,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:33:03 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:03:03",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 6,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:04:09",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 7,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:34:09 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:04:09",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 8,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:04:57",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 9,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:34:58 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:04:58",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 10,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:07:58",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 11,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:37:58 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:07:58",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 12,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:23:53",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 13,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:53:54 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:23:54",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 14,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:24:13",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 15,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:54:13 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:24:13",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 16,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:28:20",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 17,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 7:58:21 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:28:21",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 18,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:40:50",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 19,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 8:10:51 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 14:40:51",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 20,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:01:14",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 21,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 8:31:14 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:01:14",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 22,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:12:09",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 23,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 8:42:09 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:12:09",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 24,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:24:03",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 25,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 8:54:04 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:24:04",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 26,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:32:49",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 27,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 9:02:49 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 15:32:49",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 28,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 17:40:01",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 29,
-        "student_id": null,
-        "recipient": "parent.test@example.com",
-        "recipient_type": "email",
-        "notification_type": "test",
-        "subject": "Smart School Gateway: Test Email Connection",
-        "message": "Hello,\nThis is a test notification from the Smart School Communication Gateway sent at 9/11/2026, 11:10:01 pm.\n\nIf you received this message, your SMTP credentials and mail gateway are operational.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-09 17:40:01",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 30,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-22 12:48:56",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 31,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-22 12:49:42",
-        "delivered_at": null,
-        "provider_message_id": null
-      },
-      {
-        "id": 32,
-        "student_id": null,
-        "recipient": "test.parent@example.com",
-        "recipient_type": "email",
-        "notification_type": "absence_alert",
-        "subject": "Absence Notice Test",
-        "message": "Student missed Physics Lab period 5.",
-        "provider": "mock_smtp",
-        "status": "Sent",
-        "failure_reason": null,
-        "retry_count": 0,
-        "created_at": "2026-11-22 12:50:15",
+        "created_at": "2026-11-22 12:51:43",
         "delivered_at": null,
         "provider_message_id": null
       }
