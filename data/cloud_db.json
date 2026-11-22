@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T12:56:58.779Z",
+  "exportedAt": "2026-11-22T12:57:46.354Z",
   "tables": {
     "classes": [
       {
@@ -1431,11 +1431,11 @@
         "id": 5,
         "student_id": 1,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:48"
+        "updated_at": "2026-11-22 12:57:43"
       },
       {
         "id": 6,
@@ -1481,11 +1481,11 @@
         "id": 10,
         "student_id": 2,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:49"
+        "updated_at": "2026-11-22 12:57:43"
       },
       {
         "id": 11,
@@ -1531,11 +1531,11 @@
         "id": 15,
         "student_id": 3,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:52"
+        "updated_at": "2026-11-22 12:57:43"
       },
       {
         "id": 16,
@@ -1581,11 +1581,11 @@
         "id": 20,
         "student_id": 4,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:53"
+        "updated_at": "2026-11-22 12:57:43"
       },
       {
         "id": 21,
@@ -1631,11 +1631,11 @@
         "id": 25,
         "student_id": 5,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:54"
+        "updated_at": "2026-11-22 12:57:43"
       },
       {
         "id": 26,
@@ -1681,11 +1681,11 @@
         "id": 30,
         "student_id": 6,
         "date": "2026-11-22",
-        "status": "Absent",
+        "status": "Present",
         "period": 0,
-        "marked_by": "admin",
+        "marked_by": "User",
         "remarks": "",
-        "updated_at": "2026-11-22 12:56:55"
+        "updated_at": "2026-11-22 12:57:43"
       }
     ],
     "attendance_sessions": [
