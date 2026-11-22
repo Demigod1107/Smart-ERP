@@ -2,8 +2,32 @@ const fs = require('fs');
 const path = require('path');
 const { db } = require('../db');
 
-const GITHUB_TOKEN = process.env.GITHUB_SYNC_TOKEN || '';
-const GITHUB_REPO = process.env.GITHUB_REPO || 'Demigod1107/Smart-ERP';
+function getGitHubToken() {
+  if (process.env.GITHUB_SYNC_TOKEN) return process.env.GITHUB_SYNC_TOKEN;
+  try {
+    const row = db.prepare("SELECT value FROM settings WHERE key = 'cloud_sync_token'").get();
+    if (row && row.value) return row.value;
+  } catch (e) {}
+  return '';
+}
+
+function getGitHubRepo() {
+  if (process.env.GITHUB_REPO) return process.env.GITHUB_REPO;
+  try {
+    const row = db.prepare("SELECT value FROM settings WHERE key = 'cloud_sync_repo'").get();
+    if (row && row.value) return row.value;
+  } catch (e) {}
+  return 'Demigod1107/Smart-ERP';
+}
+
+function isCloudSyncActive() {
+  try {
+    const row = db.prepare("SELECT value FROM settings WHERE key = 'cloud_sync_enabled'").get();
+    if (row && row.value === 'false') return false;
+  } catch (e) {}
+  return Boolean(getGitHubToken() && getGitHubRepo());
+}
+
 const CLOUD_FILE_PATH = 'data/cloud_db.json';
 
 let lastSyncTimestamp = null;
@@ -91,7 +115,10 @@ function restoreDatabase(data) {
  * Downloads the latest persistent database from GitHub
  */
 async function pullFromCloud() {
-  if (!GITHUB_TOKEN || !GITHUB_REPO) {
+  const token = getGitHubToken();
+  const repo = getGitHubRepo();
+
+  if (!token || !repo || !isCloudSyncActive()) {
     // If running locally, check if local file exists
     const localFallback = path.join(__dirname, '..', '..', 'data', 'cloud_db.json');
     if (fs.existsSync(localFallback)) {
@@ -105,10 +132,10 @@ async function pullFromCloud() {
   }
 
   try {
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${CLOUD_FILE_PATH}`;
+    const url = `https://api.github.com/repos/${repo}/contents/${CLOUD_FILE_PATH}`;
     const res = await fetch(url, {
       headers: {
-        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Authorization': `token ${token}`,
         'User-Agent': 'Smart-ERP-Sync',
         'Accept': 'application/vnd.github.v3+json'
       }
@@ -147,7 +174,10 @@ async function pullFromCloud() {
  * Commits the current SQLite database to GitHub
  */
 async function pushToCloud(commitMsg = 'chore(data): auto-sync attendance records [skip ci]') {
-  if (!GITHUB_TOKEN || !GITHUB_REPO) {
+  const token = getGitHubToken();
+  const repo = getGitHubRepo();
+
+  if (!token || !repo || !isCloudSyncActive()) {
     // Save locally
     try {
       const dataDir = path.join(__dirname, '..', '..', 'data');
@@ -165,13 +195,13 @@ async function pushToCloud(commitMsg = 'chore(data): auto-sync attendance record
   try {
     const dump = dumpDatabase();
     const content = Buffer.from(JSON.stringify(dump, null, 2)).toString('base64');
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${CLOUD_FILE_PATH}`;
+    const url = `https://api.github.com/repos/${repo}/contents/${CLOUD_FILE_PATH}`;
 
     // Get latest SHA if we don't have it
     if (!lastKnownSha) {
       const checkRes = await fetch(url, {
         headers: {
-          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Authorization': `token ${token}`,
           'User-Agent': 'Smart-ERP-Sync'
         }
       });
@@ -193,7 +223,7 @@ async function pushToCloud(commitMsg = 'chore(data): auto-sync attendance record
     const res = await fetch(url, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Authorization': `token ${token}`,
         'User-Agent': 'Smart-ERP-Sync',
         'Content-Type': 'application/json'
       },
@@ -231,12 +261,16 @@ function triggerAutoSave() {
 }
 
 function getSyncStatus() {
+  const token = getGitHubToken();
+  const repo = getGitHubRepo();
+  const active = isCloudSyncActive();
+
   return {
-    enabled: Boolean(GITHUB_TOKEN && GITHUB_REPO),
-    repo: GITHUB_REPO,
-    cloudFile: `https://github.com/${GITHUB_REPO}/blob/main/${CLOUD_FILE_PATH}`,
+    enabled: active,
+    repo: repo,
+    cloudFile: `https://github.com/${repo}/blob/main/${CLOUD_FILE_PATH}`,
     lastSync: lastSyncTimestamp || 'Not synced yet',
-    mode: GITHUB_TOKEN ? '24/7 Cloud Git Persistence' : 'Local Persistence'
+    mode: active ? '24/7 Cloud Git Persistence' : 'Local Persistence'
   };
 }
 
