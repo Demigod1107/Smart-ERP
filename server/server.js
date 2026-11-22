@@ -771,11 +771,39 @@ app.put('/api/students/:id', (req, res) => {
   res.json({ success: true, message: 'Student updated successfully' });
 });
 
-app.delete('/api/students/:id', (req, res) => {
-  const studentId = parseInt(req.params.id, 10);
-  const info = db.prepare('DELETE FROM students WHERE id = ?').run(studentId);
-  if (info.changes === 0) return res.status(404).json({ error: 'Student not found' });
-  triggerAutoSave();
+app.delete('/api/students/:id', async (req, res) => {
+  const rawId = req.params.id;
+  const rollFromBody = req.body && req.body.roll;
+
+  let info = { changes: 0 };
+  const numericId = parseInt(rawId, 10);
+
+  if (!isNaN(numericId)) {
+    info = db.prepare('DELETE FROM students WHERE id = ?').run(numericId);
+  }
+
+  // If not found by numeric ID, try finding and deleting by roll number or admission number
+  if (info.changes === 0 && rawId) {
+    const searchParam = rawId.trim().toUpperCase();
+    info = db.prepare('DELETE FROM students WHERE roll = ? OR admission_no = ?').run(searchParam, searchParam);
+  }
+
+  // Also check if body passed roll number
+  if (info.changes === 0 && rollFromBody) {
+    const cleanRoll = rollFromBody.trim().toUpperCase();
+    info = db.prepare('DELETE FROM students WHERE roll = ?').run(cleanRoll);
+  }
+
+  if (info.changes === 0) {
+    return res.status(404).json({ error: 'Student not found by ID or Roll Number' });
+  }
+
+  try {
+    await pushToCloud(`chore(data): deleted student ${rawId}`);
+  } catch (e) {
+    triggerAutoSave();
+  }
+
   res.json({ success: true, message: 'Student deleted successfully' });
 });
 

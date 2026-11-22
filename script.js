@@ -688,17 +688,49 @@ async function markStatus(index, status) {
   }
 }
 
-function removeStudent(index) {
+async function removeStudent(index) {
   const removed = students[index];
-  if (confirm(`Remove student ${removed.name} (${removed.roll})?`)) {
-    if (removed.id) {
-      fetch(`/api/students/${removed.id}`, { method: 'DELETE' }).catch(() => {});
+  if (!removed) return;
+  if (!confirm(`Permanently remove student ${removed.name} (${removed.roll})?`)) return;
+
+  const id = removed.id;
+  const roll = removed.roll;
+
+  // Optimistically remove from local state
+  students.splice(index, 1);
+  saveData();
+  renderTable();
+  showMessage(`Removing ${removed.name} from database...`);
+
+  // Send DELETE to backend with fallback to roll number
+  try {
+    const target = id || encodeURIComponent(roll);
+    let res = await fetch(`/api/students/${target}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ roll: roll, id: id })
+    });
+
+    if (!res.ok && roll) {
+      // Retry explicitly by roll number
+      res = await fetch(`/api/students/${encodeURIComponent(roll)}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ roll: roll })
+      });
     }
-    students.splice(index, 1);
-    saveData();
-    renderTable();
-    showMessage(`Removed ${removed.name}`);
+
+    if (res.ok) {
+      showMessage(`✓ Permanently deleted ${removed.name} (${roll})`);
+    }
+  } catch (e) {
+    console.warn('Network error during student delete:', e);
   }
+
+  // Ensure cloud DB reflects the change
+  try {
+    await fetch('/api/cloud/sync', { method: 'POST' });
+  } catch (e) {}
 }
 
 // Speed Roll-Call Mode Handler
