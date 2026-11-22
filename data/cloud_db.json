@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T16:36:47.133Z",
+  "exportedAt": "2026-11-22T16:38:09.469Z",
   "tables": {
     "classes": [
       {
@@ -250,6 +250,25 @@
         "base_present": 18,
         "base_total": 20,
         "created_at": "2026-11-22 13:03:41"
+      },
+      {
+        "id": 34,
+        "roll": "10A-07",
+        "admission_no": "ADM-10A-07",
+        "name": "Arhaan Chopra",
+        "dob": null,
+        "gender": "Not Specified",
+        "class_sec": "10-A",
+        "parent_name": "Guardian",
+        "parent_phone": "9876543216",
+        "parent_email": null,
+        "address": null,
+        "photo_url": null,
+        "admission_date": "2026-11-22",
+        "status": "Active",
+        "base_present": 19,
+        "base_total": 21,
+        "created_at": "2026-11-22 16:37:59"
       }
     ],
     "subjects": [
