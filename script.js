@@ -344,6 +344,23 @@ async function syncFromBackend() {
           local.records[selectedDate] = bs.currentStatus;
           local.basePresent = bs.stats.present - (bs.currentStatus === 'Present' ? 1 : bs.currentStatus === 'Late' ? 0.5 : 0);
           local.baseTotal = bs.stats.total - 1;
+        } else {
+          // Push student from backend if not yet in LocalStorage
+          students.push({
+            id: bs.id,
+            roll: bs.roll,
+            admission_no: bs.admission_no || `ADM-${bs.roll}`,
+            name: bs.name,
+            classSec: bs.class_sec || bs.classSec,
+            class_sec: bs.class_sec || bs.classSec,
+            parent_name: bs.parent_name || 'Guardian',
+            parent_phone: bs.parent_phone || bs.phone || '',
+            phone: bs.parent_phone || bs.phone || '',
+            status: bs.status || 'Active',
+            basePresent: (bs.stats && bs.stats.present) || 18,
+            baseTotal: (bs.stats && bs.stats.total) || 20,
+            records: { [selectedDate]: bs.currentStatus || 'Present' }
+          });
         }
       });
       saveData();
@@ -900,7 +917,9 @@ if (studentForm) {
       admission_no: `ADM-${Date.now().toString().slice(-6)}`,
       name,
       classSec,
+      class_sec: classSec,
       phone,
+      parent_phone: phone,
       basePresent: 18,
       baseTotal: 20,
       records: {
@@ -908,12 +927,22 @@ if (studentForm) {
       },
     };
 
-    // Post to API if online
+    // Post to API and cloud sync
     try {
       const res = await fetch('/api/students', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newObj),
+        body: JSON.stringify({
+          roll,
+          name,
+          class_sec: classSec,
+          classSec: classSec,
+          parent_phone: phone,
+          phone,
+          admission_no: newObj.admission_no,
+          base_present: 18,
+          base_total: 20
+        }),
       });
       const data = await res.json();
       if (data.studentId) newObj.id = data.studentId;
@@ -1344,6 +1373,21 @@ async function checkCloudSyncStatus() {
   }
 }
 
+async function syncLocalStorageToCloud() {
+  try {
+    const saved = localStorage.getItem('smart_attendance_v3');
+    if (!saved) return;
+    const localStudents = JSON.parse(saved);
+    if (Array.isArray(localStudents) && localStudents.length > 0) {
+      await fetch('/api/students/sync-local', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ students: localStudents })
+      });
+    }
+  } catch (e) {}
+}
+
 async function syncWithCloudStorage() {
   const badge = document.getElementById('cloudStatusBadge');
   if (badge) {
@@ -1351,6 +1395,7 @@ async function syncWithCloudStorage() {
     badge.style.color = '#2563eb';
   }
   try {
+    await syncLocalStorageToCloud();
     const res = await fetch('/api/cloud/sync', { method: 'POST' });
     const data = await res.json();
     if (data.success) {
@@ -1379,6 +1424,7 @@ if (cloudStatusBadge) {
 window.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   initUserUI();
+  await syncLocalStorageToCloud();
   await syncFromBackend();
   renderTable();
   loadAiInsights();

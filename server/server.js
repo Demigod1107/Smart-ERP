@@ -652,12 +652,15 @@ app.get('/api/students/:id', (req, res) => {
 
 app.post('/api/students', (req, res) => {
   const {
-    roll, admission_no, name, dob, gender, class_sec,
-    parent_name, parent_phone, parent_email, address,
+    roll, admission_no, name, dob, gender, class_sec, classSec,
+    parent_name, parent_phone, phone, parent_email, address,
     admission_date, photo_url, base_present = 18, base_total = 20
   } = req.body;
 
-  if (!roll || !name || !class_sec) {
+  const resolvedClassSec = class_sec || classSec;
+  const resolvedPhone = parent_phone || phone;
+
+  if (!roll || !name || !resolvedClassSec) {
     return res.status(400).json({ error: 'Roll number, Name, and Class & Section are required.' });
   }
 
@@ -676,21 +679,68 @@ app.post('/api/students', (req, res) => {
       admission_date, photo_url, base_present, base_total, status
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Active')
   `).run(
-    cleanRoll, cleanAdm, name.trim(), dob || null, gender || 'Not Specified', class_sec,
-    parent_name || null, parent_phone || null, parent_email || null, address || null,
+    cleanRoll, cleanAdm, name.trim(), dob || null, gender || 'Not Specified', resolvedClassSec,
+    parent_name || 'Guardian', resolvedPhone || null, parent_email || null, address || null,
     admission_date || fmtDate(new Date()), photo_url || null, base_present, base_total
   );
 
+  triggerAutoSave();
   res.status(201).json({ success: true, studentId: result.lastInsertRowid });
+});
+
+// Two-way synchronization bridge between Browser LocalStorage and Database
+app.post('/api/students/sync-local', (req, res) => {
+  const { students: localStudents } = req.body;
+  if (!Array.isArray(localStudents) || localStudents.length === 0) {
+    return res.json({ success: true, synced: 0 });
+  }
+
+  let synced = 0;
+  for (const s of localStudents) {
+    const roll = (s.roll || '').trim().toUpperCase();
+    const name = (s.name || '').trim();
+    const classSec = s.class_sec || s.classSec;
+    if (!roll || !name || !classSec) continue;
+
+    const existing = db.prepare('SELECT id FROM students WHERE roll = ?').get(roll);
+    if (!existing) {
+      const cleanAdm = (s.admission_no || `ADM-${Date.now().toString().slice(-6)}-${Math.floor(Math.random()*900+100)}`).trim().toUpperCase();
+      try {
+        db.prepare(`
+          INSERT INTO students (
+            roll, admission_no, name, dob, gender, class_sec,
+            parent_name, parent_phone, parent_email, address,
+            admission_date, photo_url, base_present, base_total, status
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `).run(
+          roll, cleanAdm, name, s.dob || null, s.gender || 'Not Specified', classSec,
+          s.parent_name || 'Guardian', s.parent_phone || s.phone || null, s.parent_email || null, s.address || null,
+          s.admission_date || fmtDate(new Date()), s.photo_url || null,
+          Number(s.basePresent ?? s.base_present) || 18,
+          Number(s.baseTotal ?? s.base_total) || 20,
+          s.status || 'Active'
+        );
+        synced++;
+      } catch (err) {}
+    }
+  }
+
+  if (synced > 0) {
+    triggerAutoSave();
+  }
+  res.json({ success: true, synced });
 });
 
 app.put('/api/students/:id', (req, res) => {
   const studentId = parseInt(req.params.id, 10);
   const {
-    roll, admission_no, name, dob, gender, class_sec,
-    parent_name, parent_phone, parent_email, address,
+    roll, admission_no, name, dob, gender, class_sec, classSec,
+    parent_name, parent_phone, phone, parent_email, address,
     photo_url, status
   } = req.body;
+
+  const resolvedClassSec = class_sec || classSec;
+  const resolvedPhone = parent_phone || phone;
 
   const existing = db.prepare('SELECT * FROM students WHERE id = ?').get(studentId);
   if (!existing) return res.status(404).json({ error: 'Student not found' });
@@ -713,10 +763,11 @@ app.put('/api/students/:id', (req, res) => {
   `).run(
     roll ? roll.toUpperCase() : null,
     admission_no ? admission_no.toUpperCase() : null,
-    name, dob, gender, class_sec, parent_name, parent_phone, parent_email, address, photo_url, status,
+    name, dob, gender, resolvedClassSec, parent_name, resolvedPhone, parent_email, address, photo_url, status,
     studentId
   );
 
+  triggerAutoSave();
   res.json({ success: true, message: 'Student updated successfully' });
 });
 
@@ -724,6 +775,7 @@ app.delete('/api/students/:id', (req, res) => {
   const studentId = parseInt(req.params.id, 10);
   const info = db.prepare('DELETE FROM students WHERE id = ?').run(studentId);
   if (info.changes === 0) return res.status(404).json({ error: 'Student not found' });
+  triggerAutoSave();
   res.json({ success: true, message: 'Student deleted successfully' });
 });
 
