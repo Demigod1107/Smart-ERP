@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-22T11:05:41.464Z",
+  "exportedAt": "2026-11-22T11:05:47.332Z",
   "tables": {
     "classes": [
       {
@@ -1425,9 +1425,9 @@
         "date": "2026-11-19",
         "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
-        "remarks": null,
-        "updated_at": "2026-11-22 09:56:09"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:05:42"
       },
       {
         "id": 3,
@@ -1475,9 +1475,9 @@
         "date": "2026-11-19",
         "status": "Present",
         "period": 0,
-        "marked_by": "Admin",
-        "remarks": null,
-        "updated_at": "2026-11-22 09:56:09"
+        "marked_by": "admin",
+        "remarks": "",
+        "updated_at": "2026-11-22 11:05:43"
       },
       {
         "id": 8,
