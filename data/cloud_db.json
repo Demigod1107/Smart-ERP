@@ -1,6 +1,6 @@
 {
   "version": "4.5.0",
-  "exportedAt": "2026-11-23T04:08:10.754Z",
+  "exportedAt": "2026-11-27T13:36:06.819Z",
   "tables": {
     "classes": [
       {
@@ -1783,6 +1783,96 @@
         "marked_by": "User",
         "remarks": null,
         "updated_at": "2026-11-23 04:05:26"
+      },
+      {
+        "id": 175,
+        "student_id": 1,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 176,
+        "student_id": 2,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 177,
+        "student_id": 3,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 178,
+        "student_id": 4,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 179,
+        "student_id": 5,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 180,
+        "student_id": 6,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 181,
+        "student_id": 32,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 182,
+        "student_id": 33,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
+      },
+      {
+        "id": 183,
+        "student_id": 34,
+        "date": "2026-11-27",
+        "status": "Present",
+        "period": 0,
+        "marked_by": "User",
+        "remarks": null,
+        "updated_at": "2026-11-27 13:35:47"
       }
     ],
     "attendance_sessions": [
